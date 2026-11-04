@@ -40,6 +40,10 @@ local function refreshSoon()
     end)
 end
 
+-- for tests and other addons
+DM.Dungeons = ns.Dungeons
+DM.MapSheets = ns.MapSheets
+
 DM:On("PLAYER_LOGIN", function()
     DM:InitDB()
     setupMinimap()
