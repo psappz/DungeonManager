@@ -1,0 +1,13 @@
+{"dungeon":"stockade","sheet":"01","texture":"Interface\\AddOns\\DungeonManager\\Media\\Maps\\stockade","size":[1024,512],
+"panels":[],
+"markers":[
+{"id":"E","type":"entrance"},
+{"id":"1","type":"boss","name":"Targorr the Dread","variable":true},
+{"id":"2","type":"boss","name":"Kam Deepfury","variable":true},
+{"id":"3","type":"boss","name":"Hamhock"},
+{"id":"4","type":"boss","name":"Bazil Thredd"},
+{"id":"5","type":"boss","name":"Dextren Ward"},
+{"id":"6","type":"boss","name":"Bruegal Ironknuckle","rare":true,"placed":false},
+{"id":"Q1","type":"quest","name":"Dextren Ward","quest":[377]},
+{"id":"Q2","type":"quest","name":"Bazil Thredd","quest":[391]}],
+"uncertain":["Targorr and Kam Deepfury spawn in varying cells","Bruegal Ironknuckle (rare) not placed"]}

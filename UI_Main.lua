@@ -1,0 +1,348 @@
+-- DungeonManager - main window: Leveling, Endgame, Raids, Settings + dungeon detail
+-- Copyright (C) 2026 psappz - GPL-3.0-or-later
+local _, ns = ...
+local DM = ns.DM
+local L = ns.L
+local W = DM.W
+
+local UI = {}
+DM.UI = UI
+
+local WIDTH, HEIGHT = 900, 600
+local frame, tabs, pages = nil, {}, {}
+local C = DM.Logic.COLORS
+
+local STATUS = {
+    log = { "In quest log", "8fe39b" }, take = { "Pick up", "ffd100" }, pre = { "Prerequisite open", "f3b77a" },
+    inside = { "Starts in dungeon", "a9cbe3" }, low = { "Level too low", "e8903a" }, other = { "Other class", C.graygreen },
+    done = { "Done", C.gray }, unknown = { "?", "d9d1bd" },
+}
+
+local function groupClasses()
+    local set = {}
+    local n = GetNumGroupMembers and GetNumGroupMembers() or 0
+    local prefix = IsInRaid and IsInRaid() and "raid" or "party"
+    for i = 1, n do
+        local _, file = UnitClass(prefix .. i)
+        if file then set[file] = true end
+    end
+    return set
+end
+UI.GroupClasses = groupClasses
+
+function DM:SetWaypoint(area, x, y, label)
+    local map = area and DM.Quests:AreaToUi(area)
+    if map and C_Map and C_Map.SetUserWaypoint and UiMapPoint and (not C_Map.CanSetUserWaypointOnMap or C_Map.CanSetUserWaypointOnMap(map)) then
+        C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(map, x, y))
+        if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then C_SuperTrack.SetSuperTrackedUserWaypoint(true) end
+        DM:Print(string.format(L["Map marker set: %s"], label or ""))
+    elseif area then
+        DM:Print(string.format("%s - %s (%.1f, %.1f)", label or "", DM:AreaName(area) or "?", (x or 0) * 100, (y or 0) * 100))
+    end
+end
+
+function UI:QuestRow(e, groupSet, p)
+    local st = STATUS[e.status] or STATUS.unknown
+    local icon = DM:FactionIcon(e.fac)
+    if e.classFile then icon = icon .. DM:ClassIcon(e.classFile) end
+    local nameHex = (e.status == "done") and C.gray or ((e.status == "other") and C.graygreen or "ffffff")
+    local giver
+    if e.fromItem then giver = L["Item / object"]
+    elseif e.giver then giver = e.giver .. ((e.area and DM:AreaName(e.area)) and (" - " .. DM:AreaName(e.area)) or "") end
+    if e.status == "pre" and e.pre and e.pre[1] then
+        giver = (giver or "") .. "  |cfff3b55b" .. L["after:"] .. " " .. DM.Quests:Name(e.pre[1]) .. "|r"
+    end
+    local highlight = e.classFile and e.status ~= "done" and ((e.own) or (groupSet[e.classFile]))
+    return {
+        icon = icon, name = DM:Color(nameHex, e.name), status = DM:Color(st[2], L[st[1]]), giver = giver or "-",
+        entry = e, border = highlight and { 0.78, 0.63, 0.29 } or nil,
+    }
+end
+
+---------------------------------------------------------------------------
+-- Leveling / Endgame list
+---------------------------------------------------------------------------
+local LIST_COLS = { { "mark", "", 26 }, { "name", "Dungeon", 330 }, { "range", "Range", 70 }, { "min", "Min.", 50 },
+    { "quests", "Quests", 70 }, { "zone", "Location", 320 } }
+
+local function localizedCols(cols)
+    local out = {}
+    for i, c in ipairs(cols) do out[i] = { c[1], c[2] ~= "" and L[c[2]] or "", c[3], c[4] } end
+    return out
+end
+
+local function listRows(phase)
+    local p = DM:Player()
+    local log = DM.Quests:LogSet()
+    local hc = DM:IsHardcore()
+    local rows = {}
+    for _, d in ipairs(ns.Dungeons) do
+        local inPhase = (phase == "end") and (d.phase == "end" or d.both) or (phase ~= "end" and d.phase ~= "end")
+        if inPhase then
+            local r = DM.Logic:Evaluate(d, p, log)
+            if not (hc and r.dangerous) then
+                local name = DM:DungeonName(d)
+                if d.new then name = name .. " |cffffd100" .. L["NEW"] .. "|r" end
+                if r.dangerous then name = name .. " |TInterface\\TargetingFrame\\UI-TargetingFrame-Skull:14:14|t" end
+                local hex = (phase == "end") and C.gray or r.hex
+                local q = (r.total > 0) and (r.open .. "/" .. r.total) or (DM.Quests.ready and "0" or "...")
+                local note = DM:ZoneText(d)
+                if not r.attuned then note = "|cffe05a4f" .. L["Attunement missing"] .. "|r - " .. note end
+                table.insert(rows, {
+                    mark = DM.char.marked[d.key] and "|cffffd100+|r" or "",
+                    name = DM:Color(hex, name), range = d.low .. "-" .. d.high, min = d.min and tostring(d.min) or "-",
+                    quests = q, zone = note, d = d, selected = DM.char.marked[d.key],
+                })
+            end
+        end
+    end
+    return rows
+end
+
+local function buildList(page, phase)
+    local y = -4
+    if phase ~= "end" then
+        local lbl = W:Text(page, "GameFontHighlightSmall", L["Widen range:"])
+        lbl:SetPoint("TOPLEFT", 8, y - 4)
+        local b = W:Number(page, 36, function() return DM.char.below end, function(v) DM.char.below = math.max(0, math.floor(v)) UI:Refresh() end)
+        b:SetPoint("LEFT", lbl, "RIGHT", 22, 0)
+        local bl = W:Text(page, "GameFontHighlightSmall", "-y") bl:SetPoint("RIGHT", b, "LEFT", -6, 0)
+        local a = W:Number(page, 36, function() return DM.char.above end, function(v) DM.char.above = math.max(0, math.floor(v)) UI:Refresh() end)
+        a:SetPoint("LEFT", b, "RIGHT", 32, 0)
+        local al = W:Text(page, "GameFontHighlightSmall", "+x") al:SetPoint("RIGHT", a, "LEFT", -6, 0)
+        page.inputs = { b, a }
+        page.hint = W:Text(page, "GameFontDisableSmall", L["Click: details - Shift-click: mark for the run"])
+        page.hint:SetPoint("LEFT", a, "RIGHT", 16, 0)
+        y = y - 28
+    else
+        page.hint = W:Text(page, "GameFontDisableSmall", L["Endgame dungeons are completed after the launch."])
+        page.hint:SetPoint("TOPLEFT", 8, y - 4)
+        y = y - 24
+    end
+    page.table = W:Table(page, localizedCols(LIST_COLS), 22, phase == "end" and 18 or 17, function(item)
+        if IsShiftKeyDown() then
+            DM.char.marked[item.d.key] = not DM.char.marked[item.d.key] or nil
+            UI:Refresh()
+            DM:Fire("MARKED_CHANGED")
+        else
+            UI:ShowDetail(item.d)
+        end
+    end)
+    page.table:SetPoint("TOPLEFT", page, "TOPLEFT", 4, y)
+    page.table:SetPoint("RIGHT", page, "RIGHT", -4, 0)
+    page.legend = W:Text(page, "GameFontHighlightSmall")
+    page.legend:SetPoint("BOTTOMLEFT", 8, 2)
+    page.legend:SetText(string.format("|cff%s%s|r   |cff%s%s|r   |cff%s%s|r   |cff%s%s|r   |cff%s%s|r",
+        C.green, L["Recommended, open quests"], C.graygreen, L["Recommended, nothing open"], C.orange, L["Too hard"],
+        C.gray, L["Outleveled"], C.red, L["Cannot enter"]))
+end
+
+---------------------------------------------------------------------------
+-- Detail view
+---------------------------------------------------------------------------
+local function buildDetail(page)
+    local back = W:Button(page, L["Back"], 80, function() UI:ShowTab(UI.detailFrom or "lev") end)
+    back:SetPoint("TOPLEFT", 6, -2)
+    page.title = W:Text(page, "GameFontNormalLarge") page.title:SetPoint("LEFT", back, "RIGHT", 10, 0)
+    page.mark = W:Button(page, "", 150, function()
+        local k = UI.detail and UI.detail.key
+        if k then DM.char.marked[k] = not DM.char.marked[k] or nil UI:Refresh() DM:Fire("MARKED_CHANGED") end
+    end)
+    page.mark:SetPoint("TOPRIGHT", -6, -2)
+    page.info = W:Text(page, "GameFontHighlightSmall") page.info:SetPoint("TOPLEFT", 8, -30) page.info:SetJustifyH("LEFT")
+    page.map = page:CreateTexture(nil, "ARTWORK")
+    page.map:SetSize(440, 220)
+    page.map:SetPoint("TOPLEFT", 6, -48)
+    page.legend = W:Text(page, "GameFontHighlightSmall")
+    page.legend:SetPoint("TOPLEFT", page.map, "TOPRIGHT", 12, 0)
+    page.legend:SetWidth(420) page.legend:SetJustifyH("LEFT") page.legend:SetSpacing(2)
+    page.table = W:Table(page, {
+        { "icon", "", 40 }, { "name", L["Quest"], 280 }, { "status", L["Status"], 130 }, { "giver", L["Quest giver"], 420 },
+    }, 22, 8, function(item)
+        local e = item.entry
+        if e and e.area and e.x then DM:SetWaypoint(e.area, e.x, e.y, e.giver) end
+    end)
+    page.table:SetPoint("RIGHT", page, "RIGHT", -4, 0)
+    page.empty = W:Text(page, "GameFontDisableSmall") page.empty:SetPoint("BOTTOMLEFT", 8, 2)
+end
+
+function UI:ShowDetail(d)
+    self.detail = d
+    if self.tab ~= "detail" then self.detailFrom = self.tab end
+    self:ShowTab("detail")
+end
+
+local function renderDetail(page)
+    local d = UI.detail
+    if not d then return end
+    local p = DM:Player()
+    local r = DM.Logic:Evaluate(d, p, DM.Quests:LogSet())
+    page.title:SetText(DM:Color(r.hex, DM:DungeonName(d)))
+    page.mark:SetText(DM.char.marked[d.key] and L["Marked for the run"] or L["Mark for the run"])
+    local parts = {
+        L["Range"] .. ": " .. d.low .. "-" .. d.high, L["Min."] .. ": " .. (d.min or "-"),
+        L["Group finder"] .. ": " .. (d.gf or "-"), L["Bosses"] .. ": " .. (d.bosses or "-"),
+        L["Quests"] .. ": " .. r.open .. "/" .. r.total, DM:ZoneText(d),
+    }
+    if not r.attuned then table.insert(parts, "|cffe05a4f" .. L["Attunement missing"] .. "|r") end
+    if r.dangerous then table.insert(parts, "|cffe05a4f" .. L["Entrance in a hostile capital"] .. "|r") end
+    page.info:SetText(table.concat(parts, "   "))
+    local legend = d.map and ns.MapLegends[d.map]
+    if d.map then
+        page.map:SetTexture("Interface\\AddOns\\DungeonManager\\Media\\Maps\\" .. d.map)
+        page.map:Show()
+        local lines = {}
+        for _, m in ipairs(legend or {}) do table.insert(lines, "|cffffd100" .. m[1] .. "|r  " .. L[m[2]]) end
+        table.insert(lines, "|cff8c8c8c" .. L["Schematic, not to scale."] .. "|r")
+        page.legend:SetText(table.concat(lines, "\n"))
+        page.legend:Show()
+        page.table:SetPoint("TOPLEFT", page, "TOPLEFT", 4, -276)
+    else
+        page.map:Hide()
+        page.legend:Hide()
+        page.table:SetPoint("TOPLEFT", page, "TOPLEFT", 4, -48)
+    end
+    local groupSet = groupClasses()
+    local rows = {}
+    for _, e in ipairs(r.quests) do
+        if e.own or DM.settings.otherClass then table.insert(rows, UI:QuestRow(e, groupSet, p)) end
+    end
+    page.table:SetData(rows)
+    if #rows == 0 then
+        page.empty:SetText(DM.Quests.ready and L["No quests for your faction in this dungeon."] or L["Loading quest data..."])
+    else
+        page.empty:SetText(L["Click a quest: map marker at the quest giver."])
+    end
+end
+
+---------------------------------------------------------------------------
+-- Raids and settings
+---------------------------------------------------------------------------
+local function buildRaids(page)
+    page.text = W:Text(page, "GameFontHighlight")
+    page.text:SetPoint("TOPLEFT", 10, -8) page.text:SetJustifyH("LEFT") page.text:SetSpacing(6)
+    local lines = { "|cff8c8c8c" .. L["Raids open on 9 December. Information only for now."] .. "|r", "" }
+    for _, r in ipairs(ns.Raids) do
+        local name = (DM:IsGerman() and r.de) or r.name
+        local zone = (DM:IsGerman() and r.zoneDE) or r.zone
+        local att = (r.attune == "yes") and L["yes, per character"] or L["unknown"]
+        table.insert(lines, string.format("|cffffd100%s|r  (%d)\n%s - %s: %s", name, r.size, zone, L["Attunement"], att))
+    end
+    page.text:SetText(table.concat(lines, "\n"))
+end
+
+local function buildSettings(page)
+    local y = -10
+    local function row(widget, label, xOff)
+        widget:SetPoint("TOPLEFT", page, "TOPLEFT", xOff or 300, y)
+        if label then
+            local t = W:Text(page, "GameFontHighlight", label)
+            t:SetPoint("TOPLEFT", page, "TOPLEFT", 12, y - 4)
+        end
+        y = y - 32
+        return widget
+    end
+    local s = DM.settings
+    page.controls = {}
+    local function add(w) table.insert(page.controls, w) return w end
+    add(row(W:Number(page, 40, function() return DM.char.below end, function(v) DM.char.below = math.max(0, math.floor(v)) end), L["Widen range below (-y, per character)"]))
+    add(row(W:Number(page, 40, function() return DM.char.above end, function(v) DM.char.above = math.max(0, math.floor(v)) end), L["Widen range above (+x, per character)"]))
+    add(row(W:Cycle(page, 140, function() return { { "auto", L["Automatic"] }, { "on", L["On"] }, { "off", L["Off"] } } end,
+        function() return s.hardcore end, function(v) s.hardcore = v end), L["Hardcore protection"]))
+    add(row(W:Number(page, 40, function() return s.logWarn end, function(v) s.logWarn = math.max(0, math.floor(v)) end), L["Quest log warning below x free slots"]))
+    add(row(W:Check(page, L["Show class quests of other classes"], function() return s.otherClass end, function(v) s.otherClass = v end), nil, 8))
+    add(row(W:Check(page, L["Show minimap button"], function() return not s.minimap.hide end, function(v)
+        s.minimap.hide = not v
+        local icon = LibStub("LibDBIcon-1.0", true)
+        if icon then if v then icon:Show("DungeonManager") else icon:Hide("DungeonManager") end end
+    end), nil, 8))
+    add(row(W:Check(page, L["LegacyManager: show the +1 Legacy marker (coming soon)"], function() return s.legacyMarker end, function(v) s.legacyMarker = v end), nil, 8))
+    add(row(W:Check(page, L["Compare and share quests with the group (coming soon)"], function() return s.syncGroup end, function(v) s.syncGroup = v end), nil, 8))
+    add(row(W:Check(page, L["Compare quests with the guild (coming soon)"], function() return s.syncGuild end, function(v) s.syncGuild = v end), nil, 8))
+    local note = W:Text(page, "GameFontDisableSmall", L["Group and guild comparison are off by default and must be switched on."])
+    note:SetPoint("TOPLEFT", 12, y - 4)
+end
+
+---------------------------------------------------------------------------
+-- Window
+---------------------------------------------------------------------------
+local function create()
+    frame = W:Panel(UIParent, 0.09, 0.075, 0.05, 0.97)
+    frame:SetBackdropBorderColor(0.54, 0.48, 0.33, 1)
+    frame:SetSize(WIDTH, HEIGHT)
+    frame:SetPoint("CENTER")
+    frame:SetFrameStrata("HIGH")
+    frame:SetMovable(true)
+    frame:EnableMouse(true)
+    frame:RegisterForDrag("LeftButton")
+    frame:SetScript("OnDragStart", frame.StartMoving)
+    frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
+    frame:Hide()
+    tinsert(UISpecialFrames, "DungeonManagerFrame")
+    _G.DungeonManagerFrame = frame
+
+    local title = W:Text(frame, "GameFontNormalLarge", "DungeonManager")
+    title:SetPoint("TOPLEFT", 14, -12)
+    frame.sub = W:Text(frame, "GameFontDisableSmall")
+    frame.sub:SetPoint("LEFT", title, "RIGHT", 12, -1)
+    local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
+    close:SetPoint("TOPRIGHT", 2, 2)
+
+    local defs = {
+        { "lev", L["Leveling"], function(p) buildList(p, "lev") end },
+        { "end", L["Endgame"], function(p) buildList(p, "end") end },
+        { "raid", L["Raids"], buildRaids },
+        { "set", L["Settings"], buildSettings },
+    }
+    local x = 12
+    for _, def in ipairs(defs) do
+        local key = def[1]
+        local b = W:Toggle(frame, def[2], 150, function() return UI.tab == key or (key == "lev" and UI.tab == "detail") end, function() UI:ShowTab(key) end)
+        b:SetPoint("TOPLEFT", frame, "TOPLEFT", x, -38)
+        x = x + 154
+        tabs[key] = b
+    end
+    table.insert(defs, { "detail", "", buildDetail })
+    for _, def in ipairs(defs) do
+        local page = CreateFrame("Frame", nil, frame)
+        page:SetPoint("TOPLEFT", 6, -66)
+        page:SetPoint("BOTTOMRIGHT", -6, 26)
+        page:Hide()
+        def[3](page)
+        pages[def[1]] = page
+    end
+    frame.footer = W:Text(frame, "GameFontDisableSmall", L["Left-click minimap button: this window - right-click: run preparation"])
+    frame.footer:SetPoint("BOTTOMLEFT", 14, 8)
+    frame:SetScript("OnShow", function() UI:Refresh() end)
+end
+
+function UI:ShowTab(key)
+    self.tab = key
+    for k, page in pairs(pages) do page:SetShown(k == key) end
+    for _, b in pairs(tabs) do b:Refresh() end
+    self:Refresh()
+end
+
+function UI:Toggle(tab)
+    if not frame then create() end
+    if frame:IsShown() and (not tab or tab == self.tab) then frame:Hide() return end
+    frame:Show()
+    self:ShowTab(tab or self.tab or "lev")
+end
+
+function UI:Refresh()
+    if not frame or not frame:IsShown() then return end
+    local p = DM:Player()
+    frame.sub:SetText(string.format("%s - %s %d - %s", UnitName("player") or "", DM:ClassName(p.classFile), p.level,
+        DM:IsHardcore() and ("|cffe05a4f" .. L["Hardcore protection active"] .. "|r") or ""))
+    local page = pages[self.tab]
+    if not page then return end
+    if self.tab == "lev" or self.tab == "end" then
+        page.table:SetData(listRows(self.tab))
+        for _, w in ipairs(page.inputs or {}) do w:Refresh() end
+    elseif self.tab == "detail" then
+        renderDetail(page)
+    elseif self.tab == "set" then
+        for _, w in ipairs(page.controls or {}) do if w.Refresh then w:Refresh() end end
+    end
+end

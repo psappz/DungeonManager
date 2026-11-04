@@ -1,0 +1,27 @@
+## Interface: 16001
+## Title: |cffe3b55bDungeonManager|r
+## Notes: Plan your dungeon runs: recommended dungeons for your level, every dungeon quest with giver, location and prerequisites, and what to pick up before you go. WoW Forever.
+## Notes-deDE: Plane deine Dungeon-Runs: empfohlene Dungeons für deine Stufe, alle Dungeonquests mit Questgeber, Ort und Voraussetzungen und was du vorher annehmen musst. WoW Forever.
+## Author: psappz
+## Version: 0.9.0
+## Dependencies: QuestieDB
+## OptionalDeps: LegacyManager
+## SavedVariables: DungeonManagerDB
+## SavedVariablesPerCharacter: DungeonManagerCharDB
+## IconTexture: Interface\Icons\INV_Misc_Map_01
+## AddonCompartmentFunc: DungeonManager_OnAddonCompartmentClick
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+Libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
+
+Locale.lua
+Data\Dungeons.lua
+Core.lua
+Quests.lua
+Logic.lua
+UI_Widgets.lua
+UI_Main.lua
+UI_Prep.lua
+Init.lua
