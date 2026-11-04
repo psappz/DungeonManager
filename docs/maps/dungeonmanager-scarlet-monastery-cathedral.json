@@ -1,0 +1,77 @@
+{
+  "dungeon": "scarlet-monastery-cathedral",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Chapel Gardens — lower courtyard"
+    },
+    {
+      "id": "II",
+      "name": "Chapel Gardens — upper courtyard"
+    },
+    {
+      "id": "III",
+      "name": "Crusader’s Chapel"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I ↔ II; western courtyard stairs"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "I ↔ II; eastern courtyard stairs"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "II ↔ III; chapel entrance stairs and doors"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "High Inquisitor Fairbanks"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Scarlet Commander Mograine"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "High Inquisitor Whitemane"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Scarlet Commander Mograine and High Inquisitor Whitemane",
+      "quest": "In the Name of the Light"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Scarlet Commander Mograine and High Inquisitor Whitemane",
+      "quest": "Into The Scarlet Monastery"
+    }
+  ],
+  "uncertain": [
+    "Exact outlines and door positions of the chapel side rooms, including Fairbanks’ hidden chamber, are unverified; dashed outlines indicate this."
+  ],
+  "notes": [
+    "Fairbanks is optional; numbering follows a route visiting him before the final encounter.",
+    "Activate the torch in the northeastern side room to open Fairbanks’ hidden chamber.",
+    "Whitemane starts in the rear chamber and joins after Mograine first falls; her marker indicates her initial location.",
+    "Q1 and Q2 refer to bosses 2 and 3, not separate objects.",
+    "The two courtyard water sections belong to one fountain system with a waterfall between elevations; no walkable link is implied by the panel split.",
+    "Hearts of Zeal has distributed enemy drops, not a fixed quest location."
+  ]
+}

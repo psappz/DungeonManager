@@ -1,0 +1,79 @@
+{
+  "dungeon": "dire-maul-west",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Court of the Highborne"
+    },
+    {
+      "id": "II",
+      "name": "Side halls and upper galleries"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Dire Maul West instance entrance"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Tendris Warpwood"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01:I <-> 01:II; side-hall ramps to the upper galleries; return by the same ramps"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01:I <-> 02:I; tunnel behind Tendris to the Prison of Immol'thar"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Magister Kalendris"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Tsu'zee"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Illyanna Ravenoak"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Ferra"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Shen'dralar Ancient",
+      "quest": "The Madness Within"
+    }
+  ],
+  "uncertain": [
+    "The side-hall ramps, intermediate landings and upper-gallery outline are schematic; the two upper pylons are placed at area level.",
+    "Tsu'zee is a rare near the upper ramp. Illyanna and Ferra patrol; their circles do not mark a fixed spawn.",
+    "Shen'dralar Ancient placement is approximate. No unverified gallery-to-court jump is drawn."
+  ],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Five small diamond-and-cross symbols across the detail sheets represent the five pylons: one in the court, two upstairs, two in the prison. Clear the surrounding guards to disable them.",
+    "A requires backtracking after the upper circuit. B requires the Crescent Key or a suitable lock-opening method.",
+    "4 and 5 are one encounter, not two successive rooms."
+  ],
+  "sources": [
+    "https://www.icy-veins.com/wow-classic/dire-maul-west-dungeon-guide",
+    "https://www.wowhead.com/classic/guide/dire-maul-west-dungeon-strategy-wow-classic"
+  ]
+}

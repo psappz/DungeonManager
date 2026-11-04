@@ -80,6 +80,10 @@ if GetLocale() == "deDE" then T = {
     ["only %d free afterwards!"] = "danach nur noch %d frei!",
     ["unknown"] = "unbekannt",
     ["yes, per character"] = "ja, pro Charakter",
+    ["Click: enlarge / shrink the map"] = "Klick: Karte vergrößern / verkleinern",
+    ["%d uncertain spots (dashed)"] = "%d unsichere Stellen (gestrichelt)",
+    ["Overview"] = "Übersicht", ["Sheet 1"] = "Blatt 1", ["Sheet 2"] = "Blatt 2", ["Sheet 3"] = "Blatt 3", ["Sheet 4"] = "Blatt 4",
+    ["Living side"] = "Lebendige Seite", ["Undead side"] = "Untote Seite",
     -- map legends
     ["Entrance"] = "Eingang",
     ["Lorgus Jett (position varies)"] = "Lorgus Jett (Ort wechselt)",

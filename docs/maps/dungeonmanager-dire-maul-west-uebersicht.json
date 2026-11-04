@@ -1,0 +1,32 @@
+{
+  "dungeon": "dire-maul-west",
+  "sheet": "uebersicht",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Court, side halls and upper galleries"
+    },
+    {
+      "id": "II",
+      "name": "Prison and Athenaeum"
+    }
+  ],
+  "markers": [
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01:I <-> 02:I; tunnel behind Tendris to the Prison of Immol'thar"
+    }
+  ],
+  "uncertain": [],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Connection diagram only: I = sheet 01, II = sheet 02, III = sheet 03. Letters refer to the same connections on the detail sheets."
+  ],
+  "sources": [
+    "https://www.icy-veins.com/wow-classic/dire-maul-west-dungeon-guide",
+    "https://www.wowhead.com/classic/guide/dire-maul-west-dungeon-strategy-wow-classic"
+  ]
+}

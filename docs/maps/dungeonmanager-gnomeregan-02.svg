@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="488" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="260.0" y="59">I</text>
+<rect x="520" y="16" width="488" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="764.0" y="59">II</text>
+<path d="M 430 130 V 260 H 365 M 360 510 V 650 H 270 V 790 M 270 790 H 110 V 900 M 270 790 H 430 V 900" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 430 130 V 260 H 365 M 360 510 V 650 H 270 V 790 M 270 790 H 110 V 900 M 270 790 H 430 V 900" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 90 250 H 370 V 540 H 90 Z M 155 320 V 470 H 305 V 320 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 120 395 H 225" fill="none" stroke="#c7a14a" stroke-width="64"/>
+<path d="M 120 395 H 225" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 210 350 H 290 V 440 H 210 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<circle cx="250" cy="395" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="250" y="406">3</text>
+<rect x="216" y="437" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="250" y="476">Q4</text>
+<rect x="396" y="102" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="430" y="141">C</text>
+<path d="M 335 590 V 634 M 323 620 L 335 634 L 347 620" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<rect x="76" y="872" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="110" y="911">D</text>
+<rect x="396" y="872" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="430" y="911">F</text>
+<path d="M 620 250 H 900 L 950 350 V 600 L 880 680 H 630 L 580 580 V 350 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<path d="M 900 650 V 850 M 650 650 V 900" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 900 650 V 850 M 650 650 V 900" fill="none" stroke="#3b3021" stroke-width="56"/>
+<rect x="866" y="822" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="900" y="861">D</text>
+<rect x="616" y="872" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="650" y="911">G</text>
+<path d="M 650 740 V 784 M 638 770 L 650 784 L 662 770" fill="none" stroke="#c7a14a" stroke-width="4"/>
+</svg>

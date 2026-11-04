@@ -1,0 +1,63 @@
+{
+  "dungeon": "gnomeregan",
+  "sheet": "02",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Upper Launch Bay, central platform and ramp junction"
+    },
+    {
+      "id": "II",
+      "name": "Lower Launch Bay"
+    }
+  ],
+  "markers": [
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:III ↔ 02:I; two-tier corridor to upper Launch Bay"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "02:I ↔ 02:II; ramp and junction to lower Launch Bay"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "02:I ↔ 03:I; junction beyond the ramp to upper Engineering Labs"
+    },
+    {
+      "id": "G",
+      "type": "transition",
+      "to": "02:II ↔ 03:III; descending corridor toward Tinker’s Court"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Electrocutioner 6000"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Matrix Punchograph 3005-C",
+      "quest": "Data Rescue"
+    }
+  ],
+  "uncertain": [
+    "Ring and platform outlines are abstracted; dashed ramp geometry does not specify exact bends or distances.",
+    "Q4 identifies the central platform, not the exact machine position.",
+    "The optional ledge jump to the lower Launch Bay is omitted because its precise take-off and landing points remain unverified."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "Panel I includes the ramp down to the junction: D returns into lower Launch Bay, F continues to upper Engineering Labs. These are distinct destinations.",
+    "Boss 3 drops the Workshop Key for the secondary entrance on sheet 03."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/gn/gnlr.pdf",
+    "https://www.youtube.com/watch?v=GhGlT48i_LI",
+    "https://warcraft.wiki.gg/wiki/Launch_Bay"
+  ]
+}

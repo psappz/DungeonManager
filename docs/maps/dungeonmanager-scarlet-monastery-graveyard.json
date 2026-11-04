@@ -1,0 +1,77 @@
+{
+  "dungeon": "scarlet-monastery-graveyard",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Chamber of Atonement / Forlorn Cloister"
+    },
+    {
+      "id": "II",
+      "name": "Honor's Tomb — Upper Crypt"
+    },
+    {
+      "id": "III",
+      "name": "Honor's Tomb — Lower Crypt"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Interrogator Vishas"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Azshir the Sleepless"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Fallen Champion"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Ironspine"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Bloodmage Thalnos"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Vorrel Sengutz",
+      "quest": "Vorrel's Revenge"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01: I ↔ II; stairs into Honor's Tomb"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01: II ↔ III; stairs to the lowest chamber"
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    }
+  ],
+  "uncertain": [
+    "Dashed markers 2, 3 and 4 are shared-area search markers for the rare encounters, not three fixed or guaranteed spawn points. The full set of Vanilla spawn positions in the graveyard and tomb approach is not verified.",
+    "The dashed upper-crypt outline and internal obstructions represent the documented chamber arrangement schematically; exact stair turns, door openings and vertical alignment require verification."
+  ],
+  "notes": [
+    "The regular encounter order is Interrogator Vishas followed by Bloodmage Thalnos. Rare encounters may occur between them; their numbering does not imply a fixed order among the rares.",
+    "Q1 is the Horde quest giver in the Chamber of Atonement.",
+    "The open graveyard is walkable on both sides of the central path; its path edges are not walls.",
+    "Hearts of Zeal uses distributed Scarlet Crusade creature drops; no fixed pickup is asserted.",
+    "Scorn, associated with the Scourge Invasion event, is not included in this baseline non-event sheet.",
+    "There is no internal player teleporter. Panels separate the surface and the two crypt levels; distances are not to scale."
+  ]
+}

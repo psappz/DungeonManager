@@ -1,0 +1,130 @@
+{
+  "dungeon": "upper-blackrock-spire",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Dragonspire Hall / Hall of Binding / Rookery floor"
+    },
+    {
+      "id": "II",
+      "name": "Upper Rookery / Hall of Blackhand / forge"
+    },
+    {
+      "id": "III",
+      "name": "Blackrock Stadium"
+    },
+    {
+      "id": "IV",
+      "name": "The Furnace / The Beast's cavern / The Spire Throne"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Pyroguard Emberseer"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Solakar Flamewreath",
+      "notes": "Optional Father Flame event in the Rookery."
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Jed Runewatcher",
+      "notes": "Rare spawn; marker indicates the Hall of Blackhand, not a fixed patrol coordinate."
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Goraluk Anvilcrack"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Gyth",
+      "notes": "Shares the arena encounter with Warchief Rend Blackhand; the numbers indicate encounter phases, not separate rooms."
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Warchief Rend Blackhand"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "The Beast"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Lord Valthalak",
+      "notes": "Optional summon in the same cavern as The Beast using the Brazier of Beckoning; requires the Dungeon Set 2 quest chain."
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "General Drakkisath"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Doomrigger's Coffer",
+      "quest": "Doomrigger's Clasp"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Darkstone Tablet",
+      "quest": "The Darkstone Tablet"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Goraluk Anvilcrack / Unforged Rune Covered Breastplate",
+      "quest": "The Demon Forge"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Awbee",
+      "quest": "The Matron Protectorate"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Orb of Ascension",
+      "quest": "Blackhand's Command"
+    },
+    {
+      "id": "E",
+      "type": "entrance",
+      "notes": "Start of the Upper Blackrock Spire wing beyond the Seal of Ascension door; the shared Blackrock Spire instance portal and approach are outside this sheet."
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I <-> II: rubble ascent from the Rookery floor to its upper edge."
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "II -> III: one-way drop from the approach into the arena floor; the arrows indicate the direction of travel."
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "III <-> IV: post-arena exit route and bridge."
+    }
+  ],
+  "uncertain": [
+    "Dashed corridors preserve the documented room sequence but do not establish exact bends, lengths, orientation or elevation. Solid room outlines are schematic abstractions, not surveyed footprints.",
+    "The exact locations of Doomrigger's Coffer and the Darkstone Tablet within the Rookery are unverified; Q1 and Q2 are area markers.",
+    "Jed Runewatcher patrols; marker 3 is an approximate search location. The relative placement of the forge and the hall is schematic.",
+    "The precise chest position for The Demon Forge, Awbee on the exit route, and the Orb of Ascension behind General Drakkisath are unverified; Q3-Q5 are area markers.",
+    "The post-arena bridge elevations and detailed connection to the Beast side branch are unverified. No shortcut or direct return from the arena floor to its entry balcony is asserted."
+  ]
+}

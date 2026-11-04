@@ -1,0 +1,44 @@
+{
+  "dungeon": "lower-blackrock-spire",
+  "sheet": "uebersicht",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Entrance and ogre branch"
+    },
+    {
+      "id": "II",
+      "name": "Troll terraces and Skitterweb Tunnels"
+    },
+    {
+      "id": "III",
+      "name": "Upper chambers and final approaches"
+    }
+  ],
+  "markers": [
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01:I <-> 02:I; lower-city fork to the troll area"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "02:II <-> 03:I; spider ramps ascend to the Urok platform"
+    }
+  ],
+  "uncertain": [],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Connection diagram only: I = sheet 01, II = sheet 02, III = sheet 03. Letters refer to the same connections on the detail sheets."
+  ],
+  "sources": [
+    "https://warcraft.wiki.gg/wiki/Lower_Blackrock_Spire_walkthrough",
+    "https://giddygamer.com/wow/content/guides/blackrock_mountain_entrance_guide.pdf",
+    "https://www.icy-veins.com/wow-classic/lower-blackrock-spire-guide",
+    "https://www.warcrafttavern.com/wow-classic/guides/lower-blackrock-spire/",
+    "https://www.wowhead.com/classic/npc=9237/war-master-voone"
+  ]
+}

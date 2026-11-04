@@ -1,0 +1,65 @@
+{
+  "dungeon": "sunken-temple",
+  "sheet": "02",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Hall of the Cursed and the six protector ledges"
+    }
+  ],
+  "markers": [
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "uebersicht → 02:I; forward-left stairs via Loro landing to Hall of the Cursed; bidirectional"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Loro"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Gasher"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Mijan"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Zolo"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Zul'Lor"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Hukku"
+    }
+  ],
+  "uncertain": [
+    "The six radial dashed links are connection abstractions, not literal radial staircases. The exact outer stair folds and intermediate landing shapes remain unverified.",
+    "Four outer accesses (Loro, Mijan, Zolo, Hukku) and two inner accesses (Gasher, Zul’Lor) are documented; this sheet does not assert that all ledges lie at the ring’s height.",
+    "The entrance reaches Loro’s landing before continuing to the ring. The junction is simplified.",
+    "Unverified balcony drops to other floors are omitted."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "Clockwise visit beginning northeast: Loro, Gasher, Mijan, Zolo, Zul’Lor, Hukku.",
+    "Defeating all six removes Jammal’an’s barrier. Return via C to the entrance hub, then take D to sheet 03.",
+    "For the four outer accesses, follow the outer stairs to a landing and then turn inward; do not interpret a dashed line as a walk through the wall."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/atalhakkar/atalhakkar_gslr.pdf",
+    "https://www.icy-veins.com/wow-classic/sunken-temple-dungeon-guide",
+    "https://www.wowhead.com/classic/guide/temple-of-atalhakkar-sunken-temple-dungeon-strategy-wow-classic"
+  ]
+}

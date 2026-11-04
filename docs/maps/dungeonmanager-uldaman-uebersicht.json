@@ -1,0 +1,39 @@
+{
+  "dungeon": "uldaman",
+  "sheet": "uebersicht",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Sheet 01 — Entrance and Map Chamber"
+    },
+    {
+      "id": "II",
+      "name": "Sheet 02 — Tunnels and Temple Hall"
+    },
+    {
+      "id": "III",
+      "name": "Sheet 03 — Hall of the Crafters and lower vault"
+    }
+  ],
+  "markers": [
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01:I ↔ 02:I; tunnels north of the Map Chamber"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "02:I ↔ 03:I; approach to Hall of the Crafters"
+    }
+  ],
+  "uncertain": [],
+  "notes": [
+    "Sheet connectivity only; Roman numerals identify detail sheets. The rear entrance is on sheet 02."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/uldaman/uldaman_lr.pdf",
+    "https://www.icy-veins.com/wow-classic/uldaman-dungeon-guide",
+    "https://www.icy-veins.com/wow-classic/uldaman-quests-guide"
+  ]
+}

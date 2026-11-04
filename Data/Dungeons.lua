@@ -10,7 +10,6 @@ local _, ns = ...
 --   capital   = faction whose capital holds the entrance ("Horde" / "Alliance") -> hardcore protection
 --   attune    = { Horde = questID, Alliance = questID } completed quest that grants access
 --   quests    = researched quest IDs (hand list), added to the QuestieDB quests of `area`
---   map       = texture path (schematic overview map)
 --   phase     = "level" | "end"
 ns.Dungeons = {
     { key = "rfc", name = "Ragefire Chasm", de = "Ragefireabgrund", area = 2437, low = 13, high = 18, gf = 13, min = 10, bosses = 4,
@@ -32,10 +31,10 @@ ns.Dungeons = {
       zone = "Silverpine Forest", zoneDE = "Silberwald",
       quests = { 1013, 1098, 1014, 1740, 1654, 95036 } },
     { key = "bfd", name = "Blackfathom Deeps", de = "Tiefschwarze Grotte", area = 719, low = 24, high = 32, gf = 22, min = 15, bosses = 7,
-      zone = "Ashenvale, Zoram Strand", zoneDE = "Eschental, Zoram-Strand", map = "blackfathom-deeps",
+      zone = "Ashenvale, Zoram Strand", zoneDE = "Eschental, Zoram-Strand",
       quests = { 6563, 6565, 6561, 6921, 6922, 971, 1275, 1199, 1198, 1200, 1740, 1654, 95036 } },
     { key = "sto", name = "The Stockade", de = "Das Verlies", area = 717, low = 24, high = 32, gf = 23, min = 15, bosses = 5,
-      zone = "Stormwind City, Mage Quarter", zoneDE = "Sturmwind, Magierviertel", capital = "Alliance", map = "stockade",
+      zone = "Stormwind City, Mage Quarter", zoneDE = "Sturmwind, Magierviertel", capital = "Alliance",
       quests = { 391, 387, 388, 377, 386, 378 } },
     { key = "es", name = "Excavation Site: Wetlands", new = true, low = 26, high = 33, gf = 26, bosses = 4,
       zone = "Wetlands, above Whelgar's Excavation Site", zoneDE = "Sumpfland, über Whelgars Ausgrabungsstätte",
@@ -90,20 +89,4 @@ ns.Raids = {
     { name = "Barrow Deeps", size = 10, zone = "Beneath Blackmaw Hold, Azshara", zoneDE = "Unter Blackmaw Hold, Azshara", attune = "?" },
     { name = "Peak of Hyjal", size = 20, zone = "Mount Hyjal", zoneDE = "Berg Hyjal", attune = "?" },
     { name = "Onyxia's Lair", de = "Onyxias Hort", size = 40, zone = "Dustwallow Marsh", zoneDE = "Marschen von Dustwallow", attune = "yes" },
-}
-
--- Map legends (marker id -> English label); textures in Media\Maps
-ns.MapLegends = {
-    ["blackfathom-deeps"] = {
-        { "E", "Entrance" }, { "1", "Ghamoo-ra" }, { "2", "Lady Sarevess" }, { "3", "Gelihast" },
-        { "4", "Lorgus Jett (position varies)" }, { "5", "Baron Aquanis (Horde quest)" }, { "6", "Old Serra'kis" },
-        { "7", "Twilight Lord Kelris" }, { "8", "Aku'mai" }, { "Q1", "Lorgalis Manuscript" }, { "Q2", "Argent Guard Thaelrid" },
-        { "Q3", "Fathom Core" }, { "Q4", "Fires of the shrine / Kelris" }, { "A", "Passage I -> II" }, { "B", "Dive II -> III" },
-        { "T", "Altar of the Deeps: back to the entrance" },
-    },
-    ["stockade"] = {
-        { "E", "Entrance" }, { "1", "Targorr the Dread (cell varies)" }, { "2", "Kam Deepfury (cell varies)" },
-        { "3", "Hamhock" }, { "4", "Bazil Thredd" }, { "5", "Dextren Ward" },
-        { "Q1", "Crime and Punishment" }, { "Q2", "The Stockade Riots" },
-    },
 }

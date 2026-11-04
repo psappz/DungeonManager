@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="488" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<rect x="520" y="16" width="488" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="260" y="62">I</text>
+<text x="764" y="62">II</text>
+<path d="M 80 160 H 180 V 450 H 340 V 490 H 390 V 210 H 450 V 650 H 340 V 700 H 300 V 750 H 340 V 890 H 200 V 750 H 240 V 700 H 140 V 510 H 120 V 220 H 80 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 190 510 H 290 V 640 H 190 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="10 8"/>
+<rect x="80" y="165" width="60" height="50" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="110" y="201">E</text>
+<rect x="390" y="215" width="60" height="50" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="420" y="251">A</text>
+<circle cx="270" cy="820" r="28" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="270" y="831">1</text>
+<path d="M 560 660 V 600 H 615 V 505 H 580 V 445 H 615 V 385 H 580 V 325 H 615 V 240 H 700 V 220 H 760 V 240 H 790 V 220 H 850 V 240 H 930 V 355 H 950 V 405 H 930 V 455 H 950 V 505 H 930 V 560 H 955 V 700 H 915 V 760 L 970 810 V 890 L 920 940 H 820 L 770 890 V 810 L 825 760 V 700 H 855 V 560 H 870 V 300 H 850 V 320 H 790 V 300 H 760 V 320 H 700 V 300 H 675 V 660 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<rect x="565" y="605" width="60" height="50" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="595" y="641">A</text>
+<circle cx="870" cy="850" r="28" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="870" y="861">2</text>
+<path d="M 600 470 H 550 V 410" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<rect x="530" y="365" width="60" height="50" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="560" y="401">Q1</text>
+<path d="M 900 360 H 800 V 390 M 800 390 H 730 M 800 390 V 455 H 730 M 800 455 V 520 H 730" fill="none" stroke="#c7a14a" stroke-width="4" stroke-dasharray="10 8"/>
+<rect x="690" y="365" width="60" height="50" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="720" y="401">Q2</text>
+<rect x="690" y="430" width="60" height="50" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="720" y="466">Q3</text>
+<rect x="690" y="495" width="60" height="50" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="720" y="531">Q4</text>
+<rect x="844" y="900" width="52" height="26" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<path d="M 844 910 H 896 M 870 905 V 918" fill="none" stroke="#c7a14a" stroke-width="4"/>
+</svg>

@@ -1,0 +1,90 @@
+{
+  "dungeon": "uldaman",
+  "sheet": "02",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Echomok Cavern, rear entrance, Temple Hall, Dig Three and The Stone Vault"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Rear instance portal"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01:I ↔ 02:I; tunnels north of the Map Chamber"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "02:I ↔ 03:I; approach to Hall of the Crafters"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Obsidian Sentinel"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Ancient Stone Keeper"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Galgann Firehammer"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Grimlok"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Obsidian Power Source",
+      "quest": "Power in Uldaman"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Shattered Necklace Ruby",
+      "quest": "Find the Gems"
+    },
+    {
+      "id": "Q7",
+      "type": "quest",
+      "name": "Tablet of Will",
+      "quest": "The Lost Tablets of Will"
+    },
+    {
+      "id": "Q8",
+      "type": "quest",
+      "name": "Shattered Necklace Sapphire",
+      "quest": "Find the Gems"
+    }
+  ],
+  "uncertain": [
+    "Dashed cave network preserves documented junctions and the Temple Hall loop; exact cave outlines, ledges and passage bends remain unverified.",
+    "Temple Hall stair/ramp alignment is approximate; the arrow indicates local level change only. Unverified jump shortcuts are omitted.",
+    "Q6 and Q7 are approximate object positions near Galgann Firehammer.",
+    "The short southeastern dead-end represents Annora’s chamber; no trainer marker is used because the allowed marker set has no trainer symbol."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "The rear entrance is a normal second portal, not a teleporter.",
+    "Q5 and Q8 are boss drops; their markers are placed adjacent to the relevant encounter. Q6 and Q8 also serve Find the Gems and Power Source.",
+    "Suggested route visits Obsidian Sentinel, Temple Hall, Galgann Firehammer and Grimlok, then continues to Hall of the Crafters.",
+    "The western tunnel bypasses the Temple Hall excursion and rejoins the northern network."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/uldaman/uldaman_lr.pdf",
+    "https://www.icy-veins.com/wow-classic/uldaman-dungeon-guide",
+    "https://www.icy-veins.com/wow-classic/uldaman-quests-guide"
+  ]
+}

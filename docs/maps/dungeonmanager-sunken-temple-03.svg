@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="992" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="512.0" y="59">I</text>
+<path d="M 512 110 V 280 M 720 480 H 840 M 290 430 H 180 V 390 M 290 600 H 180 V 570 M 512 710 V 840 H 700" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 512 110 V 280 M 720 480 H 840 M 290 430 H 180 V 390 M 290 600 H 180 V 570 M 512 710 V 840 H 700" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 747 500 A 235 235 0 1 0 277 500 A 235 235 0 1 0 747 500 Z M 612 500 A 100 100 0 1 1 412 500 A 100 100 0 1 1 612 500 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<path d="M 60 300 H 250 V 680 H 60 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 800 340 H 965 V 650 H 800 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 690 750 H 960 V 960 H 690 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<rect x="478" y="82" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="512" y="121">D</text>
+<circle cx="865" cy="425" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="865" y="436">9</text>
+<circle cx="865" cy="510" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="865" y="521">10</text>
+<rect x="836" y="572" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="870" y="611">Q9</text>
+<circle cx="420" cy="340" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="420" y="351">11</text>
+<circle cx="600" cy="340" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="600" y="351">12</text>
+<circle cx="512" cy="780" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="512" y="791">13</text>
+<circle cx="590" cy="840" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="590" y="851">14</text>
+<circle cx="800" cy="830" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="800" y="841">15</text>
+<rect x="831" y="887" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="865" y="926">Q10</text>
+<circle cx="155" cy="460" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="155" y="471">16</text>
+<rect x="121" y="522" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="155" y="561">Q11</text>
+<circle cx="95" cy="350" r="10" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<circle cx="215" cy="350" r="10" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<circle cx="95" cy="630" r="10" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<circle cx="215" cy="630" r="10" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+</svg>

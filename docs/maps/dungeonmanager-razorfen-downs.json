@@ -1,0 +1,110 @@
+{
+  "dungeon": "razorfen-downs",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Entrance, idol and The Caller’s Chamber"
+    },
+    {
+      "id": "II",
+      "name": "The Murder Pens and The Bone Pile"
+    },
+    {
+      "id": "III",
+      "name": "Spiral of Thorns"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I ↔ II; passage from The Caller’s Chamber toward The Murder Pens"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "II ↔ III; westbound bridge toward the spiral"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "I ↔ III; southern passage bypassing the eastern encounters"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Tuten'kash"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Plaguemaw the Rotting"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Mordresh Fire Eye"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Glutton"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Ragglesnout"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Amnennar the Coldbringer"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Belnistrasz",
+      "quest": "Scourge of the Downs",
+      "additional_quests": [
+        "Extinguishing the Idol"
+      ]
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Idol and Belnistrasz’s Brazier",
+      "quest": "Extinguishing the Idol"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Amnennar the Coldbringer",
+      "quest": "Bring the Light"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Skull of the Coldbringer",
+      "quest": "Bring the End"
+    }
+  ],
+  "uncertain": [
+    "The spiral’s exact turns, width, hut recesses and elevation profile are unverified; dashed edges show an approximate ascent, not a surveyed floor plan.",
+    "Glutton patrols; marker 4 is an approximate encounter area.",
+    "Ragglesnout has multiple possible spawn locations. Marker 5 represents a search area, not a confirmed individual spawn point.",
+    "Individual pen subdivisions, the two ramp landings and Henry Stern’s exact position are omitted pending better reference."
+  ],
+  "notes": [
+    "Route order assumes the optional escort after Tuten'kash and before Mordresh; return from Q1 through A to Q2.",
+    "The gong symbol starts Tuten'kash’s encounter.",
+    "Plaguemaw appears during Extinguishing the Idol; Ragglesnout is rare.",
+    "Panel III shows one continuous ascending ramp; arrows indicate progression uphill.",
+    "Q3 and Q4 share boss 6 as their objective.",
+    "Ambassador Malcin and A Host of Evil objectives are outside the instance and excluded."
+  ]
+}

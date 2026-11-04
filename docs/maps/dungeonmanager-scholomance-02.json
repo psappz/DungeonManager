@@ -1,0 +1,114 @@
+{
+  "dungeon": "scholomance",
+  "sheet": "02",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Dragon-whelp floor"
+    },
+    {
+      "id": "II",
+      "name": "Great Ossuary"
+    },
+    {
+      "id": "III",
+      "name": "Viewing Room and laboratory"
+    }
+  ],
+  "markers": [
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01:I <-> 02:I; central junction to dragon-whelp floor and Great Ossuary"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Deed to Tarren Mill",
+      "quest": "Barov Family Fortune"
+    },
+    {
+      "id": "G",
+      "type": "transition",
+      "to": "02:I <-> 02:II; stairs from the dragon-whelp floor to the Great Ossuary"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Rattlegore"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Death Knight Darkreaver"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Divination Scryer",
+      "quest": "Judgment and Redemption"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:I <-> 02:III; locked Viewing Room gate; obtain Viewing Room Key from Rattlegore and backtrack"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Marduk Blackpool"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Vectus"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "02:III <-> 03:I; Viewing Room stairs to the upper Headmaster's Study"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Ras Frostwhisper"
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "Kormok"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Deed to Brill",
+      "quest": "Barov Family Fortune"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Alchemy Lab",
+      "quest": "The Human, Ras Frostwhisper"
+    }
+  ],
+  "uncertain": [
+    "The Ossuary stair G connects panels I and II; its exact bends and landings are unverified.",
+    "Q3–Q6 are approximate positions within documented rooms. The laboratory furnishing footprint is not reconstructed."
+  ],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Rattlegore drops the Viewing Room Key. Return through B to sheet 01, then use C; there is no invented direct Ossuary-to-Viewing-Room tunnel.",
+    "5 and 9 are optional summons: Darkreaver in the Ossuary and Kormok in Ras's room.",
+    "6 and 7 share the Viewing Room. Q6 marks the laboratory and the Ras quest area; the Alchemy Lab is also a profession facility."
+  ],
+  "sources": [
+    "https://www.icy-veins.com/wow-classic/scholomance-dungeon-guide",
+    "https://warcraft.wiki.gg/wiki/Headmaster%27s_Study",
+    "https://www.wowhead.com/classic/guide/scholomance-dungeon-strategy-wow-classic",
+    "https://www.zockify.com/classic/dungeons/scholomance/",
+    "https://classicdb.ch/?quest=7647",
+    "https://giddygamer.com/wow/content/items/ds2/ds2_quest_details.pdf"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "dungeon": "scarlet-monastery-library",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Huntsman’s Cloister"
+    },
+    {
+      "id": "II",
+      "name": "Gallery of Treasures, Athenaeum and Arcanist Doan’s study"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Houndmaster Loksey"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Arcanist Doan"
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I ↔ II; same-floor passage"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Beginnings of the Undead Threat",
+      "quest": "Test of Lore"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Compendium of the Fallen",
+      "quest": "Compendium of the Fallen"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Mythology of the Titans",
+      "quest": "Mythology of the Titans"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Rituals of Power",
+      "quest": "Rituals of Power"
+    }
+  ],
+  "uncertain": [
+    "Cloister garden boundary is schematic and traversable.",
+    "Q1 desk position within the early side alcoves is approximate.",
+    "Q2–Q4 share a reference area; individual shelf positions are unverified. Dashed leaders indicate this area, not passages."
+  ],
+  "notes": [
+    "Panels split one continuous floor, not separate levels.",
+    "Chest symbol: Doan’s Strongbox contains The Scarlet Key.",
+    "Houndmaster Loksey is a target of In the Name of the Light and Into The Scarlet Monastery.",
+    "Hearts of Zeal objectives are distributed across enemies; no fixed quest marker."
+  ]
+}

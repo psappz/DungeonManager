@@ -1,0 +1,87 @@
+{
+  "dungeon": "gnomeregan",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Upper Hall of Gears and Damaged Tunnel"
+    },
+    {
+      "id": "II",
+      "name": "Clean Zone and Dormitory"
+    },
+    {
+      "id": "III",
+      "name": "Lower Hall of Gears and western corridor"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Main instance entrance"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01:I ↔ 01:II; southwest passage from upper Hall of Gears"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01:II ↔ 01:III; Dormitory to lower Hall of Gears"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:III ↔ 02:I; two-tier corridor to upper Launch Bay"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Grubbis"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Viscous Fallout"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Sparklematic 5200",
+      "quest": "The Sparklematic 5200!"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Kernobee",
+      "quest": "A Fine Mess"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Matrix Punchograph 3005-B",
+      "quest": "Data Rescue"
+    }
+  ],
+  "uncertain": [
+    "Dormitory paths and the Clean Zone stair alignment are approximate; the upper and lower Dormitory routes are not fully reconstructed. No additional side rooms are inferred.",
+    "Q1–Q3 show approximate locations within their respective areas, not measured object positions.",
+    "Lower Hall of Gears outline and Viscous Fallout placement are schematic; exact patrol limits are not shown.",
+    "Unverified jump shortcuts from the upper Hall of Gears are omitted."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "Panel II combines the connected Dormitory area and Clean Zone; the arrow indicates a descent, not a separate room.",
+    "The Grubbis event is a dead-end excursion requiring a return to the upper Hall of Gears.",
+    "Q2 marks the escort start; return to the main entrance by the normal route.",
+    "Techbot and Punchograph A are outside the instance and are not drawn."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/gn/gnlr.pdf",
+    "https://www.youtube.com/watch?v=GhGlT48i_LI",
+    "https://warcraft.wiki.gg/wiki/Launch_Bay"
+  ]
+}

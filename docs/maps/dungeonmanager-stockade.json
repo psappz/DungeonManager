@@ -1,0 +1,81 @@
+{
+  "dungeon": "stockade",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "The Stockade"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Targorr the Dread"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Dextren Ward"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Bruegal Ironknuckle"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Kam Deepfury"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Hamhock"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Bazil Thredd"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Head of Targorr",
+      "quest": "What Comes Around"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Hand of Dextren Ward",
+      "quest": "Crime and Punishment"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Head of Deepfury",
+      "quest": "The Fury Runs Deep"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Head of Bazil Thredd",
+      "quest": "The Stockade Riots"
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    }
+  ],
+  "uncertain": [
+    "Dashed boss markers 1 and 4 indicate representative cells, not fixed spawns. Targorr the Dread and Kam Deepfury can occupy different cells; the complete Vanilla 1.12 spawn set is not verified. Q1 and Q3 move with those bosses.",
+    "Dashed marker 3 indicates a reported Bruegal Ironknuckle location in the first cell on the left when entering the eastern wing. His complete Vanilla spawn set is unverified; he is a rare spawn."
+  ],
+  "notes": [
+    "The route clears the entrance hall, then the western wing, then the eastern wing. Variable spawns can change the encounter order.",
+    "The prison is drawn with straightened corridors. Angles and distances are not to scale.",
+    "Quest markers are offsets connected to their boss loot sources, not separate objects.",
+    "Quell the Uprising and The Color of Blood are distributed creature objectives; no fixed quest pickup is asserted.",
+    "There are no internal teleporters or separate map-panel transitions."
+  ]
+}

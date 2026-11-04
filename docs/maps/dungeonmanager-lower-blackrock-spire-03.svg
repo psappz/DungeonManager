@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="488" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="260.0" y="59">I</text>
+<rect x="520" y="16" width="488" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="764.0" y="59">II</text>
+<path d="M 110 150 V 290 H 280 V 520 H 150 V 700 H 380 V 910 M 150 700 V 820" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 110 150 V 290 H 280 V 520 H 150 V 700 H 380 V 910 M 150 700 V 820" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 175 210 H 405 V 390 H 175 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<path d="M 60 770 H 290 V 950 H 60 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<rect x="76" y="122" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="110" y="161">D</text>
+<circle cx="265" cy="285" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="265" y="296">11</text>
+<rect x="316" y="312" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="350" y="351">Q8</text>
+<path d="M 330 450 V 494 M 318 480 L 330 494 L 342 480" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 318 464 L 330 450 L 342 464" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<circle cx="120" cy="840" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="120" y="851">12</text>
+<circle cx="225" cy="840" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="225" y="851">13</text>
+<rect x="346" y="882" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="380" y="921">F</text>
+<path d="M 600 910 V 690 H 780 V 480 H 890 V 300 M 780 690 H 920" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 600 910 V 690 H 780 V 480 H 890 V 300 M 780 690 H 920" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 835 615 H 965 V 760 H 835 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<path d="M 650 120 H 950 V 340 H 650 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<rect x="566" y="882" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="600" y="921">F</text>
+<circle cx="900" cy="690" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="900" y="701">14</text>
+<circle cx="780" cy="480" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="780" y="491">15</text>
+<circle cx="800" cy="230" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="800" y="241">16</text>
+<path d="M 640 755 V 799 M 628 785 L 640 799 L 652 785" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 628 769 L 640 755 L 652 769" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 840 370 V 414 M 828 400 L 840 414 L 852 400" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 828 384 L 840 370 L 852 384" fill="none" stroke="#c7a14a" stroke-width="4"/>
+</svg>

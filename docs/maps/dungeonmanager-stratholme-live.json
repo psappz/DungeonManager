@@ -1,0 +1,161 @@
+{
+  "dungeon": "stratholme-live",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Main Gate / streets / Fras Siabi alcove"
+    },
+    {
+      "id": "II",
+      "name": "Crusaders' Square / Scarlet Bastion entrance / Malor's room"
+    },
+    {
+      "id": "III",
+      "name": "Scarlet Bastion junction / armory / Cannon Master Willey"
+    },
+    {
+      "id": "IV",
+      "name": "Archive / final chamber"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Skul",
+      "notes": "Rare; approximate entrance-street search area, not a fixed spawn coordinate."
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Fras Siabi",
+      "notes": "Optional quest encounter triggered at the tobacco crate."
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Hearthsinger Forresten",
+      "notes": "Rare with multiple possible locations; marker represents the optional street search, not every spawn point."
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "The Unforgiven",
+      "notes": "Triggered encounter in the eastern street branch; precise archway location is unverified."
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Timmy the Cruel",
+      "notes": "Appears after clearing the Scarlet enemies in Crusaders' Square."
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Malor the Zealous"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Crimson Hammersmith",
+      "notes": "Optional summon from Blacksmithing Plans; precise plans location is unverified."
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Cannon Master Willey"
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "Archivist Galford"
+    },
+    {
+      "id": "10",
+      "type": "boss",
+      "name": "Balnazzar",
+      "notes": "Grand Crusader Dathrohan transforms into Balnazzar during the same encounter."
+    },
+    {
+      "id": "11",
+      "type": "boss",
+      "name": "Jarien",
+      "notes": "Optional Dungeon Set 2 summon with Sothos in the final chamber after Balnazzar; shared encounter, not separate rooms."
+    },
+    {
+      "id": "12",
+      "type": "boss",
+      "name": "Sothos",
+      "notes": "Summoned with Jarien; numbering does not prescribe their kill order."
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Fras Siabi's Premium Tobacco",
+      "quest": "The Great Fras Siabi"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Malor's Strongbox",
+      "quest": "The Medallion of Faith",
+      "notes": "Contains the Medallion of Faith; turn-in to Aurius is outside this sheet."
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Scarlet Archive",
+      "quest": "The Archivist"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Of Love and Family",
+      "quest": "Of Love and Family"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Head of Balnazzar",
+      "quest": "The Truth Comes Crashing Down"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Jarien and Sothos",
+      "quest": "The Left Piece of Lord Valthalak's Amulet",
+      "additional_quests": [
+        "The Right Piece of Lord Valthalak's Amulet"
+      ]
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I <-> II: western route to Crusaders' Square."
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "II <-> III: Scarlet Bastion interior beyond the Malor side room. The Scarlet Key or lockpicking is required to access the Bastion."
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "III <-> IV: second branch toward the archive and final chamber; return from Willey to this junction."
+    }
+  ],
+  "uncertain": [
+    "Dashed routes preserve documented branch relationships but not exact street bends, corridor shapes, lengths or orientation. Solid room outlines are schematic abstractions.",
+    "Skul and Hearthsinger Forresten are rare; the drawing does not establish all spawn positions. The exact Unforgiven trigger arch is unverified.",
+    "The position of the Blacksmithing Plans and the internal Bastion turns are unverified. No additional intermediate rooms or stairs are asserted.",
+    "The exact archive, painting and summoning positions are unverified; Q3, Q4 and Q6 are area markers.",
+    "Postmaster Malown and the Stratholme Courier/mailbox event are not mapped: mailbox positions and their connections require a verified Vanilla reference.",
+    "Connections to the undead wing and the Aurius chapel are omitted pending a shared street layout. No cross-wing shortcut is asserted.",
+    "Variable Stratholme Holy Water crates and Restless Soul locations are not individually mapped."
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "dungeon": "uldaman",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Hall of the Keepers, Dig Two, Map Chamber and Hidden Chamber"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Main instance portal"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01:I ↔ 02:I; tunnels north of the Map Chamber"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "The Lost Dwarves"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Revelosh"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Ironaya"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Conspicuous Urn — Shattered Necklace Topaz",
+      "quest": "Find the Gems"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Baelog",
+      "quest": "The Lost Dwarves"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Remains of a Paladin",
+      "quest": "Back to Uldaman"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "The Hidden Chamber",
+      "quest": "The Hidden Chamber"
+    }
+  ],
+  "uncertain": [
+    "Hallway bends, the Dig Two approach and Map Chamber outline are schematic; dashed geometry is not a measured footprint.",
+    "Quest markers show the correct room or branch but unverified positions within it.",
+    "Small ancillary hall recesses are omitted rather than reconstructed without evidence."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "Boss 1 groups Baelog, Eric \"The Swift\" and Olaf as one encounter; friendly to Alliance and hostile to Horde.",
+    "Baelog’s Chest supplies Gni’kiv Medallion; Revelosh supplies The Shaft of Tsol. Combine them into Staff of Prehistoria and use it in the Map Chamber to open Ironaya’s chamber.",
+    "Q1 also serves Find the Gems and Power Source; Q3 also serves Necklace Recovery, Take 2.",
+    "Exterior excavation quests and Digmaster Shovelphlange are outside these instance sheets."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/uldaman/uldaman_lr.pdf",
+    "https://www.icy-veins.com/wow-classic/uldaman-dungeon-guide",
+    "https://www.icy-veins.com/wow-classic/uldaman-quests-guide"
+  ]
+}

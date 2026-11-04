@@ -1,0 +1,109 @@
+{
+  "dungeon": "blackrock-depths",
+  "sheet": "04",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Chamber of Enchantment, Mold Foundry and Summoners’ Tomb"
+    },
+    {
+      "id": "II",
+      "name": "Post-tomb junction, Black Forge and Molten Bridge"
+    },
+    {
+      "id": "III",
+      "name": "The Lyceum, Iron Hall and Imperial Seat"
+    }
+  ],
+  "markers": [
+    {
+      "id": "K",
+      "type": "transition",
+      "to": "03:III ↔ 04:I; event-dependent rear exit to western Shadowforge City"
+    },
+    {
+      "id": "L",
+      "type": "transition",
+      "to": "04:I → 04:II; Summoners’ Tomb completion opens the onward junction"
+    },
+    {
+      "id": "M",
+      "type": "transition",
+      "to": "04:II ↔ 04:III; junction to upper Lyceum approach"
+    },
+    {
+      "id": "T",
+      "type": "teleport",
+      "to": "Molten Core raid instance portal; not a BRD return transport"
+    },
+    {
+      "id": "18",
+      "type": "boss",
+      "name": "Ambassador Flamelash"
+    },
+    {
+      "id": "19",
+      "type": "boss",
+      "name": "Panzor the Invincible"
+    },
+    {
+      "id": "20",
+      "type": "boss",
+      "name": "The Seven"
+    },
+    {
+      "id": "21",
+      "type": "boss",
+      "name": "Magmus"
+    },
+    {
+      "id": "22",
+      "type": "boss",
+      "name": "Emperor Dagran Thaurissan"
+    },
+    {
+      "id": "23",
+      "type": "boss",
+      "name": "Princess Moira Bronzebeard"
+    },
+    {
+      "id": "Q13",
+      "type": "quest",
+      "name": "Spectral Chalice",
+      "quest": "The Spectral Chalice"
+    },
+    {
+      "id": "Q14",
+      "type": "quest",
+      "name": "Core Fragment",
+      "quest": "Attunement to the Core"
+    },
+    {
+      "id": "Q15",
+      "type": "quest",
+      "name": "Princess Moira Bronzebeard",
+      "quest": "The Fate of the Kingdom"
+    }
+  ],
+  "uncertain": [
+    "Final-city corridor bends and exact stair heights are unverified; panels separate the bridge/forge branch from the upper Lyceum route without asserting measured elevations.",
+    "The small forge spur is schematic; no lava landing or safe swim route is claimed.",
+    "Panzor is rare and mobile; marker 19 is approximate.",
+    "Spectral Chalice, Core Fragment and throne-room quest positions are approximate within their known areas."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "Boss 20 groups the seven spirits: Anger’rel, Dope’rel, Hate’rel, Vile’rel, Seeth’rel, Gloom’rel and Doom’rel.",
+    "Speak to Gloom’rel for The Spectral Chalice before starting the encounter.",
+    "The small unlabelled rectangle at the bridge spur is Black Forge. It is distinct from Black Anvil on sheet 02.",
+    "The two small circles in the Lyceum are braziers; lighting both opens the onward route.",
+    "Q15 also serves The Royal Rescue. Rescue quests require sparing Moira; marker 23 identifies her encounter position, not an instruction to kill her.",
+    "No post-Vanilla teleporter, Brewfest boss or raid-remake rooms are included."
+  ],
+  "sources": [
+    "https://www.wowhead.com/classic/guide/blackrock-depths-detention-block-dungeon-strategy-wow-classic",
+    "https://www.wowhead.com/classic/guide/blackrock-depths-shadowforge-city-dungeon-strategy-wow-classic",
+    "https://warcraft.wiki.gg/wiki/Blackrock_Depths_Regions"
+  ]
+}

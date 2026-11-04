@@ -1,0 +1,83 @@
+{
+  "dungeon": "scholomance",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Reliquary, summoning chamber, balcony and central junction"
+    },
+    {
+      "id": "II",
+      "name": "Jandice Barov basement"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Scholomance instance entrance"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Deed to Southshore",
+      "quest": "Barov Family Fortune"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Blood Steward of Kirtonos"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Kirtonos the Herald"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Brazier of the Herald",
+      "quest": "Kirtonos the Herald"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01:I <-> 01:II; stairs to the Jandice basement"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01:I <-> 02:I; central junction to dragon-whelp floor and Great Ossuary"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:I <-> 02:III; locked Viewing Room gate; obtain Viewing Room Key from Rattlegore and backtrack"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Jandice Barov"
+    }
+  ],
+  "uncertain": [
+    "Entrance bridge, stair folds and central-hall proportions are schematic. The Jandice basement is shown as an area, without inventing its internal cell partitions.",
+    "Blood Steward and Q1–Q2 are placed at area level.",
+    "The torch-operated secret reward access after Jandice is omitted; its precise connection remains unverified."
+  ],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Kirtonos is summoned on the balcony using Blood of Innocents.",
+    "The basement A is a return excursion. B leads to the key; C is the later locked route to the Viewing Room."
+  ],
+  "sources": [
+    "https://www.icy-veins.com/wow-classic/scholomance-dungeon-guide",
+    "https://warcraft.wiki.gg/wiki/Headmaster%27s_Study",
+    "https://www.wowhead.com/classic/guide/scholomance-dungeon-strategy-wow-classic",
+    "https://www.zockify.com/classic/dungeons/scholomance/",
+    "https://classicdb.ch/?quest=7647",
+    "https://giddygamer.com/wow/content/items/ds2/ds2_quest_details.pdf"
+  ]
+}

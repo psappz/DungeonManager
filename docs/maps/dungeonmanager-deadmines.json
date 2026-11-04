@@ -1,0 +1,115 @@
+{
+  "dungeon": "deadmines",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "The Deadmines / Mast Room / Goblin Foundry"
+    },
+    {
+      "id": "II",
+      "name": "Ironclad Cove / Lower Deck"
+    },
+    {
+      "id": "III",
+      "name": "Ironclad Cove / Upper Deck"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Rhahk'Zor"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Miner Johnson"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Sneed's Shredder"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Sneed"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Gilnid"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Mr. Smite"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Cookie"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Captain Greenskin"
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "Edwin VanCleef"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Gnoam Sprecklesprocket",
+      "quest": "Underground Assault"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "VanCleef's Head",
+      "quest": "The Defias Brotherhood"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "An Unsent Letter",
+      "quest": "The Unsent Letter"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01: I ↔ II; cannon door to Ironclad Cove"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01: II ↔ III; ascent to the upper deck"
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "T",
+      "type": "teleport",
+      "to": "Westfall; instance exit portal"
+    }
+  ],
+  "uncertain": [
+    "The dashed swimming shortcut in II is documented, but its precise landing beside the ship approach needs in-game verification.",
+    "The dashed connection to T represents the exit ledge beside the ship; its precise height and access geometry need in-game verification."
+  ],
+  "notes": [
+    "Only the instanced dungeon is shown. Outer-mine quest locations are outside this sheet.",
+    "Miner Johnson is a rare spawn.",
+    "Bosses 3 and 4 are consecutive phases of the same encounter in the Mast Room.",
+    "Cookie can be visited before the upper deck or after Edwin VanCleef; this numbering uses the former route.",
+    "Q1 is loot from boss 3. Q2 and Q3 are loot from boss 9; leader lines offset their labels.",
+    "The small alcove before A contains Defias Gunpowder for the cannon; it is an interaction, not a quest location.",
+    "The upper deck is enlarged in III. Panels are schematic and not to scale."
+  ]
+}

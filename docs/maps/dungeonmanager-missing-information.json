@@ -1,0 +1,149 @@
+{
+  "skipped": [],
+  "drafts_with_remaining_uncertainty": [
+    {
+      "dungeon": "gnomeregan",
+      "status": "draft_created",
+      "reason": "Four SVG/JSON pairs created after topology research. Remaining limitations are recorded in each sheet and dungeonmanager-gnomeregan-research.md.",
+      "missing_information": [
+        "Exact local Dormitory stair geometry and side-room outlines.",
+        "Verified Vanilla/Classic jump take-off and landing points; Engineering Labs collision restrictions remain unverified.",
+        "Quest-marker positions on the same reconstructed floor plan, particularly Kernobee and individual punchographs."
+      ],
+      "suitable_reference": "The linked period guide resolves the main topology. Targeted Classic footage is still useful for local geometry; the 2019 video alone is not version proof.",
+      "reviewed_sources": [
+        "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/gn/gnlr.pdf",
+        "https://www.icy-veins.com/wow-classic/gnomeregan-dungeon-guide",
+        "https://www.youtube.com/watch?v=GhGlT48i_LI",
+        "https://warcraft.wiki.gg/wiki/Launch_Bay"
+      ],
+      "proposed_layout": "Overview plus three detail sheets with separate local-level panels: entrance/Hall of Gears/Clean Zone/Dormitory; Launch Bay; Engineering Labs/Tinker’s Court. Proposed, not yet drawn."
+    },
+    {
+      "dungeon": "uldaman",
+      "status": "draft_created",
+      "reason": "Main connections researched and four SVG/JSON pairs created; see dungeonmanager-uldaman-research.md.",
+      "missing_information": [
+        "Exact ramp geometry and vertical overlap between Hall of the Crafters and the lower final chambers.",
+        "Precise tunnel bends, local Temple Hall steps and subsidiary recesses.",
+        "Measured quest-object positions within the documented rooms; room-level placement is used."
+      ],
+      "suitable_reference": "A Vanilla/Classic Era walkthrough showing the minimap, both entrances, side branches and the complete descent to Archaedas, or addon-collected room and transition data.",
+      "reviewed_sources": [
+        "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/uldaman/uldaman_lr.pdf",
+        "https://www.icy-veins.com/wow-classic/uldaman-dungeon-guide",
+        "https://www.icy-veins.com/wow-classic/uldaman-quests-guide",
+        "https://www.wowhead.com/classic/quest=2201/find-the-gems"
+      ],
+      "proposed_layout": "Overview plus detail sheets for the entrance halls and Map Chamber, central tunnels and Temple Hall, and the upper and lower titan chambers. Sheet boundaries require verified floor connections."
+    },
+    {
+      "dungeon": "sunken-temple",
+      "status": "draft_created",
+      "reason": "Four SVG/JSON pairs created after source review. Entrance routes and protector access types documented; remaining geometric uncertainty is marked.",
+      "missing_information": [
+        "Exact outer protector staircase folds and landing shapes; radial links are schematic.",
+        "Measured room outlines, pool extents and local quest-object positions.",
+        "Exact safe jump landing locations beyond the represented lower drop; other shortcuts omitted."
+      ],
+      "suitable_reference": "A Vanilla/Classic Era walkthrough with visible minimap covering all four entrance routes and six balcony access paths, or addon-collected floor and transition data.",
+      "reviewed_sources": [
+        "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/atalhakkar/atalhakkar_gslr.pdf",
+        "https://www.wowhead.com/classic/guide/temple-of-atalhakkar-sunken-temple-dungeon-strategy-wow-classic",
+        "https://www.icy-veins.com/wow-classic/sunken-temple-dungeon-guide"
+      ],
+      "proposed_layout": "Overview plus separate detail sheets for the lower pit and statue ring, the upper ring and protector balconies, and the dragon floor with its side chambers. No guessed staircase connections."
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "status": "draft_created",
+      "reason": "New overview and four detail SVG/JSON pairs created after Classic reference research. Main connections and gate-state dependency are documented; exact local geometry remains uncertain.",
+      "missing_information": [
+        "Verified individual prison-cell assignments; Q1–Q3 currently identify a search area.",
+        "Exact staircase folds and vertical alignment around East Garrison, Domicile, Hall of Crafting and the upper crossing.",
+        "Exact Grim Guzzler stair and object positions.",
+        "Measured forge/Lyceum elevations and safe lava-shortcut landing points; the lava route is omitted."
+      ],
+      "suitable_reference": "A Vanilla/Classic Era walkthrough with visible minimap covering the full key route, prison branches, both tavern levels and the forge/bridge area, or addon-collected floor and transition data.",
+      "reviewed_sources": [
+        "https://warcraft.wiki.gg/wiki/East_Garrison",
+        "https://warcraft.wiki.gg/wiki/The_Shadowforge_Lock",
+        "https://warcraft.wiki.gg/wiki/Molten_Bridge",
+        "https://www.warcrafttavern.com/wow-classic/guides/blackrock-depths",
+        "https://www.wowhead.com/classic/guide/blackrock-depths-detention-block-dungeon-strategy-wow-classic",
+        "https://www.wowhead.com/classic/guide/blackrock-depths-shadowforge-city-dungeon-strategy-wow-classic"
+      ],
+      "proposed_layout": "Overview plus detail sheets for prison/arena, eastern city/anvil, manufactory/tavern, and inner city/throne. Separate vertically overlapping areas within each sheet.",
+      "legacy_assets": "Earlier text-cleaned prototypes remain in legacy-entwuerfe. The five new classic-v2 SVG/JSON pairs are now the current review drafts."
+    },
+    {
+      "dungeon": "lower-blackrock-spire",
+      "status": "draft_created",
+      "reason": "Main connections researched; schematic SVG/JSON sheets and a research report created. Remaining uncertainties are listed per sheet.",
+      "missing_information": [
+        "Entrance stair folds, wooden bridge alignment and Vaelan ledge geometry are schematic. The optional entry shortcut is omitted.",
+        "Q1–Q3 are area-level placements; Warosh patrols. Rare bosses 1–3 are approximate search positions, not guaranteed spawns.",
+        "Scorpid passages, staircase turns and the cracked-floor approach are schematic. No additional side rooms are inferred.",
+        "Ghok Bashguud is a rare in the final approach area; marker 15 is a search location, not a verified fixed point.",
+        "Burning Felguard is a rare summon without a fixed room marker and is not placed on the map.",
+        "Terrace elevations and ramp bends are compressed; the source describes the area sequence, not measured landings.",
+        "C is a documented one-way drop, but its exact safe take-off and landing coordinates are unverified. Dashed endpoints are not navigation coordinates.",
+        "The exact paths of Bannok Grimaxe and Crystal Fang, egg locations, Bijou and tablet positions remain approximate.",
+        "Bijou's Belongings and Blackrock Documents have variable locations; Human Remains and Unfired Plate Gauntlets are omitted pending positional evidence."
+      ],
+      "suitable_reference": "A Vanilla/Classic Era walkthrough with visible minimap covering the normal stairs as well as commonly used drops, or addon-collected floor and transition data.",
+      "reviewed_sources": [
+        "https://warcraft.wiki.gg/wiki/Lower_Blackrock_Spire_walkthrough",
+        "https://giddygamer.com/wow/content/guides/blackrock_mountain_entrance_guide.pdf",
+        "https://www.icy-veins.com/wow-classic/lower-blackrock-spire-guide",
+        "https://www.warcrafttavern.com/wow-classic/guides/lower-blackrock-spire/",
+        "https://www.wowhead.com/classic/npc=9237/war-master-voone"
+      ],
+      "proposed_layout": "Implemented: overview and 3 detail sheets."
+    },
+    {
+      "dungeon": "dire-maul-west",
+      "status": "draft_created",
+      "reason": "Main connections researched; schematic SVG/JSON sheets and a research report created. Remaining uncertainties are listed per sheet.",
+      "missing_information": [
+        "Prison polygon and pylon positions are schematic. The exact junction bends and Athenaeum stair folds are unverified.",
+        "Q3 and Q4 identify the library area, not measured object positions.",
+        "The Dire Maul North library approach and additional entrance alternatives are omitted pending a verified cross-wing floor connection.",
+        "The side-hall ramps, intermediate landings and upper-gallery outline are schematic; the two upper pylons are placed at area level.",
+        "Tsu'zee is a rare near the upper ramp. Illyanna and Ferra patrol; their circles do not mark a fixed spawn.",
+        "Shen'dralar Ancient placement is approximate. No unverified gallery-to-court jump is drawn."
+      ],
+      "suitable_reference": "A Vanilla/Classic Era walkthrough with the minimap visible covering both side halls, all five pylons, normal return ramps and the library connection to Dire Maul North; alternatively addon-collected room and transition data.",
+      "reviewed_sources": [
+        "https://www.icy-veins.com/wow-classic/dire-maul-west-dungeon-guide",
+        "https://www.wowhead.com/classic/guide/dire-maul-west-dungeon-strategy-wow-classic"
+      ],
+      "proposed_layout": "Implemented: overview and 2 detail sheets."
+    },
+    {
+      "dungeon": "scholomance",
+      "status": "draft_created",
+      "reason": "Main connections researched; schematic SVG/JSON sheets and a research report created. Remaining uncertainties are listed per sheet.",
+      "missing_information": [
+        "The Ossuary stair G connects panels I and II; its exact bends and landings are unverified.",
+        "Q3–Q6 are approximate positions within documented rooms. The laboratory furnishing footprint is not reconstructed.",
+        "Study staircase F, gallery outline and chamber proportions are schematic. Do not interpret the page layout as a measured floor plan.",
+        "Gandling is assigned to the central lower study; his exact spawn coordinates and local elevation require an in-game check and marker 16 remains dashed.",
+        "Sarkhoff remains and the Caer Darrow deed are room-level markers. Optional water recesses and combat teleports to guardian rooms are not mapped.",
+        "Entrance bridge, stair folds and central-hall proportions are schematic. The Jandice basement is shown as an area, without inventing its internal cell partitions.",
+        "Blood Steward and Q1–Q2 are placed at area level.",
+        "The torch-operated secret reward access after Jandice is omitted; its precise connection remains unverified."
+      ],
+      "suitable_reference": "A Vanilla/Classic Era walkthrough with minimap visible, covering Jandice, Kirtonos, Rattlegore and the return routes as well as both study floors; alternatively addon-collected room and transition data. Exclude the Mists of Pandaria rebuild.",
+      "reviewed_sources": [
+        "https://www.icy-veins.com/wow-classic/scholomance-dungeon-guide",
+        "https://warcraft.wiki.gg/wiki/Headmaster%27s_Study",
+        "https://www.wowhead.com/classic/guide/scholomance-dungeon-strategy-wow-classic",
+        "https://www.zockify.com/classic/dungeons/scholomance/",
+        "https://classicdb.ch/?quest=7647",
+        "https://giddygamer.com/wow/content/items/ds2/ds2_quest_details.pdf"
+      ],
+      "proposed_layout": "Implemented: overview and 3 detail sheets."
+    }
+  ]
+}

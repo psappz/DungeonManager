@@ -1,0 +1,55 @@
+{
+  "dungeon": "sunken-temple",
+  "sheet": "uebersicht",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Sheet 01 — Hall of Serpents and Pit of Refuse"
+    },
+    {
+      "id": "II",
+      "name": "Sheet 02 — Hall of the Cursed and protector balconies"
+    },
+    {
+      "id": "III",
+      "name": "Sheet 03 — Dragon floor and side chambers"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Instance portal; four passages ahead"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "uebersicht → 01:II; immediate right passage descends to Pit of Refuse; return by same stairs"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "uebersicht → 01:I; forward-right passage and first landing descend to Hall of Serpents; bidirectional"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "uebersicht → 02:I; forward-left stairs via Loro landing to Hall of the Cursed; bidirectional"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "uebersicht → 03:I; immediate left stairs to dragon floor; bidirectional"
+    }
+  ],
+  "uncertain": [],
+  "notes": [
+    "Connection diagram, not a floor plan. Left/right refers to facing into the instance from E.",
+    "Roman numerals identify detail sheets. Return through the entrance junction when changing major sections; no direct stairs between protector and dragon sheets are asserted."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/atalhakkar/atalhakkar_gslr.pdf",
+    "https://www.icy-veins.com/wow-classic/sunken-temple-dungeon-guide",
+    "https://www.wowhead.com/classic/guide/temple-of-atalhakkar-sunken-temple-dungeon-strategy-wow-classic"
+  ]
+}

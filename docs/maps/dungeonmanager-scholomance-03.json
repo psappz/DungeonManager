@@ -1,0 +1,93 @@
+{
+  "dungeon": "scholomance",
+  "sheet": "03",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Headmaster's Study — upper gallery"
+    },
+    {
+      "id": "II",
+      "name": "Headmaster's Study — lower level"
+    }
+  ],
+  "markers": [
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "02:III <-> 03:I; Viewing Room stairs to the upper Headmaster's Study"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "03:I <-> 03:II; normal staircase between the study levels; exact stair landing uncertain"
+    },
+    {
+      "id": "13",
+      "type": "boss",
+      "name": "Lorekeeper Polkelt"
+    },
+    {
+      "id": "14",
+      "type": "boss",
+      "name": "Doctor Theolen Krastinov"
+    },
+    {
+      "id": "Q8",
+      "type": "quest",
+      "name": "Sarkhoff Remains",
+      "quest": "Doctor Theolen Krastinov, the Butcher"
+    },
+    {
+      "id": "15",
+      "type": "boss",
+      "name": "Instructor Malicia"
+    },
+    {
+      "id": "10",
+      "type": "boss",
+      "name": "Lady Illucia Barov"
+    },
+    {
+      "id": "11",
+      "type": "boss",
+      "name": "Lord Alexei Barov"
+    },
+    {
+      "id": "Q7",
+      "type": "quest",
+      "name": "Deed to Caer Darrow",
+      "quest": "Barov Family Fortune"
+    },
+    {
+      "id": "12",
+      "type": "boss",
+      "name": "The Ravenian"
+    },
+    {
+      "id": "16",
+      "type": "boss",
+      "name": "Darkmaster Gandling"
+    }
+  ],
+  "uncertain": [
+    "Study staircase F, gallery outline and chamber proportions are schematic. Do not interpret the page layout as a measured floor plan.",
+    "Gandling is assigned to the central lower study; his exact spawn coordinates and local elevation require an in-game check and marker 16 remains dashed.",
+    "Sarkhoff remains and the Caer Darrow deed are room-level markers. Optional water recesses and combat teleports to guardian rooms are not mapped."
+  ],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Upper rooms: north Polkelt, east Krastinov, south Malicia. Lower rooms: north Illucia, east Alexei, south Ravenian.",
+    "Kill all six guardians to summon Gandling. The suggested visit order clears the lower floor first, then returns upstairs; boss numbers are stable across all sheets."
+  ],
+  "sources": [
+    "https://www.icy-veins.com/wow-classic/scholomance-dungeon-guide",
+    "https://warcraft.wiki.gg/wiki/Headmaster%27s_Study",
+    "https://www.wowhead.com/classic/guide/scholomance-dungeon-strategy-wow-classic",
+    "https://www.zockify.com/classic/dungeons/scholomance/",
+    "https://classicdb.ch/?quest=7647",
+    "https://giddygamer.com/wow/content/items/ds2/ds2_quest_details.pdf"
+  ]
+}

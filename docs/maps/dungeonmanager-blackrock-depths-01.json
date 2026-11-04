@@ -1,0 +1,103 @@
+{
+  "dungeon": "blackrock-depths",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Detention Block, Halls of the Law and arena floor"
+    },
+    {
+      "id": "II",
+      "name": "East Garrison and ascent to arena gallery"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Blackrock Depths instance portal"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01:I ↔ 01:II; arena west exit to East Garrison after Ring of the Law"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01:I ↔ 01:II; locked shortcut to East Garrison, bypassing the arena"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:II ↔ 02:I; arena spectator gallery to Shrine/Domicile junction"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "01:I ↔ 02:II; Shadowforge Gate to Dark Iron Highway"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "01:II ↔ 03:I; upper crossing to West Garrison, enabled by Shadowforge Lock"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "High Interrogator Gerstahn"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Lord Roccor"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Houndmaster Grebmar"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Ring of the Law"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Marshal Windsor",
+      "quest": "Jail Break!"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Commander Gor’shak",
+      "quest": "Commander Gor’shak"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Kharan Mighthammer",
+      "quest": "Kharan Mighthammer"
+    }
+  ],
+  "uncertain": [
+    "Prison corridor proportions and cell assignments remain unverified. Q1–Q3 mark the prison search area; their relative ordering is not a claimed cell order.",
+    "The two detention loops and the arena approach are schematic; local bends and elevation changes are not measured.",
+    "Roccor patrols; marker 2 is approximate.",
+    "East Garrison ramp and arena-gallery approach are simplified and dashed."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "The unlabelled square in panel II represents Shadowforge Lock on the lower garrison level. Operate it before using F.",
+    "Arena encounter 4 has alternatives: Anub’shiah, Eviscerator, Gorosh the Dervish, Grizzle, Hedrum the Creeper or Ok’thor the Breaker. Theldren is a quest-triggered alternative at the same location. High Justice Grimstone is not a separate kill target.",
+    "B and D are locked shortcuts requiring the appropriate key or unlocking method.",
+    "No escort path or extra prison rooms are invented."
+  ],
+  "sources": [
+    "https://www.wowhead.com/classic/guide/blackrock-depths-detention-block-dungeon-strategy-wow-classic",
+    "https://www.wowhead.com/classic/guide/blackrock-depths-shadowforge-city-dungeon-strategy-wow-classic",
+    "https://warcraft.wiki.gg/wiki/Blackrock_Depths_Regions"
+  ]
+}

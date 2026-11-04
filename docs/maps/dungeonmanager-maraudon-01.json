@@ -1,0 +1,112 @@
+{
+  "dungeon": "maraudon",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Orange — Foulspore Cavern"
+    },
+    {
+      "id": "II",
+      "name": "Purple — The Wicked Grotto"
+    },
+    {
+      "id": "III",
+      "name": "Shared approach and Celebras"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Orange entrance in I; Purple entrance in II"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I ↔ III; Orange wing joins the shared approach"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "II ↔ III; Purple wing joins the shared approach"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:III → 02:I; waterfall drop"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Noxxion"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Razorlash"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Lord Vyletongue"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Meshlok the Harvester"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Celebras the Cursed"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Veng",
+      "quest": "The Pariah's Instructions"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Celebrian Rod",
+      "quest": "Legends of Maraudon"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Noxxious Scion",
+      "quest": "Vyletongue Corruption"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Maraudos",
+      "quest": "The Pariah's Instructions"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Celebrian Diamond",
+      "quest": "Legends of Maraudon"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Celebras the Redeemed",
+      "quest": "The Scepter of Celebras"
+    }
+  ],
+  "uncertain": [
+    "Dashed corridors preserve the documented route order but not unverified tunnel bends, subsidiary loops or ledge geometry.",
+    "Veng and Maraudos patrol; Q1 and Q4 mark approximate search areas. Q3 marks a plant-search area, not one fixed plant.",
+    "Meshlok is rare and mobile; marker 4 is approximate."
+  ],
+  "notes": [
+    "Start Orange, visit Purple by backtracking from the shared approach, then descend toward Celebras.",
+    "The gap and downward arrow before Celebras denote a one-way ledge drop.",
+    "Q6 also marks the Legends of Maraudon hand-in; the ritual altar’s exact position is omitted.",
+    "Exterior caves, Cavindra, the vial-filling pool and the first three khans are outside these instance sheets."
+  ]
+}

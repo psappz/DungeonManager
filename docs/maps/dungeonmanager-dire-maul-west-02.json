@@ -1,0 +1,76 @@
+{
+  "dungeon": "dire-maul-west",
+  "sheet": "02",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Prison of Immol'thar"
+    },
+    {
+      "id": "II",
+      "name": "The Athenaeum"
+    }
+  ],
+  "markers": [
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01:I <-> 02:I; tunnel behind Tendris to the Prison of Immol'thar"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "02:I <-> 02:II; separate passage near the prison entrance to the Athenaeum"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Immol'thar"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Lord Hel'nurath"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Dreadsteed Ritual Circle",
+      "quest": "Dreadsteed of Xoroth"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Prince Tortheldrin"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Shen'dralar Library",
+      "quest": "Elven Legends"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Treasure of the Shen'dralar",
+      "quest": "The Treasure of the Shen'dralar"
+    }
+  ],
+  "uncertain": [
+    "Prison polygon and pylon positions are schematic. The exact junction bends and Athenaeum stair folds are unverified.",
+    "Q3 and Q4 identify the library area, not measured object positions.",
+    "The Dire Maul North library approach and additional entrance alternatives are omitted pending a verified cross-wing floor connection."
+  ],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Disable all five pylons before Immol'thar. The prison and library are separate destinations connected near the prison entrance.",
+    "Lord Hel'nurath and Q2 are optional Warlock quest content in the same prison arena.",
+    "Prince Tortheldrin becomes hostile after Immol'thar is defeated."
+  ],
+  "sources": [
+    "https://www.icy-veins.com/wow-classic/dire-maul-west-dungeon-guide",
+    "https://www.wowhead.com/classic/guide/dire-maul-west-dungeon-strategy-wow-classic"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "dungeon": "razorfen-kraul",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Entrance / The Trenches / Prison"
+    },
+    {
+      "id": "II",
+      "name": "Path to Razorflank"
+    },
+    {
+      "id": "III",
+      "name": "Vine Bridges"
+    },
+    {
+      "id": "IV",
+      "name": "Bat Cavern / Razorflank's Hut"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Roogug"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Aggem Thorncurse"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Death Speaker Jargba"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Overlord Ramtusk"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Earthcaller Halmgar"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Blind Hunter"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Agathelos the Raging"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Charlga Razorflank"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Vial of Phlogiston",
+      "quest": "Fire Hardened Mail",
+      "additional_quests": [
+        "Brutal Armor"
+      ]
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Blueleaf Tubers",
+      "quest": "Blueleaf Tubers"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Willix the Importer",
+      "quest": "Willix the Importer"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Heralath Fallowbrook",
+      "quest": "Mortality Wanes"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Kraul Guano",
+      "quest": "Going, Going, Guano!"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Charlga Razorflank",
+      "quest": "The Crone of the Kraul",
+      "additional_quests": [
+        "A Vengeful Fate",
+        "An Unholy Alliance"
+      ]
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01: I ↔ II; northern route from the trench junction"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01: II ↔ III; lower western passage beyond Ramtusk"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01: III ↔ IV; bridges to the Bat Cavern"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "Unverified: 01 IV → I; reported one-way drop behind Charlga toward the prison"
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    }
+  ],
+  "uncertain": [
+    "The dashed trench passage in I preserves the documented connection to the prison. Exact turns, side recesses and the detailed Willix escort track require an in-game survey.",
+    "Dashed bridges in III show the documented sequence of elevated crossings; exact vine curvature and intermediate landing geometry are not verified.",
+    "Marker 6 denotes the Blind Hunter search area in the Bat Cavern, not a verified fixed spawn point.",
+    "Dashed transition D is a reported drop behind Charlga toward the prison. Its precise takeoff, landing and Vanilla 1.12 accessibility remain unverified."
+  ],
+  "notes": [
+    "Roogug is an optional side branch. Aggem and Jargba occupy separate branches off the common ramp; return to the junction between them.",
+    "Earthcaller Halmgar and Blind Hunter are rare spawns. Their absence does not change the route.",
+    "Q2 represents a search area for the Snufflenose Gopher, not a fixed tuber spawn. Q5 represents bat drops across the cavern.",
+    "Q3 and Q4 share the prison area. Willix must be escorted toward E; the exact escort track is not drawn.",
+    "Agathelos is in a dead-end spur behind a ward. Kill the Ward Keepers to remove the barrier.",
+    "Q1 and Q6 refer to boss loot. Q6 covers the faction objectives and the Small Scroll quest starter.",
+    "Panels are schematic route sections, not to scale. Local rises are indicated by arrows. No teleporter is present."
+  ]
+}

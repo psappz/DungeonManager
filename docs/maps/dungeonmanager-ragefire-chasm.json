@@ -1,0 +1,63 @@
+{
+  "dungeon": "ragefire-chasm",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Ragefire Chasm"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Oggleflint"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Taragaman the Hungerer"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Jergosh the Invoker"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Bazzalan"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Maur Grimtotem",
+      "quest": "Searching for the Lost Satchel / Returning the Lost Satchel"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Taragaman the Hungerer's Heart",
+      "quest": "Slaying the Beast"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Jergosh the Invoker",
+      "quest": "Hidden Enemies"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Bazzalan",
+      "quest": "Hidden Enemies"
+    }
+  ],
+  "uncertain": [
+    "The dashed raised walkway to Bazzalan has a verified connection, but its exact bends and elevation profile are unverified."
+  ]
+}

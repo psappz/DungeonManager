@@ -1,0 +1,104 @@
+{
+  "dungeon": "wailing-caverns",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Screaming Gully / Dreamer’s Rock"
+    },
+    {
+      "id": "II",
+      "name": "Pit of Fangs"
+    },
+    {
+      "id": "III",
+      "name": "Winding Chasm / Crag of the Everliving"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Lady Anacondra"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Lord Cobrahn"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Kresh"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Lord Pythas"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Skum"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Lord Serpentis"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Verdan the Everliving"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Mutanus the Devourer"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Glowing Shard",
+      "quest": "The Glowing Shard"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Disciple of Naralex",
+      "quest": "The Glowing Shard",
+      "note": "Escort event prerequisite; not a quest pickup. Return after defeating all four Fang leaders."
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01: I ↔ II; western river passage"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01: I ↔ III; eastern river passage"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "01: III → I; one-way drop behind Verdan into the river"
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    }
+  ],
+  "uncertain": [
+    "Dashed outlines in III show the known Pythas–Skum–upper cavern connection, not a verified rendering of every Vanilla maze junction. Exact bends and side passages need an in-game survey.",
+    "The dashed arrow in II marks the Cobrahn return drop; its exact ledge geometry is unresolved.",
+    "Marker 1 represents the upper-bank spawn area, not a fixed Lady Anacondra spawn. Marker 3 represents the river patrol, not a fixed Kresh spawn.",
+    "Deviate Faerie Dragon is not plotted: reliable Vanilla spawn positions are still required."
+  ],
+  "notes": [
+    "Only the instanced dungeon is shown.",
+    "Boss numbers follow a common full-clear route; Kresh may be encountered earlier.",
+    "Leaders of the Fang objectives are bosses 1, 2, 4 and 6.",
+    "Serpentbloom and creature-drop objectives are distributed; no fixed gathering points are asserted."
+  ]
+}

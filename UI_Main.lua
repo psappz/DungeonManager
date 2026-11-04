@@ -150,12 +150,32 @@ local function buildDetail(page)
     end)
     page.mark:SetPoint("TOPRIGHT", -6, -2)
     page.info = W:Text(page, "GameFontHighlightSmall") page.info:SetPoint("TOPLEFT", 8, -30) page.info:SetJustifyH("LEFT")
-    page.map = page:CreateTexture(nil, "ARTWORK")
-    page.map:SetSize(440, 220)
-    page.map:SetPoint("TOPLEFT", 6, -48)
-    page.legend = W:Text(page, "GameFontHighlightSmall")
-    page.legend:SetPoint("TOPLEFT", page.map, "TOPRIGHT", 12, 0)
-    page.legend:SetWidth(420) page.legend:SetJustifyH("LEFT") page.legend:SetSpacing(2)
+    page.mapBtn = CreateFrame("Button", nil, page)
+    page.mapBtn:SetPoint("TOPLEFT", 6, -48)
+    page.mapBtn:SetSize(230, 230)
+    page.map = page.mapBtn:CreateTexture(nil, "ARTWORK")
+    page.map:SetAllPoints()
+    page.mapBtn:SetScript("OnClick", function() UI.mapBig = not UI.mapBig UI:Refresh() end)
+    page.mapBtn:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:AddLine(L["Click: enlarge / shrink the map"], 1, 1, 1)
+        GameTooltip:Show()
+    end)
+    page.mapBtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
+    page.sheetBtns = {}
+    for i = 1, 6 do
+        local b = W:Toggle(page, "", 96, function() return UI.sheet == i end, function() UI.sheet = i UI:Refresh() end)
+        b:SetPoint("TOPLEFT", page.mapBtn, "TOPRIGHT", 12 + (i - 1) * 100, 0)
+        b:Hide()
+        page.sheetBtns[i] = b
+    end
+    page.legendL = W:Text(page, "GameFontHighlightSmall")
+    page.legendL:SetPoint("TOPLEFT", page.mapBtn, "TOPRIGHT", 12, -30)
+    page.legendR = W:Text(page, "GameFontHighlightSmall")
+    page.legendR:SetPoint("TOPLEFT", page.legendL, "TOPRIGHT", 12, 0)
+    for _, fs in ipairs({ page.legendL, page.legendR }) do
+        fs:SetWidth(300) fs:SetJustifyH("LEFT") fs:SetJustifyV("TOP") fs:SetHeight(200) fs:SetSpacing(1)
+    end
     page.table = W:Table(page, {
         { "icon", "", 40 }, { "name", L["Quest"], 280 }, { "status", L["Status"], 130 }, { "giver", L["Quest giver"], 420 },
     }, 22, 8, function(item)
@@ -187,19 +207,44 @@ local function renderDetail(page)
     if not r.attuned then table.insert(parts, "|cffe05a4f" .. L["Attunement missing"] .. "|r") end
     if r.dangerous then table.insert(parts, "|cffe05a4f" .. L["Entrance in a hostile capital"] .. "|r") end
     page.info:SetText(table.concat(parts, "   "))
-    local legend = d.map and ns.MapLegends[d.map]
-    if d.map then
-        page.map:SetTexture("Interface\\AddOns\\DungeonManager\\Media\\Maps\\" .. d.map)
-        page.map:Show()
+    local sheets = ns.MapSheets and ns.MapSheets[d.key]
+    if UI.detailKey ~= d.key then UI.detailKey, UI.sheet, UI.mapBig = d.key, 1, false end
+    for i, b in ipairs(page.sheetBtns) do
+        local sh = sheets and sheets[i]
+        b:SetShown(sh ~= nil and #sheets > 1)
+        if sh then b.label:SetText(L[sh.label]) b:Refresh() end
+    end
+    local sh = sheets and sheets[UI.sheet or 1]
+    if sh then
+        page.map:SetTexture("Interface\\AddOns\\DungeonManager\\Media\\Maps\\" .. sh.tex)
+        page.mapBtn:Show()
         local lines = {}
-        for _, m in ipairs(legend or {}) do table.insert(lines, "|cffffd100" .. m[1] .. "|r  " .. L[m[2]]) end
+        for _, m in ipairs(sh.legend or {}) do table.insert(lines, "|cffffd100" .. m[1] .. "|r " .. m[2]) end
+        if sh.uncertain and #sh.uncertain > 0 then
+            table.insert(lines, "|cff8c8c8c" .. string.format(L["%d uncertain spots (dashed)"], #sh.uncertain) .. "|r")
+        end
         table.insert(lines, "|cff8c8c8c" .. L["Schematic, not to scale."] .. "|r")
-        page.legend:SetText(table.concat(lines, "\n"))
-        page.legend:Show()
-        page.table:SetPoint("TOPLEFT", page, "TOPLEFT", 4, -276)
+        local half = math.ceil(#lines / 2)
+        page.legendL:SetText(table.concat(lines, "\n", 1, half))
+        page.legendR:SetText(half < #lines and table.concat(lines, "\n", half + 1, #lines) or "")
+        if UI.mapBig then
+            page.mapBtn:SetSize(470, 470)
+            page.legendL:SetPoint("TOPLEFT", page.mapBtn, "TOPRIGHT", 12, -30)
+            page.legendL:SetHeight(440) page.legendR:SetHeight(440)
+            page.legendL:SetWidth(180) page.legendR:SetWidth(180)
+            page.table:Hide() page.empty:Hide()
+        else
+            page.mapBtn:SetSize(230, 230)
+            page.legendL:SetHeight(200) page.legendR:SetHeight(200)
+            page.legendL:SetWidth(300) page.legendR:SetWidth(300)
+            page.table:Show() page.empty:Show()
+        end
+        page.legendL:Show() page.legendR:Show()
+        page.table:SetPoint("TOPLEFT", page, "TOPLEFT", 4, -284)
     else
-        page.map:Hide()
-        page.legend:Hide()
+        page.mapBtn:Hide()
+        page.legendL:Hide() page.legendR:Hide()
+        page.table:Show() page.empty:Show()
         page.table:SetPoint("TOPLEFT", page, "TOPLEFT", 4, -48)
     end
     local groupSet = groupClasses()

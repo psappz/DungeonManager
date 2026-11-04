@@ -1,0 +1,109 @@
+{
+  "dungeon": "blackrock-depths",
+  "sheet": "02",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Shrine of Thaurissan, Domicile, Black Vault and Hall of Crafting"
+    },
+    {
+      "id": "II",
+      "name": "Dark Iron Highway and Black Anvil"
+    }
+  ],
+  "markers": [
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:II ↔ 02:I; arena spectator gallery to Shrine/Domicile junction"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "01:I ↔ 02:II; Shadowforge Gate to Dark Iron Highway"
+    },
+    {
+      "id": "G",
+      "type": "transition",
+      "to": "02:I ↔ 02:II; descent through Hall of Crafting to Black Anvil"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Pyromancer Loregrain"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Warder Stilgiss"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Verek"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Watchman Doomgrip"
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "Fineous Darkvire"
+    },
+    {
+      "id": "10",
+      "type": "boss",
+      "name": "Lord Incendius"
+    },
+    {
+      "id": "11",
+      "type": "boss",
+      "name": "Bael’Gar"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Monument of Franclorn Forgewright",
+      "quest": "Dark Iron Legacy"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "The Heart of the Mountain",
+      "quest": "The Heart of the Mountain"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Ironfel",
+      "quest": "Dark Iron Legacy"
+    },
+    {
+      "id": "Q7",
+      "type": "quest",
+      "name": "Encased Fiery Essence",
+      "quest": "A Taste of Flame"
+    }
+  ],
+  "uncertain": [
+    "Domicile descent, eastern city junctions and Hall of Crafting ramp are abstracted; their exact turns and vertical stacking remain unverified.",
+    "Vault markers show encounter locations within a room, not measured coffer or NPC coordinates.",
+    "Fineous patrols the Hall of Crafting route; marker 9 is approximate.",
+    "The highway gate is schematic and state-dependent. Lava swimming routes are omitted because the safe take-off, landing and intermediate ledges were not verified."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "G descends from the crafting halls to the anvil. The small unlabelled rectangle beside boss 10 represents Black Anvil, not Black Forge.",
+    "Operating Shadowforge Lock enables F on sheet 01 but blocks the highway route from D to the anvil. The eastern route through C and G remains available.",
+    "Watchman Doomgrip appears after the coffer event. Dark Keeper spawn selection varies; no invented fixed keeper position is drawn.",
+    "Return to Q4 after obtaining Ironfel."
+  ],
+  "sources": [
+    "https://www.wowhead.com/classic/guide/blackrock-depths-detention-block-dungeon-strategy-wow-classic",
+    "https://www.wowhead.com/classic/guide/blackrock-depths-shadowforge-city-dungeon-strategy-wow-classic",
+    "https://warcraft.wiki.gg/wiki/Blackrock_Depths_Regions"
+  ]
+}

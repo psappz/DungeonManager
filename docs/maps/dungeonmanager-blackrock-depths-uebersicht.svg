@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="992" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<path d="M 330 220 H 700 M 330 320 H 700 M 250 360 V 700 M 350 800 H 690" fill="none" stroke="#c7a14a" stroke-width="64"/>
+<path d="M 330 220 H 700 M 330 320 H 700 M 250 360 V 700 M 350 800 H 690" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 80 100 H 380 V 400 H 80 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<text x="230.0" y="155">I</text>
+<path d="M 650 100 H 950 V 400 H 650 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<text x="800.0" y="155">II</text>
+<path d="M 80 650 H 380 V 950 H 80 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<text x="230.0" y="705">III</text>
+<path d="M 650 650 H 950 V 950 H 650 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<text x="800.0" y="705">IV</text>
+<rect x="316" y="192" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="350" y="231">C</text>
+<rect x="646" y="192" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="680" y="231">C</text>
+<rect x="316" y="292" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="350" y="331">D</text>
+<rect x="646" y="292" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="680" y="331">D</text>
+<rect x="216" y="342" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="250" y="381">F</text>
+<rect x="216" y="652" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="250" y="691">F</text>
+<rect x="316" y="772" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="350" y="811">K</text>
+<rect x="646" y="772" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="680" y="811">K</text>
+</svg>

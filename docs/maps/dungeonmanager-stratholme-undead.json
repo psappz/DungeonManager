@@ -1,0 +1,128 @@
+{
+  "dungeon": "stratholme-undead",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Service Gate / Alonsus Chapel / approach"
+    },
+    {
+      "id": "II",
+      "name": "Ziggurat district"
+    },
+    {
+      "id": "III",
+      "name": "Magistrate Barthilas approach / Slaughter Square"
+    },
+    {
+      "id": "IV",
+      "name": "Slaughterhouse / Baron Rivendare"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Stonespine",
+      "notes": "Optional rare patrol; approximate search area."
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Nerub'enkan",
+      "notes": "Clear the Thuzadin Acolytes inside this ziggurat after the boss."
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Baroness Anastari",
+      "notes": "Clear the Thuzadin Acolytes inside this ziggurat after the boss."
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Black Guard Swordsmith",
+      "notes": "Optional summon from Blacksmithing Plans near Anastari; exact location unverified."
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Maleki the Pallid",
+      "notes": "Clear the Thuzadin Acolytes inside this ziggurat after the boss. The three ziggurats may be visited in a different order."
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Magistrate Barthilas",
+      "notes": "Late encounter position for a service-gate run. Barthilas can instead be encountered near the entrance when approaching from the main-gate side; that alternative position is not mapped."
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Ramstein the Gorger",
+      "notes": "Appears during the Slaughter Square event after clearing the abominations. Subsequent undead waves and Black Guard Sentries must be defeated before the Baron encounter."
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Baron Rivendare"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Aurius",
+      "quest": "The Medallion of Faith",
+      "additional_quests": [
+        "Aurius' Reckoning"
+      ],
+      "notes": "Medallion pickup is in Malor's Strongbox on the live side; this marks Aurius in the chapel."
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Scourge Data",
+      "quest": "The Active Agent",
+      "notes": "Repeated in all three ziggurats to mark alternative search locations; only one contains the quest object."
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Menethil's Gift",
+      "quest": "Menethil's Gift",
+      "notes": "Ritual symbol near Baron Rivendare."
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Ysida Harmon",
+      "quest": "Dead Man's Plea"
+    },
+    {
+      "id": "E",
+      "type": "entrance",
+      "notes": "Service Gate; requires the Key to the City or another valid unlocking method."
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I <-> II: streets leading into the ziggurat district."
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "II <-> III: access to Slaughter Square is unlocked by clearing all three ziggurats, including their acolytes."
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "III <-> IV: Slaughterhouse entrance; final access follows the courtyard event."
+    }
+  ],
+  "uncertain": [
+    "Dashed routes express known connections, not verified street geometry. Room shapes, distances and relative elevations are schematic.",
+    "Stonespine patrol and the late Barthilas position are approximate. The alternative early Barthilas location and the main-gate approach are omitted.",
+    "The exact street junctions between the three ziggurats are unverified; panel II is a connectivity abstraction, not a literal central crossroads.",
+    "The Black Guard Swordsmith plans, Aurius, Scourge Data, ritual symbol and Ysida positions are approximate area markers.",
+    "The cross-wing connection to Stratholme Live is not mapped until a shared street layout is verified. Variable crates and roaming quest targets are omitted."
+  ]
+}

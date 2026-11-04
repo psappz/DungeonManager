@@ -1,0 +1,140 @@
+{
+  "dungeon": "blackfathom-deeps",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Drowned Sacellum / Pool of Ask'Ar"
+    },
+    {
+      "id": "II",
+      "name": "South Hall / Eastern Passage"
+    },
+    {
+      "id": "III",
+      "name": "Moonshrine Ruins — Underwater"
+    },
+    {
+      "id": "IV",
+      "name": "Moonshrine Sanctum / Aku'mai's Lair"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Ghamoo-ra"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Lady Sarevess"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Gelihast"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Lorgus Jett"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Baron Aquanis"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Old Serra'kis"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Twilight Lord Kelris"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Aku'mai"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Lorgalis Manuscript",
+      "quest": "Knowledge in the Deeps"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Argent Guard Thaelrid",
+      "quest": "Blackfathom Villainy"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Lorgus Jett",
+      "quest": "Allegiance to the Old Gods"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Fathom Core",
+      "quest": "Amongst the Ruins"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Strange Water Globe",
+      "quest": "Baron Aquanis"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Head of Kelris",
+      "quest": "Blackfathom Villainy"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01: I ↔ II; southern exit from the pool"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01: II ↔ IV; entrance to the Moonshrine Ruins"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01: IV ↔ III; dive below the ruins and return to the western ledge"
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "T",
+      "type": "teleport",
+      "name": "Altar of the Deeps",
+      "to": "Unverified: return toward the Blackfathom Deeps entrance; see uncertain"
+    }
+  ],
+  "uncertain": [
+    "Dashed stepping stones in I show the documented jump route through the Drowned Sacellum; exact gaps and ledge shapes require verification.",
+    "The dashed underwater outline in III is a schematic basin connecting the Fathom Core and the northern Old Serra'kis alcove; precise submerged walls and supports are not verified.",
+    "T marks the altar behind Aku'mai. Sources disagree about its return-teleport function versus a buff-only function. Vanilla 1.12 behavior and the destination must be verified in game."
+  ],
+  "notes": [
+    "Only the instanced dungeon is shown.",
+    "This full-clear numbering visits the underwater encounters before Kelris. They can also be visited later.",
+    "Baron Aquanis is summoned through the Horde Fathom Core quest interaction, not a mandatory encounter. Q5 is the quest-starting drop from boss 5.",
+    "Q2 also serves the objective of In Search of Thaelrid.",
+    "Lady Sarevess and Thaelrid are reached by swimming beneath rock overhangs.",
+    "The four small squares beside Kelris represent the braziers that trigger the event opening the final door.",
+    "Twilight Falls and The Orb of Soran'ruk use distributed creature drops in the Moonshrine area; no fixed pickup is asserted.",
+    "No Season of Discovery teleport network is included. Panels are schematic and not to scale."
+  ]
+}

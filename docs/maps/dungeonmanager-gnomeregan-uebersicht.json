@@ -1,0 +1,45 @@
+{
+  "dungeon": "gnomeregan",
+  "sheet": "uebersicht",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Sheet 01 — Entrance, Hall of Gears and Dormitory"
+    },
+    {
+      "id": "II",
+      "name": "Sheet 02 — Launch Bay"
+    },
+    {
+      "id": "III",
+      "name": "Sheet 03 — Engineering Labs and Tinker’s Court"
+    }
+  ],
+  "markers": [
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:III ↔ 02:I; two-tier corridor to upper Launch Bay"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "02:I ↔ 03:I; junction beyond the ramp to upper Engineering Labs"
+    },
+    {
+      "id": "G",
+      "type": "transition",
+      "to": "02:II ↔ 03:III; descending corridor toward Tinker’s Court"
+    }
+  ],
+  "uncertain": [],
+  "notes": [
+    "Connectivity diagram only. Roman numerals inside nodes identify detail sheets.",
+    "All connections shown are bidirectional. Detail sheets contain the bosses and quest markers."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/gn/gnlr.pdf",
+    "https://www.youtube.com/watch?v=GhGlT48i_LI",
+    "https://warcraft.wiki.gg/wiki/Launch_Bay"
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "dungeon": "shadowfang-keep",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Entrance / Courtyard / Prison / Stables"
+    },
+    {
+      "id": "II",
+      "name": "Kitchen / Dining Hall"
+    },
+    {
+      "id": "III",
+      "name": "Upper Hall / Battlements"
+    },
+    {
+      "id": "IV",
+      "name": "Tower / Arugal's Chamber"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Rethilgore"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Razorclaw the Butcher"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Baron Silverlaine"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Commander Springvale"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Odo the Blindwatcher"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Deathsworn Captain"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Fenrus the Devourer"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Wolf Master Nandos"
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "Archmage Arugal"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Deathstalker Adamant",
+      "quest": "Deathstalkers in Shadowfang"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Deathstalker Vincent",
+      "quest": "Deathstalkers in Shadowfang"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Jordan's Smithing Hammer",
+      "quest": "The Test of Righteousness"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Shadowfang Darksoul / Large Soran'ruk Fragment",
+      "quest": "The Orb of Soran'ruk"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "The Book of Ur",
+      "quest": "The Book of Ur"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Head of Arugal",
+      "quest": "Arugal Must Die"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "01: I ↔ II; stairs down from the courtyard to the kitchen"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01: II ↔ III; stairs behind Baron Silverlaine"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01: III ↔ IV; battlements to the tower"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "01: I ↔ III; upper route bypassing the kitchen and dining hall"
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    }
+  ],
+  "uncertain": [
+    "Dashed connections in IV preserve the known route to Fenrus, Nandos and Arugal; the exact spiral stair geometry and intermediate landings require an in-game survey. No additional rooms are asserted.",
+    "Dashed ledges in the final chamber indicate the known broken upper walkway; precise gaps and ramp positions remain unverified."
+  ],
+  "notes": [
+    "Free Deathstalker Adamant or Sorcerer Ashcrombe after Rethilgore to open the courtyard gate. Q1 labels Adamant; both prisoners are in the prison area.",
+    "Deathsworn Captain is a rare spawn on the battlement route after Odo.",
+    "Q4 marks a creature-drop area, not a single fixed quest object. Shadowfang Darksouls also occur farther along the route.",
+    "Q5 is on a shelf in the Fenrus room. Q6 is loot from Archmage Arugal.",
+    "The Voidwalkers summoned after Fenrus are part of the gate-opening event and have no separate boss number.",
+    "Panels are schematic route sections. Stair arrows indicate changes in height; upper tower spaces are separated in the drawing to avoid overlaps.",
+    "No fixed player teleporter is asserted. Arugal's combat teleports are not map travel links."
+  ]
+}

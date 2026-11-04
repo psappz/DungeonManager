@@ -1,0 +1,134 @@
+{
+  "dungeon": "dire-maul-east",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Upper approach / Pusillin route"
+    },
+    {
+      "id": "II",
+      "name": "Lethtendris platform / Zevrim platform"
+    },
+    {
+      "id": "III",
+      "name": "Courtyard / Old Ironbark / Hydrospawn pool"
+    },
+    {
+      "id": "IV",
+      "name": "Lower Conservatory / Shrine of Eldretharr"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Pusillin",
+      "notes": "Final combat location after the chase; drops the Crescent Key. Intermediate chase stops are not mapped."
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Lethtendris",
+      "notes": "Shared encounter with Pimgib; numbers 2 and 3 are not separate rooms or a required kill order."
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Pimgib"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Hydrospawn"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Zevrim Thornhoof",
+      "notes": "Kill Zevrim, then return to Old Ironbark in panel III to unlock transition D."
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Alzzin the Wildshaper"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Isalien",
+      "notes": "Optional Dungeon Set 2 summon in the same chamber as Alzzin; requires the Brazier of Beckoning. Empyrean is an encounter add, not a separate boss marker."
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Book of Incantations",
+      "quest": "Pusillin and the Elder Azj'Tordin"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Lethtendris's Web",
+      "quest": "Lethtendris's Web"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Hydrospawn Essence",
+      "quest": "Arcane Refreshment"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Felvine Shard",
+      "quest": "Shards of the Felvine"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Isalien",
+      "quest": "The Left Piece of Lord Valthalak's Amulet",
+      "additional_quests": [
+        "The Right Piece of Lord Valthalak's Amulet"
+      ]
+    },
+    {
+      "id": "E",
+      "type": "entrance",
+      "notes": "Main entrance from the central Dire Maul courtyard."
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I <-> III: passage down from the upper route to the lower hall."
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "III <-> II: ramp to the Lethtendris and Pimgib platform."
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "III <-> II: passage and ascent to Zevrim Thornhoof."
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "III <-> IV: Old Ironbark / Ironbark the Redeemed opens the Conservatory Door after Zevrim dies; then descend to Alzzin."
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "I -> III: one-way jump from the entrance ledge to the courtyard; skips the Pusillin chase."
+    }
+  ],
+  "uncertain": [
+    "Dashed passages show known connections with unverified geometry; bends, lengths and compass directions are schematic. Room outlines do not reproduce surveyed footprints.",
+    "The exact Pusillin chase route and intermediate stops are not established; only the starting approach and final combat area are represented.",
+    "The precise ramp junctions and the location of the courtyard jump are unverified. Panels II and III separate the elevated boss platforms from the lower hall.",
+    "The exact Felvine Shard and Isalien summoning positions are unverified; Q4 and Q5 are area markers.",
+    "The final descent and the exit tunnel opened during the Alzzin encounter have unverified geometry. The outgoing arrow marks the exit direction, not a teleport.",
+    "The Eldreth Row entrance and the Crescent Key entrance at Lariss Pavilion are omitted because their exact junctions are not verified for this drawing. Variable A Dusty Tome spawns are not mapped."
+  ]
+}

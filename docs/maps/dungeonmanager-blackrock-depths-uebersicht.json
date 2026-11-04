@@ -1,0 +1,54 @@
+{
+  "dungeon": "blackrock-depths",
+  "sheet": "uebersicht",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Sheet 01 — Detention Block, arena and East Garrison"
+    },
+    {
+      "id": "II",
+      "name": "Sheet 02 — Eastern city, vault and Black Anvil"
+    },
+    {
+      "id": "III",
+      "name": "Sheet 03 — West Garrison, Manufactory and Grim Guzzler"
+    },
+    {
+      "id": "IV",
+      "name": "Sheet 04 — Inner city, Molten Core branch and Imperial Seat"
+    }
+  ],
+  "markers": [
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:II ↔ 02:I; arena spectator gallery to Shrine/Domicile junction"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "01:I ↔ 02:II; Shadowforge Gate to Dark Iron Highway"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "01:II ↔ 03:I; upper crossing to West Garrison, enabled by Shadowforge Lock"
+    },
+    {
+      "id": "K",
+      "type": "transition",
+      "to": "03:III ↔ 04:I; event-dependent rear exit to western Shadowforge City"
+    }
+  ],
+  "uncertain": [],
+  "notes": [
+    "Connection schema only. Roman numerals in nodes identify detail sheets.",
+    "C is the upper eastern-city route; D is the lower highway route. F requires operating Shadowforge Lock. The lock closes the lower highway gate while enabling F."
+  ],
+  "sources": [
+    "https://www.wowhead.com/classic/guide/blackrock-depths-detention-block-dungeon-strategy-wow-classic",
+    "https://www.wowhead.com/classic/guide/blackrock-depths-shadowforge-city-dungeon-strategy-wow-classic",
+    "https://warcraft.wiki.gg/wiki/Blackrock_Depths_Regions"
+  ]
+}

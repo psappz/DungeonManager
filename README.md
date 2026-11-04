@@ -7,7 +7,7 @@ Dungeon planner for **WoW Forever**. DungeonManager shows which dungeons fit you
 ## Features (v0.9)
 
 - **Leveling list** with colours: green = recommended and open quests for you, grey-green = recommended but nothing open for you, orange = can enter but too hard, grey = outleveled, red = cannot enter (level or attunement). Widen the recommended range with −y / +x per character.
-- **Detail view** per dungeon: range, entry level, group finder level, bosses, schematic overview map (first maps: Blackfathom Deeps, The Stockade) and every quest with status (in log, pick up, prerequisite open, starts in the dungeon, level too low, done). Done quests move to the bottom. Click a quest to set a map marker at the quest giver.
+- **Detail view** per dungeon: range, entry level, group finder level, bosses, schematic overview maps for all 20 classic dungeons (larger dungeons with an overview and several sheets; click to enlarge) and every quest with status (in log, pick up, prerequisite open, starts in the dungeon, level too low, done). Done quests move to the bottom. Click a quest to set a map marker at the quest giver.
 - **Faction safe**: quest givers and turn-ins of the other faction are never shown. Dungeons without quests for your faction are marked.
 - **Class quests** of all classes, with class icon. Other classes in grey-green (planning for the group); highlighted when that class is in your group.
 - **Hardcore protection**: dungeons whose entrance lies in a hostile capital (Ragefire Chasm, Ruins of Lordaeron, Hall of Thanes, The Stockade) are hidden on Hardcore realms (automatic, on or off).

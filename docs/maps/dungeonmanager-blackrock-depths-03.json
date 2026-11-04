@@ -1,0 +1,119 @@
+{
+  "dungeon": "blackrock-depths",
+  "sheet": "03",
+  "panels": [
+    {
+      "id": "I",
+      "name": "West Garrison and Manufactory"
+    },
+    {
+      "id": "II",
+      "name": "Grim Guzzler — lower floor"
+    },
+    {
+      "id": "III",
+      "name": "Grim Guzzler — upper floor and rear exit"
+    }
+  ],
+  "markers": [
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "01:II ↔ 03:I; upper crossing to West Garrison, enabled by Shadowforge Lock"
+    },
+    {
+      "id": "H",
+      "type": "transition",
+      "to": "03:I ↔ 03:II; Manufactory bridge to Grim Guzzler lower floor"
+    },
+    {
+      "id": "J",
+      "type": "transition",
+      "to": "03:II ↔ 03:III; Grim Guzzler internal stairs"
+    },
+    {
+      "id": "K",
+      "type": "transition",
+      "to": "03:III ↔ 04:I; event-dependent rear exit to western Shadowforge City"
+    },
+    {
+      "id": "12",
+      "type": "boss",
+      "name": "General Angerforge"
+    },
+    {
+      "id": "13",
+      "type": "boss",
+      "name": "Golem Lord Argelmach"
+    },
+    {
+      "id": "14",
+      "type": "boss",
+      "name": "Hurley Blackbreath"
+    },
+    {
+      "id": "15",
+      "type": "boss",
+      "name": "Ribbly Screwspigot"
+    },
+    {
+      "id": "16",
+      "type": "boss",
+      "name": "Plugger Spazzring"
+    },
+    {
+      "id": "17",
+      "type": "boss",
+      "name": "Phalanx"
+    },
+    {
+      "id": "Q8",
+      "type": "quest",
+      "name": "Marshal Windsor’s Lost Information — Angerforge",
+      "quest": "A Shred of Hope"
+    },
+    {
+      "id": "Q9",
+      "type": "quest",
+      "name": "Marshal Windsor’s Lost Information — Argelmach",
+      "quest": "A Shred of Hope"
+    },
+    {
+      "id": "Q10",
+      "type": "quest",
+      "name": "Thunderbrew Lager Kegs",
+      "quest": "Hurley Blackbreath"
+    },
+    {
+      "id": "Q11",
+      "type": "quest",
+      "name": "Ribbly Screwspigot",
+      "quest": "Ribbly Screwspigot"
+    },
+    {
+      "id": "Q12",
+      "type": "quest",
+      "name": "Private Rocknot",
+      "quest": "Rocknot’s Ale"
+    }
+  ],
+  "uncertain": [
+    "Garrison ramps, the Manufactory bridge and the exact tavern stair footprint are unverified; dashed corridors preserve the documented connections only.",
+    "Tavern object positions and room proportions are approximate.",
+    "The storeroom is documented, but its detailed shape and entrance alignment are uncertain."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "Angerforge is a descending side trip; return to the landing to continue into the Manufactory.",
+    "The bar’s rear exit is on the upper level. Rocknot’s event is one way to open it and activate Phalanx. Alternative exit methods are not separate doors.",
+    "Hurley and Ribbly are lower-floor optional encounters; Plugger and Phalanx are upstairs. The numbering is a full-clear convention, not a requirement to kill friendly vendors.",
+    "J is the same internal stair connection at both ends.",
+    "Coren Direbrew and later transport devices are excluded from this Vanilla map."
+  ],
+  "sources": [
+    "https://www.wowhead.com/classic/guide/blackrock-depths-detention-block-dungeon-strategy-wow-classic",
+    "https://www.wowhead.com/classic/guide/blackrock-depths-shadowforge-city-dungeon-strategy-wow-classic",
+    "https://warcraft.wiki.gg/wiki/Blackrock_Depths_Regions"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "dungeon": "uldaman",
+  "sheet": "03",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Hall of the Crafters and gated descent"
+    },
+    {
+      "id": "II",
+      "name": "Khaz’goroth’s Seat and Ancient Treasure vault"
+    }
+  ],
+  "markers": [
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "02:I ↔ 03:I; approach to Hall of the Crafters"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "03:I ↔ 03:II; gated descending passage to Archaedas; exact bends uncertain"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Archaedas"
+    },
+    {
+      "id": "Q9",
+      "type": "quest",
+      "name": "Shattered Necklace Power Source",
+      "quest": "Restoring the Necklace"
+    },
+    {
+      "id": "Q10",
+      "type": "quest",
+      "name": "The Discs of Norgannon",
+      "quest": "The Platinum Discs"
+    }
+  ],
+  "uncertain": [
+    "The descending corridor C has confirmed endpoints but unverified ramp bends and vertical alignment; its geometry is dashed.",
+    "The approach and treasure-vault dimensions are schematic; Q10 is approximate within the vault.",
+    "Exact vertical overlap between the upper and lower chambers is intentionally not asserted."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "The four small unnumbered circles represent the Hall of the Crafters guardian event, not additional named bosses. The square is its altar.",
+    "The gate beyond the guardian event leads toward Archaedas. The vault opens after Archaedas is defeated.",
+    "Q9 also serves Find the Gems and Power Source.",
+    "No return teleporter is asserted. Return through the cleared passages."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/uldaman/uldaman_lr.pdf",
+    "https://www.icy-veins.com/wow-classic/uldaman-dungeon-guide",
+    "https://www.icy-veins.com/wow-classic/uldaman-quests-guide"
+  ]
+}

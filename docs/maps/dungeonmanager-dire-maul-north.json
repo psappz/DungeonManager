@@ -1,0 +1,149 @@
+{
+  "dungeon": "dire-maul-north",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Gordok Commons / courtyards"
+    },
+    {
+      "id": "II",
+      "name": "Lower hall / Broken Trap / Knot Thimblejack"
+    },
+    {
+      "id": "III",
+      "name": "Upper platform / Ogre Tannin Basket"
+    },
+    {
+      "id": "IV",
+      "name": "Captain Kromcrush approach / Gordok's Seat"
+    }
+  ],
+  "markers": [
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Guard Mol'dar",
+      "notes": "Patrolling boss; dashed marker is an approximate area, not a fixed spawn coordinate."
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Stomper Kreeg"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Guard Fengus",
+      "notes": "Patrolling boss; dashed marker is an approximate area, not a fixed spawn coordinate."
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Guard Slip'kik",
+      "notes": "Patrolling boss; dashed marker is an approximate area, not a fixed spawn coordinate."
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Captain Kromcrush"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Cho'Rush the Observer",
+      "notes": "Shares the final encounter with King Gordok. Spare him for a full tribute run; numbers do not require killing every boss."
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "King Gordok"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Stomper Kreeg",
+      "quest": "The Gordok Taste Test",
+      "notes": "Available after becoming king if Kreeg remains alive."
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Broken Trap",
+      "quest": "A Broken Trap",
+      "notes": "Repair with Frost Oil and a Thorium Widget to freeze Guard Slip'kik."
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Knot Thimblejack",
+      "quest": "The Gordok Ogre Suit",
+      "additional_quests": [
+        "Free Knot!"
+      ],
+      "notes": "Obtain the suit before freeing Knot if it is needed for this run."
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Ogre Tannin Basket",
+      "quest": "The Gordok Ogre Suit"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Captain Kromcrush",
+      "quest": "Unfinished Gordok Business",
+      "notes": "Quest interaction after becoming king if Kromcrush remains alive. Before the final encounter, the Gordok Ogre Suit can be used to send him away."
+    },
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I <-> II: courtyard door into the interior hall; the Gordok Courtyard Key is in the chest shown in panel I."
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "II <-> III: ramp from the lower hall to the platform above Knot Thimblejack."
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "III <-> IV: onward passage to Captain Kromcrush and Gordok's Seat."
+    }
+  ],
+  "symbols": [
+    {
+      "shape": "chest",
+      "panel": "I",
+      "center": [
+        330,
+        365
+      ],
+      "name": "Fengus's Chest",
+      "contents": "Gordok Courtyard Key"
+    },
+    {
+      "shape": "chest",
+      "panel": "IV",
+      "center": [
+        790,
+        930
+      ],
+      "name": "Gordok Tribute",
+      "notes": "Appears after the final encounter and the interaction with Mizzle the Crafty; exact position is schematic."
+    }
+  ],
+  "uncertain": [
+    "Dashed corridors indicate documented connections with unverified bends, dimensions and orientation. Room outlines are schematic abstractions, not surveyed footprints.",
+    "The patrol paths of Mol'dar, Fengus and Slip'kik are not established; markers 1, 3 and 4 indicate search areas.",
+    "Exact positions of the trap, Knot, the tannin basket and the Kromcrush quest interaction are unverified; Q2-Q5 are area markers.",
+    "The detailed route from the upper platform to Kromcrush, including any intermediate landings, is unverified and is compressed into a dashed connection.",
+    "Both chest positions are schematic. The Athenaeum side connection is omitted until its junction and descending passage can be verified together with Dire Maul West.",
+    "No safe path around hostile packs or patrols is asserted. Tribute uses the same rooms; it is not a separate physical corridor."
+  ]
+}

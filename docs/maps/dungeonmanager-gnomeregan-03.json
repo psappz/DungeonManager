@@ -1,0 +1,91 @@
+{
+  "dungeon": "gnomeregan",
+  "sheet": "03",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Upper Engineering Labs and Workshop Entrance"
+    },
+    {
+      "id": "II",
+      "name": "Lower Engineering Labs"
+    },
+    {
+      "id": "III",
+      "name": "Descending approach and Tinker’s Court"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance",
+      "name": "Workshop Entrance; Workshop Key required for the exterior door"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "02:I ↔ 03:I; junction beyond the ramp to upper Engineering Labs"
+    },
+    {
+      "id": "G",
+      "type": "transition",
+      "to": "02:II ↔ 03:III; descending corridor toward Tinker’s Court"
+    },
+    {
+      "id": "H",
+      "type": "transition",
+      "to": "03:II ↔ 03:III; side passage from the end-boss corridor to lower Engineering Labs"
+    },
+    {
+      "id": "J",
+      "type": "transition",
+      "to": "03:I ↔ 03:II; Engineering Labs elevator, bidirectional"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Crowd Pummeler 9-60"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Dark Iron Ambassador"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Mekgineer Thermaplugg"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Matrix Punchograph 3005-D",
+      "quest": "Data Rescue"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Thermaplugg’s Safe",
+      "quest": "Rig Wars"
+    }
+  ],
+  "uncertain": [
+    "Engineering Labs proportions, internal obstructions and corridor bends are schematic.",
+    "Q5 represents an approximate machine location in the lower Labs; duplicate machines are not drawn. Q6 is approximate within the northern side of Tinker’s Court.",
+    "Dark Iron Ambassador is rare; marker 5 is an approximate search location in the approach corridor, not a guaranteed spawn point.",
+    "No unverified drop from upper to lower Engineering Labs is drawn; use the documented elevator J."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "J is a bidirectional elevator, not a teleporter.",
+    "Suggested full-clear numbering: Grubbis, Viscous Fallout, Electrocutioner 6000, Crowd Pummeler 9-60, optional Dark Iron Ambassador, Mekgineer Thermaplugg. This is a route choice, not a mandatory encounter sequence.",
+    "The lower Labs side connection H makes a loop through the elevator and the upper Labs connection F.",
+    "Distributed quest drops and scattered collection objects are not assigned invented fixed positions."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/gn/gnlr.pdf",
+    "https://www.youtube.com/watch?v=GhGlT48i_LI",
+    "https://warcraft.wiki.gg/wiki/Launch_Bay"
+  ]
+}

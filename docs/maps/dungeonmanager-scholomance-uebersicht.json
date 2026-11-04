@@ -1,0 +1,50 @@
+{
+  "dungeon": "scholomance",
+  "sheet": "uebersicht",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Entrance, central junction and Jandice basement"
+    },
+    {
+      "id": "II",
+      "name": "Great Ossuary, Viewing Room and laboratory"
+    },
+    {
+      "id": "III",
+      "name": "Upper and lower Headmaster's Study"
+    }
+  ],
+  "markers": [
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "01:I <-> 02:I; central junction to dragon-whelp floor and Great Ossuary"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:I <-> 02:III; locked Viewing Room gate; obtain Viewing Room Key from Rattlegore and backtrack"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "02:III <-> 03:I; Viewing Room stairs to the upper Headmaster's Study"
+    }
+  ],
+  "uncertain": [],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Connection diagram only: I = sheet 01, II = sheet 02, III = sheet 03. Letters refer to the same connections on the detail sheets."
+  ],
+  "sources": [
+    "https://www.icy-veins.com/wow-classic/scholomance-dungeon-guide",
+    "https://warcraft.wiki.gg/wiki/Headmaster%27s_Study",
+    "https://www.wowhead.com/classic/guide/scholomance-dungeon-strategy-wow-classic",
+    "https://www.zockify.com/classic/dungeons/scholomance/",
+    "https://classicdb.ch/?quest=7647",
+    "https://giddygamer.com/wow/content/items/ds2/ds2_quest_details.pdf"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "dungeon": "scarlet-monastery-armory",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Entrance and Training Grounds"
+    },
+    {
+      "id": "II",
+      "name": "Footman’s Armory"
+    },
+    {
+      "id": "III",
+      "name": "Crusader’s Armory and Hall of Champions"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I ↔ II; stairs from Training Grounds to Footman’s Armory"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "II ↔ III; passage to Crusader’s Armory"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Herod"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Herod",
+      "quest": "In the Name of the Light"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Herod",
+      "quest": "Into The Scarlet Monastery"
+    }
+  ],
+  "uncertain": [
+    "The exact staircase shape and landing inside the Hall of Champions are unverified; the dashed arrow marks the approximate connection."
+  ],
+  "notes": [
+    "Panels divide a continuous route with local elevation changes.",
+    "The inner rectangle in the Training Grounds marks a traversable courtyard surface, not a wall.",
+    "Q1 and Q2 share boss 1 as their objective; they are not separate objects.",
+    "Scarlet Trainees enter after Herod dies; they are not a separate boss.",
+    "Hearts of Zeal has distributed enemy drops, not a fixed quest location.",
+    "The Scarlet Key opens the external Armory door; it is obtained in the Library."
+  ]
+}

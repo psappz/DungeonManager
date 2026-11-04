@@ -1,0 +1,83 @@
+{
+  "dungeon": "maraudon",
+  "sheet": "02",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Inner — Earth Song Falls and branching ascent"
+    },
+    {
+      "id": "II",
+      "name": "Inner — Zaetar’s Grave, upper terrace"
+    },
+    {
+      "id": "III",
+      "name": "Inner — water below Zaetar’s Grave"
+    }
+  ],
+  "markers": [
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:III → 02:I; waterfall arrival"
+    },
+    {
+      "id": "T",
+      "type": "teleport",
+      "to": "Arrival at Earth Song Falls from the external Scepter of Celebras portal"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "I ↔ II; route to Princess Theradras"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "II → III; waterfall jump north of the Princess terrace"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Tinkerer Gizlock"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Landslide"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Princess Theradras"
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "Rotgrip"
+    },
+    {
+      "id": "Q7",
+      "type": "quest",
+      "name": "Princess Theradras",
+      "quest": "Corruption of Earth and Seed"
+    },
+    {
+      "id": "Q8",
+      "type": "quest",
+      "name": "Zaetar's Spirit",
+      "quest": "Seed of Life"
+    }
+  ],
+  "uncertain": [
+    "Dashed inner corridors abstract the winding ramps, bridge and Gizlock descent; exact geometry is unverified.",
+    "The lower pool outline and Rotgrip’s patrol are approximate. No unverified return path from the pool is drawn."
+  ],
+  "notes": [
+    "Visit Gizlock and Landslide as side trips, then Princess Theradras and Rotgrip.",
+    "F is a one-way downward jump, despite its upward screen direction in panel II.",
+    "Zaetar’s Spirit appears after Princess Theradras dies.",
+    "T is an arrival marker; it does not provide a return teleport.",
+    "Twisted Evils uses distributed enemy drops and has no fixed marker."
+  ]
+}

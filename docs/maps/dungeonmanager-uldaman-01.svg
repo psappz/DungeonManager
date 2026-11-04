@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="992" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="512.0" y="59">I</text>
+<path d="M 920 330 H 750 H 540 H 330 M 690 330 V 600 H 720 V 760 M 540 330 V 165 M 250 270 V 130" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 920 330 H 750 H 540 H 330 M 690 330 V 600 H 720 V 760 M 540 330 V 165 M 250 270 V 130" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 650 240 H 820 V 430 H 650 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 475 260 H 590 V 410 H 475 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 150 230 H 380 V 500 H 150 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<path d="M 150 390 H 90 V 570" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 150 390 H 90 V 570" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 55 535 H 200 V 700 H 55 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 600 690 H 870 V 900 H 600 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<rect x="886" y="302" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="920" y="341">E</text>
+<circle cx="720" cy="770" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="720" y="781">1</text>
+<rect x="766" y="822" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="800" y="861">Q1</text>
+<rect x="606" y="822" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="640" y="861">Q2</text>
+<circle cx="535" cy="330" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="535" y="341">2</text>
+<rect x="506" y="137" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="540" y="176">Q3</text>
+<circle cx="125" cy="600" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="125" y="611">3</text>
+<rect x="91" y="642" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="125" y="681">Q4</text>
+<rect x="216" y="102" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="250" y="141">A</text>
+<path d="M 415 345 V 389 M 403 375 L 415 389 L 427 375" fill="none" stroke="#c7a14a" stroke-width="4"/>
+</svg>

@@ -1,0 +1,81 @@
+{
+  "dungeon": "lower-blackrock-spire",
+  "sheet": "03",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Urok platform and Halycon's Lair"
+    },
+    {
+      "id": "II",
+      "name": "Storehouse and Chamber of Battle"
+    }
+  ],
+  "markers": [
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "02:II <-> 03:I; spider ramps ascend to the Urok platform"
+    },
+    {
+      "id": "11",
+      "type": "boss",
+      "name": "Urok Doomhowl"
+    },
+    {
+      "id": "Q8",
+      "type": "quest",
+      "name": "Urok's Tribute Pile",
+      "quest": "Urok Doomhowl"
+    },
+    {
+      "id": "12",
+      "type": "boss",
+      "name": "Halycon"
+    },
+    {
+      "id": "13",
+      "type": "boss",
+      "name": "Gizrul the Slavener"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "03:I <-> 03:II; stairs beyond the Halycon junction toward the Storehouse and Chamber of Battle"
+    },
+    {
+      "id": "14",
+      "type": "boss",
+      "name": "Quartermaster Zigris"
+    },
+    {
+      "id": "15",
+      "type": "boss",
+      "name": "Ghok Bashguud"
+    },
+    {
+      "id": "16",
+      "type": "boss",
+      "name": "Overlord Wyrmthalak"
+    }
+  ],
+  "uncertain": [
+    "Scorpid passages, staircase turns and the cracked-floor approach are schematic. No additional side rooms are inferred.",
+    "Ghok Bashguud is a rare in the final approach area; marker 15 is a search location, not a verified fixed point.",
+    "Burning Felguard is a rare summon without a fixed room marker and is not placed on the map."
+  ],
+  "notes": [
+    "Original schematic for Vanilla/Classic 1.12; not to scale. Dashed outlines indicate unverified local geometry or approximate marker positions.",
+    "Panel positions are for page layout, not a common compass or measured elevation. Paired letters connect fields; arrows identify local vertical movement.",
+    "Boss numbering suggests a full-clear route including optional encounters; it is not a mandatory kill order. Return along the same path from dead ends unless a one-way transition is stated.",
+    "Urok requires the tribute event. Halycon and Gizrul share the lair; Gizrul follows Halycon.",
+    "This full-clear numbering visits the lair before the Storehouse; other groups may reverse those excursions."
+  ],
+  "sources": [
+    "https://warcraft.wiki.gg/wiki/Lower_Blackrock_Spire_walkthrough",
+    "https://giddygamer.com/wow/content/guides/blackrock_mountain_entrance_guide.pdf",
+    "https://www.icy-veins.com/wow-classic/lower-blackrock-spire-guide",
+    "https://www.warcrafttavern.com/wow-classic/guides/lower-blackrock-spire/",
+    "https://www.wowhead.com/classic/npc=9237/war-master-voone"
+  ]
+}

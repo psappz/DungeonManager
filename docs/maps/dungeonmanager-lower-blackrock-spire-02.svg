@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="488" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="260.0" y="59">I</text>
+<rect x="520" y="16" width="488" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<text x="764.0" y="59">II</text>
+<path d="M 100 150 H 250 V 400 H 390 V 650 H 250 V 830 M 250 280 H 100 M 250 400 H 100 M 390 650 H 440" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 100 150 H 250 V 400 H 390 V 650 H 250 V 830 M 250 280 H 100 M 250 400 H 100 M 390 650 H 440" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 185 210 H 325 V 440 H 185 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<path d="M 60 480 H 230 V 630 H 60 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<path d="M 250 400 V 550 H 145" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 250 400 V 550 H 145" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 150 760 H 410 V 935 H 150 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<rect x="66" y="122" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="100" y="161">A</text>
+<rect x="66" y="252" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="100" y="291">C</text>
+<path d="M 145 310 V 354 M 133 340 L 145 354 L 157 340" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<circle cx="115" cy="540" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="115" y="551">5</text>
+<rect x="156" y="562" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="190" y="601">Q4</text>
+<rect x="406" y="622" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="440" y="661">Q5</text>
+<circle cx="220" cy="820" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="220" y="831">6</text>
+<circle cx="335" cy="820" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="335" y="831">7</text>
+<rect x="246" y="872" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="280" y="911">Q6</text>
+<path d="M 600 150 H 760 V 340 H 880 V 510 H 710 V 690 H 860 V 900" fill="none" stroke="#c7a14a" stroke-width="64" stroke-dasharray="12 9"/>
+<path d="M 600 150 H 760 V 340 H 880 V 510 H 710 V 690 H 860 V 900" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 670 270 H 850 V 415 H 670 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<path d="M 630 560 L 730 520 L 830 575 V 735 L 710 780 L 630 700 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4" stroke-dasharray="12 9"/>
+<rect x="566" y="122" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="600" y="161">C</text>
+<path d="M 650 185 V 229 M 638 215 L 650 229 L 662 215" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<circle cx="760" cy="340" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="760" y="351">8</text>
+<circle cx="710" cy="630" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="710" y="641">9</text>
+<circle cx="860" cy="810" r="30" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="860" y="821">10</text>
+<rect x="726" y="692" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="760" y="731">Q7</text>
+<rect x="826" y="892" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="860" y="931">D</text>
+<path d="M 920 620 V 664 M 908 650 L 920 664 L 932 650" fill="none" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 908 634 L 920 620 L 932 634" fill="none" stroke="#c7a14a" stroke-width="4"/>
+</svg>

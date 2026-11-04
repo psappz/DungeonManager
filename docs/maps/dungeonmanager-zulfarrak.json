@@ -1,0 +1,169 @@
+{
+  "dungeon": "zulfarrak",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Entrance plaza and eastern road"
+    },
+    {
+      "id": "II",
+      "name": "Graveyard and pyramid"
+    },
+    {
+      "id": "III",
+      "name": "Chief Ukorz Sandscalp’s enclosure"
+    },
+    {
+      "id": "IV",
+      "name": "Sacred pool and western return"
+    }
+  ],
+  "markers": [
+    {
+      "id": "E",
+      "type": "entrance"
+    },
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "I ↔ II; eastern road to the graveyard"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "II ↔ III; approach to the gate opened by Weegli Blastfuse"
+    },
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "II ↔ IV; western road from the pyramid area to the pool"
+    },
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "IV ↔ I; southern return to the entrance plaza"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Zerillis"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Antu'sul"
+    },
+    {
+      "id": "3",
+      "type": "boss",
+      "name": "Theka the Martyr"
+    },
+    {
+      "id": "4",
+      "type": "boss",
+      "name": "Witch Doctor Zum'rah"
+    },
+    {
+      "id": "5",
+      "type": "boss",
+      "name": "Dustwraith"
+    },
+    {
+      "id": "6",
+      "type": "boss",
+      "name": "Nekrum Gutchewer"
+    },
+    {
+      "id": "7",
+      "type": "boss",
+      "name": "Shadowpriest Sezz'ziz"
+    },
+    {
+      "id": "8",
+      "type": "boss",
+      "name": "Sergeant Bly"
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "Ruuzlu"
+    },
+    {
+      "id": "10",
+      "type": "boss",
+      "name": "Chief Ukorz Sandscalp"
+    },
+    {
+      "id": "11",
+      "type": "boss",
+      "name": "Hydromancer Velratha"
+    },
+    {
+      "id": "12",
+      "type": "boss",
+      "name": "Gahz'rilla"
+    },
+    {
+      "id": "13",
+      "type": "boss",
+      "name": "Sandarr Dunereaver"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Tablet of Theka",
+      "quest": "The Spider God"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "First Mosh’aru Tablet",
+      "quest": "The Prophecy of Mosh’aru"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Nekrum’s Medallion",
+      "quest": "Nekrum's Medallion"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Divino-matic Rod",
+      "quest": "Divino-matic Rod"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Tiara of the Deep",
+      "quest": "Tiara of the Deep"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Second Mosh’aru Tablet",
+      "quest": "The Prophecy of Mosh’aru"
+    },
+    {
+      "id": "Q7",
+      "type": "quest",
+      "name": "Gahz'rilla's Electrified Scale",
+      "quest": "Gahz'rilla"
+    }
+  ],
+  "uncertain": [
+    "Zerillis, Dustwraith and Sandarr Dunereaver are rare; dashed markers indicate approximate search areas, not verified spawn coordinates.",
+    "Hydromancer Velratha patrols around the pool; marker 11 is approximate.",
+    "The exact position of the Tablet of Theka within Theka’s area is unverified."
+  ],
+  "notes": [
+    "Numbering follows an eastern-first circuit with optional rare encounters. Bosses 6 and 7 fight together, as do 9 and 10.",
+    "Free the prisoners after defeating the Sandfury Executioner on the pyramid. The executioner is an event guard, not a separately numbered boss.",
+    "Sergeant Bly begins on the summit; marker 8 shows the initial location, not his later fight position. Ask Weegli Blastfuse to open the gate before provoking Bly.",
+    "Q2 drops from Theka, Q3 from Nekrum, Q4 from Bly, Q5 and Q6 from Velratha, and Q7 from Gahz'rilla. Quest labels use leader lines where needed.",
+    "The gong requires the Mallet of Zul'Farrak in Vanilla.",
+    "Troll Temper and Scarab Shells are distributed drops; scarabs occur around Theka.",
+    "Courtyard outlines are simplified; minor ruins and graves are omitted."
+  ]
+}

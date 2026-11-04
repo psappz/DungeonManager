@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="992" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<path d="M 260 290 V 560 M 400 600 L 620 440" fill="none" stroke="#c7a14a" stroke-width="64"/>
+<path d="M 260 290 V 560 M 400 600 L 620 440" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 90 140 H 430 V 360 H 90 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 90 510 H 430 V 730 H 90 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<path d="M 590 290 H 930 V 850 H 590 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<text x="260" y="200">I</text>
+<text x="260" y="570">II</text>
+<text x="760" y="350">III</text>
+<rect x="226" y="292" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="260" y="331">C</text>
+<rect x="226" y="512" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="260" y="551">C</text>
+<rect x="366" y="572" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="400" y="611">F</text>
+<rect x="586" y="412" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="620" y="451">F</text>
+<rect x="366" y="662" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="400" y="701">G</text>
+<rect x="586" y="752" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="620" y="791">G</text>
+<path d="M 434 690 H 500 V 780 H 586" fill="none" stroke="#c7a14a" stroke-width="64"/>
+<path d="M 434 690 H 500 V 780 H 586" fill="none" stroke="#3b3021" stroke-width="56"/>
+<rect x="366" y="662" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="400" y="701">G</text>
+<rect x="586" y="752" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="620" y="791">G</text>
+</svg>

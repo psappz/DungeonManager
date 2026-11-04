@@ -1,0 +1,30 @@
+{
+  "dungeon": "maraudon",
+  "sheet": "uebersicht",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Sheet 01 — Orange, Purple and Celebras"
+    },
+    {
+      "id": "II",
+      "name": "Sheet 02 — Inner Maraudon"
+    }
+  ],
+  "markers": [
+    {
+      "id": "C",
+      "type": "transition",
+      "to": "01:III → 02:I; waterfall drop"
+    },
+    {
+      "id": "T",
+      "type": "teleport",
+      "to": "02:I; arrival from the Scepter of Celebras portal outside the instance"
+    }
+  ],
+  "uncertain": [],
+  "notes": [
+    "Connection diagram only. Roman numerals inside the two nodes identify detail sheets."
+  ]
+}

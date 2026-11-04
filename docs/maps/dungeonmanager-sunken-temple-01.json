@@ -1,0 +1,108 @@
+{
+  "dungeon": "sunken-temple",
+  "sheet": "01",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Hall of Serpents and statue ledges"
+    },
+    {
+      "id": "II",
+      "name": "Pit of Refuse and Altar of Hakkar"
+    }
+  ],
+  "markers": [
+    {
+      "id": "A",
+      "type": "transition",
+      "to": "uebersicht → 01:II; immediate right passage descends to Pit of Refuse; return by same stairs"
+    },
+    {
+      "id": "B",
+      "type": "transition",
+      "to": "uebersicht → 01:I; forward-right passage and first landing descend to Hall of Serpents; bidirectional"
+    },
+    {
+      "id": "F",
+      "type": "transition",
+      "to": "01:I → 01:II; one-way drop from statue ledge to the lower pit; exact take-off point uncertain"
+    },
+    {
+      "id": "1",
+      "type": "boss",
+      "name": "Spawn of Hakkar"
+    },
+    {
+      "id": "2",
+      "type": "boss",
+      "name": "Atal'alarion"
+    },
+    {
+      "id": "Q1",
+      "type": "quest",
+      "name": "Serpent Statue — South",
+      "quest": "Secret of the Circle"
+    },
+    {
+      "id": "Q2",
+      "type": "quest",
+      "name": "Serpent Statue — North",
+      "quest": "Secret of the Circle"
+    },
+    {
+      "id": "Q3",
+      "type": "quest",
+      "name": "Serpent Statue — Southwest",
+      "quest": "Secret of the Circle"
+    },
+    {
+      "id": "Q4",
+      "type": "quest",
+      "name": "Serpent Statue — Southeast",
+      "quest": "Secret of the Circle"
+    },
+    {
+      "id": "Q5",
+      "type": "quest",
+      "name": "Serpent Statue — Northwest",
+      "quest": "Secret of the Circle"
+    },
+    {
+      "id": "Q6",
+      "type": "quest",
+      "name": "Serpent Statue — Northeast",
+      "quest": "Secret of the Circle"
+    },
+    {
+      "id": "Q7",
+      "type": "quest",
+      "name": "Altar of Hakkar",
+      "quest": "Into the Depths"
+    },
+    {
+      "id": "Q8",
+      "type": "quest",
+      "name": "Idol of Hakkar",
+      "quest": "Secret of the Circle"
+    }
+  ],
+  "uncertain": [
+    "Dashed ring and pit outlines are schematic; alcove dimensions and exact access bends are unverified.",
+    "Q1–Q6 preserve statue directions and activation order, not measured positions.",
+    "F represents the documented one-way drop, with an approximate take-off and landing region. Return via A and the entrance hub to B; no unverified reverse jump or direct return stair is drawn.",
+    "Spawn of Hakkar patrols the ring; marker 1 is a search-area marker, not a fixed spawn position.",
+    "Altar, idol and pool extents are approximate."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "Q1 through Q6 encode statue activation order: South, North, Southwest, Southeast, Northwest, Northeast. Boss circles are separate.",
+    "The optional lower section is numbered first for a complete visit; groups may visit it later.",
+    "Spawn of Hakkar is distinct from Avatar of Hakkar on sheet 03."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/atalhakkar/atalhakkar_gslr.pdf",
+    "https://www.icy-veins.com/wow-classic/sunken-temple-dungeon-guide",
+    "https://www.wowhead.com/classic/guide/temple-of-atalhakkar-sunken-temple-dungeon-strategy-wow-classic"
+  ]
+}

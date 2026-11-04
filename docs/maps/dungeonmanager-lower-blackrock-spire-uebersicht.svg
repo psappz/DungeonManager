@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" font-family="serif" font-size="32" text-anchor="middle" fill="#ffd100">
+<rect width="1024" height="1024" fill="#17130d"/>
+<rect x="16" y="16" width="992" height="992" fill="none" stroke="#c7a14a" stroke-width="1"/>
+<path d="M 240 240 L 760 500" fill="none" stroke="#c7a14a" stroke-width="64"/>
+<path d="M 240 240 L 760 500" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 760 500 L 240 780" fill="none" stroke="#c7a14a" stroke-width="64"/>
+<path d="M 760 500 L 240 780" fill="none" stroke="#3b3021" stroke-width="56"/>
+<path d="M 90 130 H 390 V 350 H 90 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<text x="240" y="180">I</text>
+<path d="M 610 390 H 910 V 610 H 610 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<text x="760" y="440">II</text>
+<path d="M 90 670 H 390 V 890 H 90 Z" fill="#3b3021" stroke="#c7a14a" stroke-width="4"/>
+<text x="240" y="720">III</text>
+<rect x="116" y="247" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="150" y="286">A</text>
+<rect x="636" y="507" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="670" y="546">A</text>
+<rect x="726" y="507" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="760" y="546">D</text>
+<rect x="116" y="787" width="68" height="56" fill="#17130d" stroke="#c7a14a" stroke-width="3"/>
+<text x="150" y="826">D</text>
+</svg>

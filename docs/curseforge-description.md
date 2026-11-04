@@ -27,7 +27,7 @@ Widen the recommended range with **−y / +x** (per character). Dungeons without
 Click a dungeon:
 
 - Range, entry level, group finder level, number of bosses, location
-- A **schematic overview map** with legend (first maps: Blackfathom Deeps, The Stockade – more follow)
+- A **schematic overview map** with legend for every classic dungeon – larger dungeons have an overview plus detail sheets; click the map to enlarge it. Maps for the new Forever dungeons follow.
 - **Every quest** for your faction with its status: in your log, pick up, prerequisite open, starts in the dungeon, level too low, done. Quest chains show what has to come first. Done quests move to the bottom – still visible, so you can point your group to them.
 - **Click a quest** to set a map marker at the quest giver.
 
@@ -71,7 +71,7 @@ All Latin-script game clients. UI: English and German; French, Spanish, Italian 
 ## Known limitations
 
 - Entry levels of the new Forever dungeons and some quest givers will be verified in the live game after the launch.
-- Overview maps exist for two dungeons so far; the others follow.
+- The overview maps are own schematic drawings, not to scale; uncertain spots are dashed. Maps for the new Forever dungeons follow.
 - Sharing quests with the group and guild comparison are planned.
 
 ## Feedback

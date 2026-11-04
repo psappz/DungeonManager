@@ -1,0 +1,96 @@
+{
+  "dungeon": "sunken-temple",
+  "sheet": "03",
+  "panels": [
+    {
+      "id": "I",
+      "name": "Pit of Sacrifice, Lair of the Chosen, Chamber of the Dreamer and Sanctum of the Fallen God"
+    }
+  ],
+  "markers": [
+    {
+      "id": "D",
+      "type": "transition",
+      "to": "uebersicht → 03:I; immediate left stairs to dragon floor; bidirectional"
+    },
+    {
+      "id": "9",
+      "type": "boss",
+      "name": "Jammal'an the Prophet"
+    },
+    {
+      "id": "10",
+      "type": "boss",
+      "name": "Ogom the Wretched"
+    },
+    {
+      "id": "11",
+      "type": "boss",
+      "name": "Dreamscythe"
+    },
+    {
+      "id": "12",
+      "type": "boss",
+      "name": "Weaver"
+    },
+    {
+      "id": "13",
+      "type": "boss",
+      "name": "Hazzas"
+    },
+    {
+      "id": "14",
+      "type": "boss",
+      "name": "Morphaz"
+    },
+    {
+      "id": "15",
+      "type": "boss",
+      "name": "Shade of Eranikus"
+    },
+    {
+      "id": "16",
+      "type": "boss",
+      "name": "Avatar of Hakkar"
+    },
+    {
+      "id": "Q9",
+      "type": "quest",
+      "name": "Head of Jammal’an",
+      "quest": "Jammal’an the Prophet"
+    },
+    {
+      "id": "Q10",
+      "type": "quest",
+      "name": "Essence Font",
+      "quest": "The Essence of Eranikus"
+    },
+    {
+      "id": "Q11",
+      "type": "quest",
+      "name": "Avatar of Hakkar ritual",
+      "quest": "The God Hakkar"
+    }
+  ],
+  "uncertain": [
+    "Corridor bends and chamber proportions are schematic. The two western approaches are retained without reconstructing their detailed turns.",
+    "Dreamscythe and Weaver patrol; markers 11 and 12 indicate approximate encounter areas after Jammal’an dies.",
+    "Q10, Q11 and the four unnumbered brazier symbols are approximate placements within the documented chambers.",
+    "The central hole is not a floor connection on this map; no unverified landing or survival path is shown."
+  ],
+  "notes": [
+    "Schematic connectivity, not to scale. Dashed corridor edges indicate unverified bends, widths or local stair geometry; endpoints follow the documented connections.",
+    "Letters identify paired transitions. E marks an instance entrance; no exterior dungeon rooms are included.",
+    "Jammal’an and Ogom share an encounter; Ogom is usually killed first despite adjacent route numbers.",
+    "Dreamscythe and Weaver appear after Jammal’an. Hazzas and Morphaz guard the southern approach to Eranikus.",
+    "Avatar of Hakkar is an optional event; numbered last here, but it can be scheduled separately.",
+    "The four small circles in the western chamber represent ritual braziers. Event instructions belong in the JSON, not the image.",
+    "Class quests with drops from marked bosses use those same locations; no extra fixed drop spots are invented.",
+    "The pre-instance rares Zekkis, Kazkaz the Unholy and Veyzhak the Cannibal are outside these sheets."
+  ],
+  "sources": [
+    "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/atalhakkar/atalhakkar_gslr.pdf",
+    "https://www.icy-veins.com/wow-classic/sunken-temple-dungeon-guide",
+    "https://www.wowhead.com/classic/guide/temple-of-atalhakkar-sunken-temple-dungeon-strategy-wow-classic"
+  ]
+}
