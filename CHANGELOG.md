@@ -6,6 +6,7 @@
 - Larger dungeons: overview plus detail sheets, switchable in the dungeon view (Stratholme: living and undead side)
 - Click the map to enlarge or shrink it
 - Legend per sheet; uncertain spots are dashed and counted below the legend
+- Quest data read through LibQuestieDB (QuestieDB addon, as used by Questie 12.5)
 
 ## 0.9.0 (unreleased)
 

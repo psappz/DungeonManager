@@ -18,7 +18,15 @@ local band = bit and bit.band or function(a, b)
     return r
 end
 
-local function get(db, key, id)
+-- LibQuestieDB (QuestieDB addon): Quest.Get(id, key) / Npc.Get(id, key) as used by Questie 12.5;
+-- older builds expose global QuestDB / NpcDB with one accessor per key.
+local function get(kind, key, id)
+    local lib = type(LibQuestieDB) == "table" and LibQuestieDB[kind]
+    if type(lib) == "table" and type(lib.Get) == "function" then
+        local ok, v = pcall(lib.Get, id, key)
+        if ok then return v end
+    end
+    local db = (kind == "Quest") and QuestDB or NpcDB
     if type(db) ~= "table" then return nil end
     local f = db[key]
     if type(f) == "function" then
@@ -32,8 +40,22 @@ local function get(db, key, id)
     return nil
 end
 
+local function allQuestIds()
+    local lib = type(LibQuestieDB) == "table" and LibQuestieDB.Quest
+    for _, fn in ipairs({ "GetAllIds", "GetAllIDs", "GetIds" }) do
+        if lib and type(lib[fn]) == "function" then
+            local ok, ids = pcall(lib[fn])
+            if ok and type(ids) == "table" then return ids end
+        end
+    end
+    if type(QuestDB) == "table" and type(QuestDB.GetAllIds) == "function" then return QuestDB.GetAllIds() end
+    return {}
+end
+
 function Q:Available()
-    return type(LibQuestieDB) == "table" and type(QuestDB) == "table" and type(NpcDB) == "table"
+    if type(LibQuestieDB) ~= "table" then return false end
+    return (type(LibQuestieDB.Quest) == "table" and type(LibQuestieDB.Npc) == "table")
+        or (type(QuestDB) == "table" and type(NpcDB) == "table")
 end
 
 local areaToUi
@@ -75,14 +97,14 @@ function Q:Build(onDone)
         if onDone then onDone() end
         return
     end
-    local ids = (QuestDB.GetAllIds and QuestDB.GetAllIds()) or {}
+    local ids = allQuestIds()
     local i, n, SLICE = 1, #ids, 500
     local ticker
     ticker = C_Timer.NewTicker(0, function()
         local stop = math.min(i + SLICE - 1, n)
         for k = i, stop do
             local id = ids[k]
-            local zs = get(QuestDB, "zoneOrSort", id)
+            local zs = get("Quest", "zoneOrSort", id)
             local list = zs and byArea[zs]
             if list then
                 for _, d in ipairs(list) do
@@ -129,7 +151,7 @@ function Q:LogSet()
 end
 
 local function friendly(npc, fac)
-    local f = get(NpcDB, "friendlyToFaction", npc)
+    local f = get("Npc", "friendlyToFaction", npc)
     if type(f) ~= "string" then return nil end
     if f == "AH" then return "N" end
     if f:find(fac, 1, true) then return fac end
@@ -150,11 +172,11 @@ function Q:Name(id)
         local t = C_QuestLog.GetTitleForQuestID(id)
         if t and t ~= "" then return t end
     end
-    return get(QuestDB, "name", id) or ("Quest " .. id)
+    return get("Quest", "name", id) or ("Quest " .. id)
 end
 
 local function firstSpawn(npc)
-    local spawns = get(NpcDB, "spawns", npc)
+    local spawns = get("Npc", "spawns", npc)
     if type(spawns) ~= "table" then return nil end
     for area, coords in pairs(spawns) do
         if type(coords) == "table" and coords[1] and coords[1][1] and coords[1][1] >= 0 then
@@ -168,17 +190,17 @@ function Q:Evaluate(id, d, p, log)
     if not self:Available() then
         return { id = id, name = "Quest " .. id, status = self:IsDone(id) and "done" or (log[id] and "log" or "unknown"), fac = "N", own = true }
     end
-    local races = get(QuestDB, "requiredRaces", id) or 0
+    local races = get("Quest", "requiredRaces", id) or 0
     if races > 0 and p.raceID and band(races, 2 ^ (p.raceID - 1)) == 0 then return nil end
 
     local e = { id = id, name = self:Name(id), own = true }
-    local classes = get(QuestDB, "requiredClasses", id) or 0
+    local classes = get("Quest", "requiredClasses", id) or 0
     if classes > 0 then
         e.classFile = classFileFromMask(classes)
         if p.classID and band(classes, 2 ^ (p.classID - 1)) == 0 then e.own = false end
     end
 
-    local sb = get(QuestDB, "startedBy", id)
+    local sb = get("Quest", "startedBy", id)
     local npcs, objs, items = sb and sb[1], sb and sb[2], sb and sb[3]
     if type(npcs) == "table" and #npcs > 0 then
         for _, npc in ipairs(npcs) do
@@ -189,7 +211,7 @@ function Q:Evaluate(id, d, p, log)
             end
         end
         if not e.npc then return nil end           -- only hostile or unknown givers: never shown
-        e.giver = get(NpcDB, "name", e.npc)
+        e.giver = get("Npc", "name", e.npc)
         e.area, e.x, e.y = firstSpawn(e.npc)
     elseif (type(items) == "table" and #items > 0) or (type(objs) == "table" and #objs > 0) then
         e.fac = races > 0 and p.fac or "N"
@@ -198,7 +220,7 @@ function Q:Evaluate(id, d, p, log)
         return nil                                 -- no start data: do not guess
     end
 
-    local fb = get(QuestDB, "finishedBy", id)
+    local fb = get("Quest", "finishedBy", id)
     local fnpcs = fb and fb[1]
     if type(fnpcs) == "table" and #fnpcs > 0 then
         local ok = false
@@ -207,13 +229,13 @@ function Q:Evaluate(id, d, p, log)
     end
 
     e.inside = e.fromItem or (d.area and e.area == d.area) or false
-    e.level = get(QuestDB, "requiredLevel", id) or 0
-    local flags = get(QuestDB, "questFlags", id) or 0
+    e.level = get("Quest", "requiredLevel", id) or 0
+    local flags = get("Quest", "questFlags", id) or 0
     e.shareable = band(flags, 8) > 0
 
     local pre = {}
-    local single = get(QuestDB, "preQuestSingle", id)
-    local group = get(QuestDB, "preQuestGroup", id)
+    local single = get("Quest", "preQuestSingle", id)
+    local group = get("Quest", "preQuestGroup", id)
     local preOk = true
     if type(single) == "table" and #single > 0 then
         local any = false
