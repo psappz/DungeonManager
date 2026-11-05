@@ -46,8 +46,16 @@ DM.MapSheets = ns.MapSheets
 
 DM:On("PLAYER_LOGIN", function()
     DM:InitDB()
-    setupMinimap()
     DM.Quests:Build(refreshSoon)
+end)
+-- The minimap button is created late on purpose (as in ConfigManager and Questie): button collectors
+-- such as MinimapButtonButton take it over right away, before minimap skins (EllesmereUI) rescan the
+-- minimap and hide its children.
+local minimapDone = false
+DM:On("PLAYER_ENTERING_WORLD", function()
+    if minimapDone then return end
+    minimapDone = true
+    C_Timer.After(2, setupMinimap)
 end)
 for _, ev in ipairs({ "QUEST_LOG_UPDATE", "QUEST_TURNED_IN", "PLAYER_LEVEL_UP", "GROUP_ROSTER_UPDATE" }) do
     DM:On(ev, function() if DM.settings then refreshSoon() end end)

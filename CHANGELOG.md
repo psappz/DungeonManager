@@ -2,7 +2,8 @@
 
 ## 0.9.0.4
 
-- Own icon in the style of the Manager addon family (minimap button, addon list); the game icon used before does not exist in the Forever client
+- Own icon in the style of the Manager addon family (minimap button, addon list)
+- Minimap button is created a moment after login, so minimap skins (e.g. EllesmereUI) no longer hide it and collectors (MinimapButtonButton) pick it up
 
 ## 0.9.0.3
 
