@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0.4
+
+- Own icon in the style of the Manager addon family (minimap button, addon list); the game icon used before does not exist in the Forever client
+
 ## 0.9.0.3
 
 - Fix: the dungeon maps were still a green square. The client only reads 32-bit TGA textures (with alpha channel); the maps are now 32-bit TGA with RLE compression, like the textures of other addons (e.g. Questie).

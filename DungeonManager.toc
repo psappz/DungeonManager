@@ -3,12 +3,12 @@
 ## Notes: Plan your dungeon runs: recommended dungeons for your level, every dungeon quest with giver, location and prerequisites, and what to pick up before you go. WoW Forever.
 ## Notes-deDE: Plane deine Dungeon-Runs: empfohlene Dungeons für deine Stufe, alle Dungeonquests mit Questgeber, Ort und Voraussetzungen und was du vorher annehmen musst. WoW Forever.
 ## Author: psappz
-## Version: 0.9.0.3
+## Version: 0.9.0.4
 ## Dependencies: QuestieDB
 ## OptionalDeps: LegacyManager
 ## SavedVariables: DungeonManagerDB
 ## SavedVariablesPerCharacter: DungeonManagerCharDB
-## IconTexture: Interface\Icons\INV_Misc_Map_01
+## IconTexture: Interface\AddOns\DungeonManager\Media\DungeonManager
 ## AddonCompartmentFunc: DungeonManager_OnAddonCompartmentClick
 
 Libs\LibStub\LibStub.lua
