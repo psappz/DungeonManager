@@ -116,13 +116,9 @@ function DM:QuestLogMax()
 end
 
 function DM:QuestLogCount()
+    -- Forever returns only the number of entries (incl. headers): count real quests ourselves
     local n = 0
-    local entries = GetNumQuestLogEntries and select(2, GetNumQuestLogEntries())
-    if entries then return entries end
-    if C_QuestLog and C_QuestLog.GetNumQuestLogEntries then
-        local _, q = C_QuestLog.GetNumQuestLogEntries()
-        return q or n
-    end
+    for _ in pairs(DM.Quests:LogSet()) do n = n + 1 end
     return n
 end
 
