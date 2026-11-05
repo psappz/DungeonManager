@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0.5
+
+- Fix: maps still showed as a green square when files of an older version were left in the addon folder (the client picked the old BLP file of the same name). Map textures now have their own names (dm_*.tga).
+
 ## 0.9.0.4
 
 - Own icon in the style of the Manager addon family (minimap button, addon list)

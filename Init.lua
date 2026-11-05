@@ -12,7 +12,7 @@ local function setupMinimap()
     local obj = LDB:NewDataObject(ADDON, {
         type = "launcher",
         text = "DungeonManager",
-        icon = "Interface\\AddOns\\DungeonManager\\Media\\DungeonManager.tga",
+        icon = "Interface\\AddOns\\DungeonManager\\Media\\DungeonManager",
         OnClick = function(_, button)
             if button == "RightButton" then DM.Prep:Toggle() else DM.UI:Toggle() end
         end,
