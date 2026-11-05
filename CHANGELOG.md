@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0.3
+
+- Fix: the dungeon maps were still a green square. The client only reads 32-bit TGA textures (with alpha channel); the maps are now 32-bit TGA with RLE compression, like the textures of other addons (e.g. Questie).
+
 ## 0.9.0.2
 
 - Fix: the dungeon maps showed as a green square in the Forever client. The maps are now shipped as uncompressed TGA textures.
