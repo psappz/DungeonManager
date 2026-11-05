@@ -216,7 +216,7 @@ local function renderDetail(page)
     end
     local sh = sheets and sheets[UI.sheet or 1]
     if sh then
-        page.map:SetTexture("Interface\\AddOns\\DungeonManager\\Media\\Maps\\" .. sh.tex)
+        page.map:SetTexture("Interface\\AddOns\\DungeonManager\\Media\\Maps\\" .. sh.tex .. ".tga")
         page.mapBtn:Show()
         local lines = {}
         for _, m in ipairs(sh.legend or {}) do table.insert(lines, "|cffffd100" .. m[1] .. "|r " .. m[2]) end

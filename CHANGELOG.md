@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0.2
+
+- Fix: the dungeon maps showed as a green square in the Forever client. The maps are now shipped as uncompressed TGA textures.
+
 ## 0.9.0.1 (unreleased)
 
 - Schematic overview maps for all 20 classic dungeons (49 map sheets, own drawings, not to scale)
