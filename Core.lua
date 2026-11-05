@@ -18,8 +18,9 @@ local handlers = {}
 
 function DM:On(event, fn)
     if not handlers[event] then
+        -- events that do not exist in this client (e.g. NEW_RECIPE_LEARNED in Forever) must not abort loading
+        if not pcall(frame.RegisterEvent, frame, event) then return false end
         handlers[event] = {}
-        frame:RegisterEvent(event)
     end
     table.insert(handlers[event], fn)
 end
