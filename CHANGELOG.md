@@ -7,6 +7,8 @@
 - Click the map to enlarge or shrink it
 - Legend per sheet; uncertain spots are dashed and counted below the legend
 - Quest data read through LibQuestieDB (QuestieDB addon, as used by Questie 12.5)
+- Quest log check counts the quests itself (the Forever client returns no quest count)
+- Events unknown to the client are skipped instead of stopping the addon from loading
 
 ## 0.9.0 (unreleased)
 
