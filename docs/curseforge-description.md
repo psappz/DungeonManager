@@ -6,7 +6,7 @@ DungeonManager shows you which dungeons fit your level, lists every dungeon ques
 
 Made for **WoW Forever**. **Requires Questie (QuestieDB).**
 
-> Version 0.9 – first release for the Forever launch. Please report anything that looks wrong (see *Feedback* below).
+> Please report anything that looks wrong (see *Feedback* below).
 
 ---
 
@@ -30,6 +30,16 @@ Click a dungeon:
 - A **schematic overview map** with legend for every classic dungeon – larger dungeons have an overview plus detail sheets; click the map to enlarge it. Maps for the new Forever dungeons follow.
 - **Every quest** for your faction with its status: in your log, pick up, prerequisite open, starts in the dungeon, level too low, done. Quest chains show what has to come first. Done quests move to the bottom – still visible, so you can point your group to them.
 - **Click a quest** to set a map marker at the quest giver.
+
+## Works with DungeonJournal
+
+[**DungeonJournal**](https://www.curseforge.com/wow/addons/dungeonjournal) by **ExehnTV** is *the* dungeon reference for WoW Forever – bosses, loot, maps and carefully maintained quest data. DungeonManager does not try to replace it. When DungeonJournal is installed, DungeonManager uses its quest lists, maps and quest pages and concentrates on what it adds on top: which dungeon fits your level right now, faction and Hardcore safety, the run preparation with route, and the group and guild comparison.
+
+- The DungeonManager window shows **"DungeonJournal active"** when it is found; hover it for details.
+- **Open in DungeonJournal** on every dungeon page; clicking a quest opens its page in DungeonJournal.
+- Pawn upgrade arrows for all quest rewards, thanks to DungeonJournal's reward data.
+
+All credit for that data goes to ExehnTV – if you use it, please give [DungeonJournal](https://www.curseforge.com/wow/addons/dungeonjournal) a thumbs up. Without DungeonJournal, DungeonManager falls back to its own lists and maps. The integration can be switched off in the settings.
 
 ## Class quests
 
@@ -64,6 +74,8 @@ All Latin-script game clients. UI: English and German; French, Spanish, Italian 
 
 ## Works well with
 
+- **DungeonJournal** by ExehnTV – see above
+- **AtlasLoot**, **Pawn**, **TomTom** and **Questie** (quest XP) – optional, used when installed
 - **LegacyManager** – Legacy points, Quick Swap and the Quick-Gain copilot
 - **RecipeManager** – recipe vendors and Limited Supply
 - **ConfigManager** – copy keybindings and settings between game versions
@@ -72,7 +84,6 @@ All Latin-script game clients. UI: English and German; French, Spanish, Italian 
 
 - Entry levels of the new Forever dungeons and some quest givers will be verified in the live game after the launch.
 - The overview maps are own schematic drawings, not to scale; uncertain spots are dashed. Maps for the new Forever dungeons follow.
-- Sharing quests with the group and guild comparison are planned.
 
 ## Feedback
 

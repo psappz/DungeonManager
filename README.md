@@ -4,7 +4,7 @@ Dungeon planner for **WoW Forever**. DungeonManager shows which dungeons fit you
 
 **Requires Questie (QuestieDB).** QuestieDB must be installed and enabled; the Questie map and tracker are optional.
 
-## Features (v0.9)
+## Features
 
 - **Leveling list** with colours: green = recommended and open quests for you, grey-green = recommended but nothing open for you, orange = can enter but too hard, grey = outleveled, red = cannot enter (level or attunement). Widen the recommended range with −y / +x per character.
 - **Detail view** per dungeon: range, entry level, group finder level, bosses, schematic overview maps for all 20 classic dungeons (larger dungeons with an overview and several sheets; click to enlarge) and every quest with status (in log, pick up, prerequisite open, starts in the dungeon, level too low, done). Done quests move to the bottom. Click a quest to set a map marker at the quest giver.
@@ -18,6 +18,7 @@ Slash commands: `/dmgr`, `/dmgr prep`, `/dmgr settings`.
 
 ## Data sources
 
+- **[DungeonJournal](https://www.curseforge.com/wow/addons/dungeonjournal) by ExehnTV** (optional, All Rights Reserved): when installed, its quest lists, maps and quest pages are used at runtime – nothing of it is copied into DungeonManager. All credit for that data goes to ExehnTV.
 - **QuestieDB** (GPL-3.0): quests, quest givers, positions, prerequisites – read at runtime.
 - `Data/Dungeons.lua`: researched dungeon data (ranges, entry levels, locations, attunements) and a hand list of dungeon quests, including the new Forever dungeons.
 - `docs/maps`: source SVGs and legends of the schematic maps (own drawings, not to scale).

@@ -237,6 +237,7 @@ local function buildDetail(page)
     end)
     page.table:SetPoint("RIGHT", page, "RIGHT", -4, 0)
     page.empty = W:Text(page, "GameFontDisableSmall") page.empty:SetPoint("BOTTOMLEFT", 8, 2)
+    page.credit = W:Text(page, "GameFontDisableSmall") page.credit:SetPoint("BOTTOMRIGHT", -8, 2)
 end
 
 function UI:ShowDetail(d)
@@ -255,6 +256,8 @@ local function renderDetail(page)
     page.loot:SetShown(DM.Int:HasAtlasLoot(d.key))
     local dj = DM.DJ:Active() and DM.DJ:Name(d) ~= nil
     page.journal:SetShown(dj)
+    page.credit:SetShown(dj)
+    if dj then page.credit:SetText(DM.DJ:Credit(L["Quests and maps: %s by %s"])) end
     page.journal:ClearAllPoints()
     if page.loot:IsShown() then page.journal:SetPoint("RIGHT", page.loot, "LEFT", -6, 0)
     else page.journal:SetPoint("RIGHT", page.mark, "LEFT", -6, 0) end
@@ -372,6 +375,12 @@ local function buildSettings(page)
     add(row(W:Check(page, L["TomTom: use its arrow for quest givers (if installed)"], function() return s.tomtom end, function(v) s.tomtom = v end), nil, 8))
     add(row(W:Check(page, L["Pawn: upgrade arrow for quest rewards (if installed)"], function() return s.pawn end, function(v) s.pawn = v DM.Int:ResetUpgradeCache() end), nil, 8))
     add(row(W:Check(page, L["DungeonJournal: use its quest lists, maps and pages (if installed)"], function() return s.useDungeonJournal ~= false end, function(v) s.useDungeonJournal = v UI:Refresh() end), nil, 8))
+    if DM.DJ:Installed() then
+        local _, _, author = DM.DJ:Info()
+        local thanks = W:Text(page, "GameFontDisableSmall", string.format(L["Thanks to %s for DungeonJournal - %s"], author, DM.DJ.URL))
+        thanks:SetPoint("TOPLEFT", page, "TOPLEFT", 36, y + 8)
+        y = y - 12
+    end
     add(row(W:Check(page, L["Questie: show quest XP"], function() return s.showXP end, function(v) s.showXP = v end), nil, 8))
     add(row(W:Check(page, L["Compare quests of marked dungeons with the group"], function() return s.syncGroup end, function(v)
         s.syncGroup = v
@@ -414,6 +423,29 @@ local function create()
     frame.sub = W:Text(frame, "GameFontDisableSmall")
     frame.sub:SetPoint("LEFT", title, "RIGHT", 12, -1)
     W:Close(frame)
+
+    -- DungeonJournal found: status and credit (hover), click opens it
+    local dj = CreateFrame("Button", nil, frame)
+    dj:SetPoint("TOPRIGHT", -34, -10)
+    dj:SetHeight(18)
+    dj.text = W:Text(dj, "GameFontNormalSmall")
+    dj.text:SetPoint("RIGHT")
+    dj:SetScript("OnClick", function() if SlashCmdList and SlashCmdList.FOREVERDUNGEONJOURNAL then pcall(SlashCmdList.FOREVERDUNGEONJOURNAL, "") end end)
+    dj:SetScript("OnEnter", function(self)
+        local title, ver, author = DM.DJ:Info()
+        GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT")
+        GameTooltip:AddLine(string.format(L["%s by %s"], title .. (ver and (" " .. ver) or ""), author), 1, 0.82, 0)
+        if DM.DJ:Active() then
+            GameTooltip:AddLine(L["Quest lists, maps and quest pages in this window come from DungeonJournal. All credit for that data goes to its author."], 1, 1, 1, true)
+        else
+            GameTooltip:AddLine(L["Installed but switched off in the settings."], 1, 1, 1, true)
+        end
+        GameTooltip:AddLine(DM.DJ.URL, 0.6, 0.6, 0.6)
+        GameTooltip:AddLine(L["Click: open DungeonJournal"], 0.5, 0.8, 1)
+        GameTooltip:Show()
+    end)
+    dj:SetScript("OnLeave", function() GameTooltip:Hide() end)
+    frame.dj = dj
 
     local defs = {
         { "lev", L["Leveling"], function(p) buildList(p, "lev") end },
@@ -461,6 +493,13 @@ end
 
 function UI:Refresh()
     if not frame or not frame:IsShown() then return end
+    if DM.DJ:Installed() then
+        frame.dj.text:SetText(DM.DJ:Active() and ("|cff7fd17f" .. L["DungeonJournal active"] .. "|r") or ("|cff8c8c8c" .. L["DungeonJournal found (off)"] .. "|r"))
+        frame.dj:SetWidth(frame.dj.text:GetStringWidth() + 4)
+        frame.dj:Show()
+    else
+        frame.dj:Hide()
+    end
     local p = DM:Player()
     frame.sub:SetText(string.format("%s - %s %d - %s", UnitName("player") or "", DM:ClassName(p.classFile), p.level,
         DM:IsHardcore() and ("|cffe05a4f" .. L["Hardcore protection active"] .. "|r") or ""))

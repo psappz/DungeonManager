@@ -25,6 +25,22 @@ end
 
 function J:Installed() return nsTable() ~= nil end
 
+-- Credit: DungeonJournal is ExehnTV's work - name it wherever its data is used.
+J.URL = "curseforge.com/wow/addons/dungeonjournal"
+function J:Info()
+    local get = (C_AddOns and C_AddOns.GetAddOnMetadata) or GetAddOnMetadata
+    local function meta(k)
+        local ok, v = pcall(get, "ForeverDungeonJournal", k)
+        return ok and v or nil
+    end
+    return meta("Title") or "DungeonJournal", meta("Version"), meta("Author") or "Exehn"
+end
+
+function J:Credit(fmt)
+    local title, _, author = self:Info()
+    return string.format(fmt, title, author)
+end
+
 -- Installed and switched on in the settings
 function J:Active() return self:Installed() and DM.settings and DM.settings.useDungeonJournal ~= false end
 

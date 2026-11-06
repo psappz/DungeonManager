@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.2
+
+### New
+- The window shows **"DungeonJournal active"** (or "found (off)") when DungeonJournal is installed; hover for details, click to open it.
+- Credit for DungeonJournal by ExehnTV in the dungeon page, the settings and the description.
+
 ## 1.5.1
 
 ### Look

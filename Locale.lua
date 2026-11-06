@@ -10,6 +10,14 @@ local T
 local l = GetLocale()
 if l == "deDE" then T = {
     ["Open in DungeonJournal"] = "In DungeonJournal öffnen",
+    ["DungeonJournal active"] = "DungeonJournal aktiv",
+    ["DungeonJournal found (off)"] = "DungeonJournal gefunden (aus)",
+    ["%s by %s"] = "%s von %s",
+    ["Quest lists, maps and quest pages in this window come from DungeonJournal. All credit for that data goes to its author."] = "Questlisten, Karten und Questseiten in diesem Fenster stammen aus DungeonJournal. Der Verdienst für diese Daten gebührt seinem Autor.",
+    ["Installed but switched off in the settings."] = "Installiert, aber in den Einstellungen ausgeschaltet.",
+    ["Click: open DungeonJournal"] = "Klick: DungeonJournal öffnen",
+    ["Quests and maps: %s by %s"] = "Quests und Karten: %s von %s",
+    ["Thanks to %s for DungeonJournal - %s"] = "Danke an %s für DungeonJournal - %s",
     ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Bosse, Beute, Karten und Questseiten dieses Dungeons im DungeonJournal.",
     ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Quest anklicken: im DungeonJournal öffnen - Rechtsklick: Kartenmarkierung.",
     ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal: dessen Questlisten, Karten und Seiten nutzen (falls installiert)",
@@ -127,6 +135,14 @@ if l == "deDE" then T = {
 
 if l == "frFR" then T = {
     ["Open in DungeonJournal"] = "Ouvrir dans DungeonJournal",
+    ["DungeonJournal active"] = "DungeonJournal actif",
+    ["DungeonJournal found (off)"] = "DungeonJournal trouvé (désactivé)",
+    ["%s by %s"] = "%s par %s",
+    ["Quest lists, maps and quest pages in this window come from DungeonJournal. All credit for that data goes to its author."] = "Les listes de quêtes, cartes et pages de quête de cette fenêtre proviennent de DungeonJournal. Tout le mérite de ces données revient à son auteur.",
+    ["Installed but switched off in the settings."] = "Installé, mais désactivé dans les paramètres.",
+    ["Click: open DungeonJournal"] = "Clic : ouvrir DungeonJournal",
+    ["Quests and maps: %s by %s"] = "Quêtes et cartes : %s par %s",
+    ["Thanks to %s for DungeonJournal - %s"] = "Merci à %s pour DungeonJournal - %s",
     ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Boss, butin, cartes et pages de quêtes de ce donjon dans DungeonJournal.",
     ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Clic sur une quête : l'ouvrir dans DungeonJournal - clic droit : repère sur la carte.",
     ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal : utiliser ses listes de quêtes, cartes et pages (si installé)",
@@ -236,6 +252,14 @@ if l == "frFR" then T = {
 
 if l == "esES" or l == "esMX" then T = {
     ["Open in DungeonJournal"] = "Abrir en DungeonJournal",
+    ["DungeonJournal active"] = "DungeonJournal activo",
+    ["DungeonJournal found (off)"] = "DungeonJournal encontrado (desactivado)",
+    ["%s by %s"] = "%s de %s",
+    ["Quest lists, maps and quest pages in this window come from DungeonJournal. All credit for that data goes to its author."] = "Las listas de misiones, los mapas y las páginas de misión de esta ventana provienen de DungeonJournal. Todo el mérito de esos datos es de su autor.",
+    ["Installed but switched off in the settings."] = "Instalado, pero desactivado en los ajustes.",
+    ["Click: open DungeonJournal"] = "Clic: abrir DungeonJournal",
+    ["Quests and maps: %s by %s"] = "Misiones y mapas: %s de %s",
+    ["Thanks to %s for DungeonJournal - %s"] = "Gracias a %s por DungeonJournal - %s",
     ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Jefes, botín, mapas y páginas de misiones de esta mazmorra en DungeonJournal.",
     ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Clic en una misión: abrirla en DungeonJournal - clic derecho: marcador en el mapa.",
     ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal: usar sus listas de misiones, mapas y páginas (si está instalado)",
@@ -345,6 +369,14 @@ if l == "esES" or l == "esMX" then T = {
 
 if l == "itIT" then T = {
     ["Open in DungeonJournal"] = "Apri in DungeonJournal",
+    ["DungeonJournal active"] = "DungeonJournal attivo",
+    ["DungeonJournal found (off)"] = "DungeonJournal trovato (disattivato)",
+    ["%s by %s"] = "%s di %s",
+    ["Quest lists, maps and quest pages in this window come from DungeonJournal. All credit for that data goes to its author."] = "Elenchi delle missioni, mappe e pagine delle missioni in questa finestra provengono da DungeonJournal. Tutto il merito di questi dati va al suo autore.",
+    ["Installed but switched off in the settings."] = "Installato, ma disattivato nelle impostazioni.",
+    ["Click: open DungeonJournal"] = "Clic: apri DungeonJournal",
+    ["Quests and maps: %s by %s"] = "Missioni e mappe: %s di %s",
+    ["Thanks to %s for DungeonJournal - %s"] = "Grazie a %s per DungeonJournal - %s",
     ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Boss, bottino, mappe e pagine missione di questo dungeon in DungeonJournal.",
     ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Clic su una missione: aprila in DungeonJournal - clic destro: segnalino sulla mappa.",
     ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal: usa le sue liste di missioni, mappe e pagine (se installato)",
@@ -454,6 +486,14 @@ if l == "itIT" then T = {
 
 if l == "ptBR" or l == "ptPT" then T = {
     ["Open in DungeonJournal"] = "Abrir no DungeonJournal",
+    ["DungeonJournal active"] = "DungeonJournal ativo",
+    ["DungeonJournal found (off)"] = "DungeonJournal encontrado (desativado)",
+    ["%s by %s"] = "%s de %s",
+    ["Quest lists, maps and quest pages in this window come from DungeonJournal. All credit for that data goes to its author."] = "As listas de missões, mapas e páginas de missão desta janela vêm do DungeonJournal. Todo o mérito desses dados é do seu autor.",
+    ["Installed but switched off in the settings."] = "Instalado, mas desativado nas configurações.",
+    ["Click: open DungeonJournal"] = "Clique: abrir o DungeonJournal",
+    ["Quests and maps: %s by %s"] = "Missões e mapas: %s de %s",
+    ["Thanks to %s for DungeonJournal - %s"] = "Obrigado a %s pelo DungeonJournal - %s",
     ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Chefes, saque, mapas e páginas de missões desta masmorra no DungeonJournal.",
     ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Clique numa missão: abrir no DungeonJournal - clique direito: marcador no mapa.",
     ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal: usar as listas de missões, mapas e páginas dele (se instalado)",
