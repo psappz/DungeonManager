@@ -107,6 +107,13 @@ local function rows(plan)
             if e.status == "pre" and e.pre and e.pre[1] then
                 t = t .. "  |cfff3b55b(" .. L["after:"] .. " " .. DM.Quests:Name(e.pre[1]) .. ")|r"
             end
+            if e.shareable == false then t = t .. "  |cff9a9a9a(" .. L["not shareable"] .. ")|r" end
+            if DM.Sync:Enabled() then
+                local _, has = DM.Sync:Who(e.id)
+                if #has > 0 and e.shareable ~= false then
+                    t = t .. "  |cff8fe39b" .. string.format(L["%s can share it"], table.concat(has, ", ")) .. "|r"
+                end
+            end
             table.insert(out, { text = t, entry = e, border = e.classFile and { 0.78, 0.63, 0.29 } or nil })
         end
     end
@@ -139,8 +146,7 @@ local function create()
     _G.DungeonManagerPrepFrame = frame
     local title = W:Text(frame, "GameFontNormalLarge", L["Run preparation"])
     title:SetPoint("TOPLEFT", 14, -12)
-    local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
-    close:SetPoint("TOPRIGHT", 2, 2)
+    W:Close(frame)
     frame.sub = W:Text(frame, "GameFontDisableSmall") frame.sub:SetPoint("TOPLEFT", 14, -34) frame.sub:SetWidth(430) frame.sub:SetJustifyH("LEFT")
     frame.log = W:Text(frame, "GameFontHighlightSmall") frame.log:SetPoint("TOPLEFT", 14, -52)
     frame.table = W:Table(frame, { { "text", "", 440 } }, 20, 22, function(item)
@@ -151,6 +157,12 @@ local function create()
     frame.table:SetPoint("RIGHT", -6, 0)
     frame.footer = W:Text(frame, "GameFontDisableSmall", L["Click a line: map marker - right-click minimap button: hide"])
     frame.footer:SetPoint("BOTTOMLEFT", 14, 8)
+    frame.post = W:Button(frame, L["Post to group"], 120, function()
+        local plan = Prep:Plan()
+        if #plan.names == 0 then return end
+        DM.Sync:PostPlan(plan)
+    end)
+    frame.post:SetPoint("TOPRIGHT", -32, -8)
     frame:SetScript("OnShow", function() Prep:Refresh() end)
 end
 
@@ -168,9 +180,18 @@ function Prep:Refresh()
     local free = max - used
     local after = free - plan.need
     local warn = after < (DM.settings.logWarn or 5)
+    local xpText = ""
+    if DM.settings.showXP then
+        local xp = 0
+        for _, z in ipairs(plan.route) do for _, e in ipairs(z.list) do xp = xp + (DM.Int:QuestXP(e.id) or 0) end end
+        for _, e in ipairs(plan.inside) do xp = xp + (DM.Int:QuestXP(e.id) or 0) end
+        if xp > 0 then xpText = "  |cff69ccf0" .. L["Quest XP"] .. ": " .. DM.Int:FormatXP(xp) .. "|r" end
+    end
     frame.log:SetText(string.format(L["Quest log: %d to pick up - %d of %d free"], plan.need, free, max)
-        .. (warn and ("  |cffe8903a" .. string.format(L["only %d free afterwards!"], after) .. "|r") or ""))
+        .. (warn and ("  |cffe8903a" .. string.format(L["only %d free afterwards!"], after) .. "|r") or "") .. xpText)
+    frame.post:SetEnabled(#plan.names > 0 and IsInGroup())
     frame.table:SetData(rows(plan))
 end
 
 DM:Listen("MARKED_CHANGED", function() Prep:Refresh() end)
+DM:Listen("SYNC_CHANGED", function() Prep:Refresh() if DM.UI then DM.UI:Refresh() end end)

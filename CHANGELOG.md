@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.3.0
+
+### New
+- **Group quest comparison (opt-in).** Members with DungeonManager see who still needs a quest of the marked dungeons and who already has it in the log ("can share it"). Off by default; only quest IDs of the marked dungeons are exchanged, only within the group.
+- **Post to group.** One click in the run preparation posts what to pick up, zone by zone, to party/raid chat – for members without the addon.
+- **Not shareable** quests are marked in the detail view, the run preparation and the chat post.
+- **TomTom:** if installed, its arrow points to the quest giver (option).
+- **Pawn:** upgrade arrow for rewards of quests in your log (option; QuestieDB has no reward items, so quests not yet accepted have no arrow).
+- **AtlasLoot:** "Loot" button in the detail view opens the dungeon in AtlasLoot (AtlasLoot Classic Forever and other AtlasLootClassic forks).
+- **Quest XP** from Questie in the detail view and the run preparation (sum of the run).
+- **LegacyManager:** dungeons whose range reaches your next Legacy class milestone are marked "+N Legacy at level X".
+- **Manager family** line in the settings; public API (`DungeonManagerAPI`) for LegacyManager and the coming RaidManager.
+- French, Spanish, Italian and Portuguese interface (map legends: English and German).
+- `/dmgr int` shows which integrations were found.
+
+### Fixed
+- Quests of the other faction could slip through when QuestieDB lists the giver as friendly to both factions (e.g. "In Search of Thaelrid" from Dawnwatcher Shaedlass in Darnassus for Horde characters). Givers in the other faction's capitals are never shown, and a quest whose prerequisite chain starts on the other side is hidden as well.
+- AtlasLoot opened behind the DungeonManager window. The button is now called "Open in AtlasLoot".
+
+### Look
+- Own flat buttons, checkboxes, input fields and close button instead of Blizzard's templates; buttons grow with their (translated) text.
+
 ## 0.9.0.5
 
 - Fix: maps still showed as a green square when files of an older version were left in the addon folder (the client picked the old BLP file of the same name). Map textures now have their own names (dm_*.tga).

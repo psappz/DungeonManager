@@ -52,8 +52,11 @@ local GLOBAL_DEFAULTS = {
     logWarn = 5,              -- warn when fewer free quest log slots remain
     minimap = { hide = false },
     legacyMarker = true,
-    syncGroup = false,        -- later: compare quests with group members (opt-in)
+    syncGroup = false,        -- compare quests with group members (opt-in)
     syncGuild = false,        -- later: compare quests with guild members (opt-in)
+    tomtom = true,            -- use TomTom's arrow when TomTom is installed
+    pawn = true,              -- upgrade arrow from Pawn for quest rewards
+    showXP = true,            -- quest XP from Questie
 }
 local CHAR_DEFAULTS = {
     below = 2,                -- -y

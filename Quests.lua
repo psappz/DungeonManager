@@ -185,6 +185,79 @@ local function firstSpawn(npc)
     end
 end
 
+-- Capitals of the other faction: a quest giver standing there is never shown (also when QuestieDB lists
+-- the NPC as friendly to both factions, e.g. Dawnwatcher Shaedlass in Darnassus).
+local HOSTILE_CAPITALS = {
+    H = { [1519] = true, [1537] = true, [1657] = true },   -- Stormwind, Ironforge, Darnassus
+    A = { [1637] = true, [1638] = true, [1497] = true },   -- Orgrimmar, Thunder Bluff, Undercity
+}
+
+local function spawnAreas(npc)
+    local spawns = get("Npc", "spawns", npc)
+    local out = {}
+    if type(spawns) == "table" then for area in pairs(spawns) do out[area] = true end end
+    return out
+end
+
+local function giverOk(npc, p)
+    if not friendly(npc, p.fac) then return false end
+    for area in pairs(spawnAreas(npc)) do
+        if HOSTILE_CAPITALS[p.fac][area] then return false end
+    end
+    return true
+end
+
+-- Can this character get the quest at all (race mask, giver, turn-in)? Prerequisites are checked
+-- recursively, so a quest whose chain starts on the other faction's side is hidden too.
+local reachCache = {}
+function Q:Reachable(id, p, depth)
+    depth = depth or 0
+    local key = id .. p.fac .. (p.raceID or 0)
+    if reachCache[key] ~= nil then return reachCache[key] end
+    if depth > 6 then return true end
+    local ok = true
+    local races = get("Quest", "requiredRaces", id) or 0
+    if races > 0 and p.raceID and band(races, 2 ^ (p.raceID - 1)) == 0 then ok = false end
+    if ok then
+        local sb = get("Quest", "startedBy", id)
+        local npcs = sb and sb[1]
+        if type(npcs) == "table" and #npcs > 0 then
+            local any = false
+            for _, npc in ipairs(npcs) do if giverOk(npc, p) then any = true break end end
+            if not any then ok = false end
+        end
+    end
+    if ok then
+        local fb = get("Quest", "finishedBy", id)
+        local fnpcs = fb and fb[1]
+        if type(fnpcs) == "table" and #fnpcs > 0 then
+            local any = false
+            for _, npc in ipairs(fnpcs) do if giverOk(npc, p) then any = true break end end
+            if not any then ok = false end
+        end
+    end
+    if ok then
+        local group = get("Quest", "preQuestGroup", id)
+        if type(group) == "table" then
+            for _, q in ipairs(group) do
+                if not self:IsDone(q) and not self:Reachable(q, p, depth + 1) then ok = false break end
+            end
+        end
+    end
+    if ok then
+        local single = get("Quest", "preQuestSingle", id)
+        if type(single) == "table" and #single > 0 then
+            local any = false
+            for _, q in ipairs(single) do
+                if self:IsDone(q) or self:Reachable(q, p, depth + 1) then any = true break end
+            end
+            if not any then ok = false end
+        end
+    end
+    reachCache[key] = ok
+    return ok
+end
+
 -- Returns nil when the quest must not be shown for this character (faction rules), else an entry.
 function Q:Evaluate(id, d, p, log)
     if not self:Available() then
@@ -192,6 +265,7 @@ function Q:Evaluate(id, d, p, log)
     end
     local races = get("Quest", "requiredRaces", id) or 0
     if races > 0 and p.raceID and band(races, 2 ^ (p.raceID - 1)) == 0 then return nil end
+    if not self:IsDone(id) and not log[id] and not self:Reachable(id, p) then return nil end
 
     local e = { id = id, name = self:Name(id), own = true }
     local classes = get("Quest", "requiredClasses", id) or 0
@@ -204,7 +278,7 @@ function Q:Evaluate(id, d, p, log)
     local npcs, objs, items = sb and sb[1], sb and sb[2], sb and sb[3]
     if type(npcs) == "table" and #npcs > 0 then
         for _, npc in ipairs(npcs) do
-            local f = friendly(npc, p.fac)
+            local f = giverOk(npc, p) and friendly(npc, p.fac)
             if f then
                 e.fac, e.npc = f, npc
                 break
@@ -224,7 +298,7 @@ function Q:Evaluate(id, d, p, log)
     local fnpcs = fb and fb[1]
     if type(fnpcs) == "table" and #fnpcs > 0 then
         local ok = false
-        for _, npc in ipairs(fnpcs) do if friendly(npc, p.fac) then ok = true break end end
+        for _, npc in ipairs(fnpcs) do if giverOk(npc, p) then ok = true break end end
         if not ok then return nil end              -- turn-in in hostile hands
     end
 
@@ -268,3 +342,4 @@ function Q:ForDungeon(d, p, log)
     end
     return out
 end
+DM:On("QUEST_TURNED_IN", function() wipe(reachCache) end)

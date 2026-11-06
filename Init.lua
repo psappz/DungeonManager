@@ -68,5 +68,11 @@ SlashCmdList.DUNGEONMANAGER = function(msg)
     if msg == "" then DM.UI:Toggle()
     elseif msg == "prep" or msg == "run" then DM.Prep:Toggle()
     elseif msg == "settings" or msg == "config" then DM.UI:Toggle("set")
-    else DM:Print("/dmgr, /dmgr prep, /dmgr settings") end
+    elseif msg == "int" or msg == "integrations" then
+        local I = DM.Int
+        local function yn(v) return v and "|cff5cc46ayes|r" or "|cffe05a4fno|r" end
+        DM:Print("TomTom", yn(I:HasTomTom()), "- Pawn", yn(I:HasPawn()), "- AtlasLoot", yn(I:HasAtlasLoot()),
+            "- Questie XP", yn(I:QuestXP(6563) or I:QuestXP(1199)), "- LegacyManager", yn(I:LegacyMilestone(DM:Player().classFile, DM:Player().level)))
+        DM:Print("Group sync:", yn(DM.settings.syncGroup), "peers:", DM.Sync:PeerCount())
+    else DM:Print("/dmgr, /dmgr prep, /dmgr settings, /dmgr int") end
 end

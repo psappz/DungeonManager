@@ -32,6 +32,10 @@ UI.GroupClasses = groupClasses
 
 function DM:SetWaypoint(area, x, y, label)
     local map = area and DM.Quests:AreaToUi(area)
+    if map and DM.settings.tomtom and DM.Int:HasTomTom() and DM.Int:TomTomWaypoint(map, x, y, label) then
+        DM:Print(string.format(L["TomTom arrow set: %s"], label or ""))
+        return
+    end
     if map and C_Map and C_Map.SetUserWaypoint and UiMapPoint and (not C_Map.CanSetUserWaypointOnMap or C_Map.CanSetUserWaypointOnMap(map)) then
         C_Map.SetUserWaypoint(UiMapPoint.CreateFromCoordinates(map, x, y))
         if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then C_SuperTrack.SetSuperTrackedUserWaypoint(true) end
@@ -53,8 +57,16 @@ function UI:QuestRow(e, groupSet, p)
         giver = (giver or "") .. "  |cfff3b55b" .. L["after:"] .. " " .. DM.Quests:Name(e.pre[1]) .. "|r"
     end
     local highlight = e.classFile and e.status ~= "done" and ((e.own) or (groupSet[e.classFile]))
+    local name = DM:Color(nameHex, e.name)
+    if DM.settings.pawn and e.status == "log" and DM.Int:QuestHasUpgrade(e.id) then name = DM.Int.UPGRADE_ICON .. " " .. name end
+    if e.shareable == false and e.status ~= "done" then name = name .. " |cff9a9a9a(" .. L["not shareable"] .. ")|r" end
+    if DM.Sync:Enabled() then
+        local need, has = DM.Sync:Who(e.id)
+        if #has > 0 then giver = (giver or "") .. "  |cff8fe39b" .. string.format(L["in log: %s"], table.concat(has, ", ")) .. "|r" end
+        if #need > 0 then giver = (giver or "") .. "  |cffffd100" .. string.format(L["also needs it: %s"], table.concat(need, ", ")) .. "|r" end
+    end
     return {
-        icon = icon, name = DM:Color(nameHex, e.name), status = DM:Color(st[2], L[st[1]]), giver = giver or "-",
+        icon = icon, name = name, status = DM:Color(st[2], L[st[1]]), giver = giver or "-",
         entry = e, border = highlight and { 0.78, 0.63, 0.29 } or nil,
     }
 end
@@ -76,6 +88,8 @@ local function listRows(phase)
     local log = DM.Quests:LogSet()
     local hc = DM:IsHardcore()
     local rows = {}
+    local msLevel, msPoints
+    if DM.settings.legacyMarker then msLevel, msPoints = DM.Int:LegacyMilestone(p.classFile, p.level) end
     for _, d in ipairs(ns.Dungeons) do
         local inPhase = (phase == "end") and (d.phase == "end" or d.both) or (phase ~= "end" and d.phase ~= "end")
         if inPhase then
@@ -84,6 +98,9 @@ local function listRows(phase)
                 local name = DM:DungeonName(d)
                 if d.new then name = name .. " |cffffd100" .. L["NEW"] .. "|r" end
                 if r.dangerous then name = name .. " |TInterface\\TargetingFrame\\UI-TargetingFrame-Skull:14:14|t" end
+                if msLevel and phase ~= "end" and (r.hex == C.green or r.hex == C.graygreen) and d.low <= msLevel and msLevel <= d.high + 1 then
+                    name = name .. " |cff4fa3ff" .. string.format(L["+%d Legacy at %d"], msPoints or 1, msLevel) .. "|r"
+                end
                 local hex = (phase == "end") and C.gray or r.hex
                 local q = (r.total > 0) and (r.open .. "/" .. r.total) or (DM.Quests.ready and "0" or "...")
                 local note = DM:ZoneText(d)
@@ -149,6 +166,17 @@ local function buildDetail(page)
         if k then DM.char.marked[k] = not DM.char.marked[k] or nil UI:Refresh() DM:Fire("MARKED_CHANGED") end
     end)
     page.mark:SetPoint("TOPRIGHT", -6, -2)
+    page.loot = W:Button(page, L["Open in AtlasLoot"], 140, function()
+        if UI.detail then DM.Int:OpenAtlasLoot(UI.detail.key) end
+    end)
+    page.loot:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_TOP")
+        GameTooltip:AddLine("AtlasLoot", 1, 0.82, 0)
+        GameTooltip:AddLine(L["Opens the loot of this dungeon in AtlasLoot."], 1, 1, 1, true)
+        GameTooltip:Show()
+    end)
+    page.loot:SetScript("OnLeave", function() GameTooltip:Hide() end)
+    page.loot:SetPoint("RIGHT", page.mark, "LEFT", -6, 0)
     page.info = W:Text(page, "GameFontHighlightSmall") page.info:SetPoint("TOPLEFT", 8, -30) page.info:SetJustifyH("LEFT")
     page.mapBtn = CreateFrame("Button", nil, page)
     page.mapBtn:SetPoint("TOPLEFT", 6, -48)
@@ -165,7 +193,8 @@ local function buildDetail(page)
     page.sheetBtns = {}
     for i = 1, 6 do
         local b = W:Toggle(page, "", 96, function() return UI.sheet == i end, function() UI.sheet = i UI:Refresh() end)
-        b:SetPoint("TOPLEFT", page.mapBtn, "TOPRIGHT", 12 + (i - 1) * 100, 0)
+        if i == 1 then b:SetPoint("TOPLEFT", page.mapBtn, "TOPRIGHT", 12, 0)
+        else b:SetPoint("LEFT", page.sheetBtns[i - 1], "RIGHT", 4, 0) end
         b:Hide()
         page.sheetBtns[i] = b
     end
@@ -199,11 +228,19 @@ local function renderDetail(page)
     local r = DM.Logic:Evaluate(d, p, DM.Quests:LogSet())
     page.title:SetText(DM:Color(r.hex, DM:DungeonName(d)))
     page.mark:SetText(DM.char.marked[d.key] and L["Marked for the run"] or L["Mark for the run"])
+    page.loot:SetShown(DM.Int:HasAtlasLoot(d.key))
     local parts = {
         L["Range"] .. ": " .. d.low .. "-" .. d.high, L["Min."] .. ": " .. (d.min or "-"),
         L["Group finder"] .. ": " .. (d.gf or "-"), L["Bosses"] .. ": " .. (d.bosses or "-"),
         L["Quests"] .. ": " .. r.open .. "/" .. r.total, DM:ZoneText(d),
     }
+    if DM.settings.showXP then
+        local xp = 0
+        for _, e in ipairs(r.quests) do
+            if e.own and e.status ~= "done" then xp = xp + (DM.Int:QuestXP(e.id) or 0) end
+        end
+        if xp > 0 then table.insert(parts, L["Quest XP"] .. ": " .. DM.Int:FormatXP(xp)) end
+    end
     if not r.attuned then table.insert(parts, "|cffe05a4f" .. L["Attunement missing"] .. "|r") end
     if r.dangerous then table.insert(parts, "|cffe05a4f" .. L["Entrance in a hostile capital"] .. "|r") end
     page.info:SetText(table.concat(parts, "   "))
@@ -301,11 +338,21 @@ local function buildSettings(page)
         local icon = LibStub("LibDBIcon-1.0", true)
         if icon then if v then icon:Show("DungeonManager") else icon:Hide("DungeonManager") end end
     end), nil, 8))
-    add(row(W:Check(page, L["LegacyManager: show the +1 Legacy marker (coming soon)"], function() return s.legacyMarker end, function(v) s.legacyMarker = v end), nil, 8))
-    add(row(W:Check(page, L["Compare and share quests with the group (coming soon)"], function() return s.syncGroup end, function(v) s.syncGroup = v end), nil, 8))
+    add(row(W:Check(page, L["LegacyManager: mark dungeons that reach your next Legacy milestone"], function() return s.legacyMarker end, function(v) s.legacyMarker = v end), nil, 8))
+    add(row(W:Check(page, L["TomTom: use its arrow for quest givers (if installed)"], function() return s.tomtom end, function(v) s.tomtom = v end), nil, 8))
+    add(row(W:Check(page, L["Pawn: upgrade arrow for quest rewards (if installed)"], function() return s.pawn end, function(v) s.pawn = v DM.Int:ResetUpgradeCache() end), nil, 8))
+    add(row(W:Check(page, L["Questie: show quest XP"], function() return s.showXP end, function(v) s.showXP = v end), nil, 8))
+    add(row(W:Check(page, L["Compare quests of marked dungeons with the group"], function() return s.syncGroup end, function(v)
+        s.syncGroup = v
+        if v then DM.Sync:Broadcast(true) DM.Sync:Request() end
+    end), nil, 8))
     add(row(W:Check(page, L["Compare quests with the guild (coming soon)"], function() return s.syncGuild end, function(v) s.syncGuild = v end), nil, 8))
     local note = W:Text(page, "GameFontDisableSmall", L["Group and guild comparison are off by default and must be switched on."])
     note:SetPoint("TOPLEFT", 12, y - 4)
+    page.family = W:Text(page, "GameFontHighlightSmall")
+    page.family:SetPoint("BOTTOMLEFT", 12, 26)
+    local url = W:Text(page, "GameFontDisableSmall", ns.Family.URL)
+    url:SetPoint("BOTTOMLEFT", 12, 8)
 end
 
 ---------------------------------------------------------------------------
@@ -316,7 +363,9 @@ local function create()
     frame:SetBackdropBorderColor(0.54, 0.48, 0.33, 1)
     frame:SetSize(WIDTH, HEIGHT)
     frame:SetPoint("CENTER")
-    frame:SetFrameStrata("HIGH")
+    -- MEDIUM like most addon windows: AtlasLoot and others opened from here come to the front
+    frame:SetFrameStrata("MEDIUM")
+    frame:SetToplevel(true)
     frame:SetMovable(true)
     frame:EnableMouse(true)
     frame:RegisterForDrag("LeftButton")
@@ -330,8 +379,7 @@ local function create()
     title:SetPoint("TOPLEFT", 14, -12)
     frame.sub = W:Text(frame, "GameFontDisableSmall")
     frame.sub:SetPoint("LEFT", title, "RIGHT", 12, -1)
-    local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
-    close:SetPoint("TOPRIGHT", 2, 2)
+    W:Close(frame)
 
     local defs = {
         { "lev", L["Leveling"], function(p) buildList(p, "lev") end },
@@ -339,12 +387,12 @@ local function create()
         { "raid", L["Raids"], buildRaids },
         { "set", L["Settings"], buildSettings },
     }
-    local x = 12
+    local prev
     for _, def in ipairs(defs) do
         local key = def[1]
         local b = W:Toggle(frame, def[2], 150, function() return UI.tab == key or (key == "lev" and UI.tab == "detail") end, function() UI:ShowTab(key) end)
-        b:SetPoint("TOPLEFT", frame, "TOPLEFT", x, -38)
-        x = x + 154
+        if prev then b:SetPoint("LEFT", prev, "RIGHT", 4, 0) else b:SetPoint("TOPLEFT", frame, "TOPLEFT", 12, -38) end
+        prev = b
         tabs[key] = b
     end
     table.insert(defs, { "detail", "", buildDetail })
@@ -389,5 +437,6 @@ function UI:Refresh()
         renderDetail(page)
     elseif self.tab == "set" then
         for _, w in ipairs(page.controls or {}) do if w.Refresh then w:Refresh() end end
+        page.family:SetText(ns.Family.Line(L["Manager family"]))
     end
 end
