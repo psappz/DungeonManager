@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.1
+
+### Look
+- The version number is shown at the bottom of the main window.
+
 ## 1.5.0
 
 ### New

@@ -440,6 +440,8 @@ local function create()
     end
     frame.footer = W:Text(frame, "GameFontDisableSmall", L["Left-click minimap button: this window - right-click: run preparation"])
     frame.footer:SetPoint("BOTTOMLEFT", 14, 8)
+    frame.version = W:Text(frame, "GameFontDisableSmall", "v" .. DM.version)
+    frame.version:SetPoint("BOTTOMRIGHT", -14, 8)
     frame:SetScript("OnShow", function() UI:Refresh() end)
 end
 
