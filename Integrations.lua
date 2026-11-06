@@ -57,6 +57,8 @@ local function isUpgrade(link)
     return false
 end
 
+function I:IsUpgradeLink(link) return isUpgrade(link) end
+
 local upgradeCache = {}
 -- Quest rewards are only known to the client for quests in the log (QuestieDB has no reward items).
 function I:QuestHasUpgrade(questID)
@@ -162,4 +164,13 @@ function I:LegacyMilestone(classFile, level)
     local ok, msLevel, points = pcall(api.NextClassMilestone, classFile, level)
     if ok and msLevel then return msLevel, points end
     return nil
+end
+
+-- Zone name of a run-preparation stop: QuestieDB area, or a uiMap from DungeonJournal
+function DM:ZoneLabel(z)
+    if z.area then return DM:AreaName(z.area) end
+    if z.uiMap and C_Map and C_Map.GetMapInfo then
+        local info = C_Map.GetMapInfo(z.uiMap)
+        return info and info.name
+    end
 end

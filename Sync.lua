@@ -192,7 +192,7 @@ function S:PostPlan(plan)
     table.insert(lines, head)
     local cur = ""
     for _, z in ipairs(plan.route) do
-        local zone = (z.area and DM:AreaName(z.area)) or "?"
+        local zone = DM:ZoneLabel(z) or "?"
         local parts = {}
         for _, e in ipairs(z.list) do
             local extra = e.giver or ""

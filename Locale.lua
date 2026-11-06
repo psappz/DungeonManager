@@ -9,6 +9,10 @@ ns.L = L
 local T
 local l = GetLocale()
 if l == "deDE" then T = {
+    ["Open in DungeonJournal"] = "In DungeonJournal öffnen",
+    ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Bosse, Beute, Karten und Questseiten dieses Dungeons im DungeonJournal.",
+    ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Quest anklicken: im DungeonJournal öffnen - Rechtsklick: Kartenmarkierung.",
+    ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal: dessen Questlisten, Karten und Seiten nutzen (falls installiert)",
     ["Compare quests of marked dungeons with the guild"] = "Quests markierter Dungeons mit der Gilde abgleichen",
     ["guild: %s"] = "Gilde: %s",
     ["Open in AtlasLoot"] = "In AtlasLoot öffnen",
@@ -122,6 +126,10 @@ if l == "deDE" then T = {
 } end
 
 if l == "frFR" then T = {
+    ["Open in DungeonJournal"] = "Ouvrir dans DungeonJournal",
+    ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Boss, butin, cartes et pages de quêtes de ce donjon dans DungeonJournal.",
+    ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Clic sur une quête : l'ouvrir dans DungeonJournal - clic droit : repère sur la carte.",
+    ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal : utiliser ses listes de quêtes, cartes et pages (si installé)",
     ["Compare quests of marked dungeons with the guild"] = "Comparer les quêtes des donjons marqués avec la guilde",
     ["guild: %s"] = "guilde : %s",
     ["Open in AtlasLoot"] = "Ouvrir dans AtlasLoot",
@@ -227,6 +235,10 @@ if l == "frFR" then T = {
 } end
 
 if l == "esES" or l == "esMX" then T = {
+    ["Open in DungeonJournal"] = "Abrir en DungeonJournal",
+    ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Jefes, botín, mapas y páginas de misiones de esta mazmorra en DungeonJournal.",
+    ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Clic en una misión: abrirla en DungeonJournal - clic derecho: marcador en el mapa.",
+    ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal: usar sus listas de misiones, mapas y páginas (si está instalado)",
     ["Compare quests of marked dungeons with the guild"] = "Comparar misiones de las mazmorras marcadas con la hermandad",
     ["guild: %s"] = "hermandad: %s",
     ["Open in AtlasLoot"] = "Abrir en AtlasLoot",
@@ -332,6 +344,10 @@ if l == "esES" or l == "esMX" then T = {
 } end
 
 if l == "itIT" then T = {
+    ["Open in DungeonJournal"] = "Apri in DungeonJournal",
+    ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Boss, bottino, mappe e pagine missione di questo dungeon in DungeonJournal.",
+    ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Clic su una missione: aprila in DungeonJournal - clic destro: segnalino sulla mappa.",
+    ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal: usa le sue liste di missioni, mappe e pagine (se installato)",
     ["Compare quests of marked dungeons with the guild"] = "Confronta le missioni dei dungeon segnati con la gilda",
     ["guild: %s"] = "gilda: %s",
     ["Open in AtlasLoot"] = "Apri in AtlasLoot",
@@ -437,6 +453,10 @@ if l == "itIT" then T = {
 } end
 
 if l == "ptBR" or l == "ptPT" then T = {
+    ["Open in DungeonJournal"] = "Abrir no DungeonJournal",
+    ["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."] = "Chefes, saque, mapas e páginas de missões desta masmorra no DungeonJournal.",
+    ["Click a quest: open it in DungeonJournal - right-click: map marker."] = "Clique numa missão: abrir no DungeonJournal - clique direito: marcador no mapa.",
+    ["DungeonJournal: use its quest lists, maps and pages (if installed)"] = "DungeonJournal: usar as listas de missões, mapas e páginas dele (se instalado)",
     ["Compare quests of marked dungeons with the guild"] = "Comparar missões das masmorras marcadas com a guilda",
     ["guild: %s"] = "guilda: %s",
     ["Open in AtlasLoot"] = "Abrir no AtlasLoot",

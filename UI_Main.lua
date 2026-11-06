@@ -30,8 +30,8 @@ local function groupClasses()
 end
 UI.GroupClasses = groupClasses
 
-function DM:SetWaypoint(area, x, y, label)
-    local map = area and DM.Quests:AreaToUi(area)
+function DM:SetWaypoint(area, x, y, label, uiMap)
+    local map = uiMap or (area and DM.Quests:AreaToUi(area))
     if map and DM.settings.tomtom and DM.Int:HasTomTom() and DM.Int:TomTomWaypoint(map, x, y, label) then
         DM:Print(string.format(L["TomTom arrow set: %s"], label or ""))
         return
@@ -58,7 +58,10 @@ function UI:QuestRow(e, groupSet, p)
     end
     local highlight = e.classFile and e.status ~= "done" and ((e.own) or (groupSet[e.classFile]))
     local name = DM:Color(nameHex, e.name)
-    if DM.settings.pawn and e.status == "log" and DM.Int:QuestHasUpgrade(e.id) then name = DM.Int.UPGRADE_ICON .. " " .. name end
+    if DM.settings.pawn and e.status ~= "done" and e.own
+        and ((e.status == "log" and DM.Int:QuestHasUpgrade(e.id)) or (e.dj and DM.DJ:RewardUpgrade(e.dj))) then
+        name = DM.Int.UPGRADE_ICON .. " " .. name
+    end
     if e.shareable == false and e.status ~= "done" then name = name .. " |cff9a9a9a(" .. L["not shareable"] .. ")|r" end
     if DM.Sync:Enabled() then
         local need, has = DM.Sync:Who(e.id)
@@ -185,6 +188,16 @@ local function buildDetail(page)
     end)
     page.loot:SetScript("OnLeave", function() GameTooltip:Hide() end)
     page.loot:SetPoint("RIGHT", page.mark, "LEFT", -6, 0)
+    page.journal = W:Button(page, L["Open in DungeonJournal"], 140, function()
+        if UI.detail then DM.DJ:Open(UI.detail) end
+    end)
+    page.journal:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_TOP")
+        GameTooltip:AddLine("DungeonJournal", 1, 0.82, 0)
+        GameTooltip:AddLine(L["Bosses, loot, maps and quest pages of this dungeon in DungeonJournal."], 1, 1, 1, true)
+        GameTooltip:Show()
+    end)
+    page.journal:SetScript("OnLeave", function() GameTooltip:Hide() end)
     page.info = W:Text(page, "GameFontHighlightSmall") page.info:SetPoint("TOPLEFT", 8, -30) page.info:SetJustifyH("LEFT")
     page.mapBtn = CreateFrame("Button", nil, page)
     page.mapBtn:SetPoint("TOPLEFT", 6, -48)
@@ -215,9 +228,12 @@ local function buildDetail(page)
     end
     page.table = W:Table(page, {
         { "icon", "", 40 }, { "name", L["Quest"], 280 }, { "status", L["Status"], 130 }, { "giver", L["Quest giver"], 420 },
-    }, 22, 8, function(item)
+    }, 22, 8, function(item, button)
         local e = item.entry
-        if e and e.area and e.x then DM:SetWaypoint(e.area, e.x, e.y, e.giver) end
+        if not e then return end
+        -- with DungeonJournal: left-click opens the quest page there, right-click sets the map marker
+        if DM.DJ:Active() and button ~= "RightButton" and UI.detail and DM.DJ:Open(UI.detail, e.id) then return end
+        if e.x and (e.uiMap or e.area) then DM:SetWaypoint(e.area, e.x, e.y, e.giver, e.uiMap) end
     end)
     page.table:SetPoint("RIGHT", page, "RIGHT", -4, 0)
     page.empty = W:Text(page, "GameFontDisableSmall") page.empty:SetPoint("BOTTOMLEFT", 8, 2)
@@ -237,6 +253,11 @@ local function renderDetail(page)
     page.title:SetText(DM:Color(r.hex, DM:DungeonName(d)))
     page.mark:SetText(DM.char.marked[d.key] and L["Marked for the run"] or L["Mark for the run"])
     page.loot:SetShown(DM.Int:HasAtlasLoot(d.key))
+    local dj = DM.DJ:Active() and DM.DJ:Name(d) ~= nil
+    page.journal:SetShown(dj)
+    page.journal:ClearAllPoints()
+    if page.loot:IsShown() then page.journal:SetPoint("RIGHT", page.loot, "LEFT", -6, 0)
+    else page.journal:SetPoint("RIGHT", page.mark, "LEFT", -6, 0) end
     local parts = {
         L["Range"] .. ": " .. d.low .. "-" .. d.high, L["Min."] .. ": " .. (d.min or "-"),
         L["Group finder"] .. ": " .. (d.gf or "-"), L["Bosses"] .. ": " .. (d.bosses or "-"),
@@ -259,7 +280,8 @@ local function renderDetail(page)
         b:SetShown(sh ~= nil and #sheets > 1)
         if sh then b.label:SetText(L[sh.label]) b:Refresh() end
     end
-    local sh = sheets and sheets[UI.sheet or 1]
+    local sh = (not dj) and sheets and sheets[UI.sheet or 1]   -- DungeonJournal has the better maps
+    if dj then for _, b in ipairs(page.sheetBtns) do b:Hide() end end
     if sh then
         page.map:SetTexture("Interface\\AddOns\\DungeonManager\\Media\\Maps\\" .. sh.tex)
         page.mapBtn:Show()
@@ -301,7 +323,7 @@ local function renderDetail(page)
     if #rows == 0 then
         page.empty:SetText(DM.Quests.ready and L["No quests for your faction in this dungeon."] or L["Loading quest data..."])
     else
-        page.empty:SetText(L["Click a quest: map marker at the quest giver."])
+        page.empty:SetText(dj and L["Click a quest: open it in DungeonJournal - right-click: map marker."] or L["Click a quest: map marker at the quest giver."])
     end
 end
 
@@ -349,6 +371,7 @@ local function buildSettings(page)
     add(row(W:Check(page, L["LegacyManager: mark dungeons that reach your next Legacy milestone"], function() return s.legacyMarker end, function(v) s.legacyMarker = v end), nil, 8))
     add(row(W:Check(page, L["TomTom: use its arrow for quest givers (if installed)"], function() return s.tomtom end, function(v) s.tomtom = v end), nil, 8))
     add(row(W:Check(page, L["Pawn: upgrade arrow for quest rewards (if installed)"], function() return s.pawn end, function(v) s.pawn = v DM.Int:ResetUpgradeCache() end), nil, 8))
+    add(row(W:Check(page, L["DungeonJournal: use its quest lists, maps and pages (if installed)"], function() return s.useDungeonJournal ~= false end, function(v) s.useDungeonJournal = v UI:Refresh() end), nil, 8))
     add(row(W:Check(page, L["Questie: show quest XP"], function() return s.showXP end, function(v) s.showXP = v end), nil, 8))
     add(row(W:Check(page, L["Compare quests of marked dungeons with the group"], function() return s.syncGroup end, function(v)
         s.syncGroup = v

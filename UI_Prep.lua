@@ -9,8 +9,8 @@ local Prep = {}
 DM.Prep = Prep
 local frame
 
-local function worldPos(area, x, y)
-    local map = area and DM.Quests:AreaToUi(area)
+local function worldPos(area, x, y, uiMap)
+    local map = uiMap or (area and DM.Quests:AreaToUi(area))
     if not (map and x and C_Map and C_Map.GetWorldPosFromMapPos and CreateVector2D) then return end
     local cont, pos = C_Map.GetWorldPosFromMapPos(map, CreateVector2D(x, y))
     if not pos then return end
@@ -63,9 +63,9 @@ function Prep:Plan()
     end
     local zones, order = {}, {}
     for _, e in ipairs(pick) do
-        local k = e.area or 0
-        if not zones[k] then zones[k] = { area = e.area, list = {} } table.insert(order, zones[k]) end
-        e.c, e.wx, e.wy = worldPos(e.area, e.x, e.y)
+        local k = e.area or (e.uiMap and ("ui" .. e.uiMap)) or 0
+        if not zones[k] then zones[k] = { area = e.area, uiMap = e.uiMap, list = {} } table.insert(order, zones[k]) end
+        e.c, e.wx, e.wy = worldPos(e.area, e.x, e.y, e.uiMap)
         table.insert(zones[k].list, e)
     end
     local c, x, y = playerPos()
@@ -100,7 +100,7 @@ local function rows(plan)
     local n = 0
     for _, z in ipairs(plan.route) do
         n = n + 1
-        table.insert(out, { text = string.format("|cffffd100%d. %s|r", n, (z.area and DM:AreaName(z.area)) or L["Unknown place"]) })
+        table.insert(out, { text = string.format("|cffffd100%d. %s|r", n, DM:ZoneLabel(z) or L["Unknown place"]) })
         for _, e in ipairs(z.list) do
             local icon = e.classFile and DM:ClassIcon(e.classFile) or ""
             local t = "    " .. icon .. (e.giver or "?") .. ": " .. e.name
@@ -151,7 +151,7 @@ local function create()
     frame.log = W:Text(frame, "GameFontHighlightSmall") frame.log:SetPoint("TOPLEFT", 14, -52)
     frame.table = W:Table(frame, { { "text", "", 440 } }, 20, 22, function(item)
         local e = item.entry
-        if e and e.area and e.x then DM:SetWaypoint(e.area, e.x, e.y, e.giver) end
+        if e and e.x and (e.area or e.uiMap) then DM:SetWaypoint(e.area, e.x, e.y, e.giver, e.uiMap) end
     end)
     frame.table:SetPoint("TOPLEFT", 6, -70)
     frame.table:SetPoint("RIGHT", -6, 0)

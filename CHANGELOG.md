@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.5.0
+
+### New
+- **DungeonJournal (Exehn) integration.** With DungeonJournal installed, DungeonManager leaves the per-dungeon reference to it and keeps its own strengths (recommendations by level, faction and Hardcore safety, run preparation, group and guild comparison):
+  - Quest lists come from DungeonJournal, which is maintained for Forever – changed quest chains show up there first. QuestieDB stays for completion state and coordinates; quests QuestieDB does not know yet are still shown.
+  - "Open in DungeonJournal" button in the detail view; clicking a quest opens its page in DungeonJournal, right-click sets the map marker.
+  - DungeonJournal's maps replace DungeonManager's schematic maps.
+  - Pawn upgrade arrow for every quest (DungeonJournal knows the reward items), not only for quests in your log.
+  - Shareability from DungeonJournal's audited data.
+- Option to switch this off; without DungeonJournal everything works as before.
+
 ## 1.4.0
 
 ### New

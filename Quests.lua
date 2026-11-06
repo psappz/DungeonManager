@@ -334,7 +334,57 @@ function Q:Evaluate(id, d, p, log)
     return e
 end
 
+-- Entry for a quest that QuestieDB does not know yet (new or changed Forever quest), from DungeonJournal
+function Q:FromJournal(q, d, p, log)
+    local e = {
+        id = q.id, name = q.name or ("#" .. q.id), own = true, giver = q.pickup,
+        fac = (q.faction == "Both" or not q.faction) and "N" or p.fac,
+        level = q.requires or q.level or 0, inside = q.startsInDungeon and true or false, fromJournal = true,
+    }
+    if type(q.startMap) == "table" then e.uiMap, e.x, e.y = q.startMap.mapID, q.startMap.x, q.startMap.y end
+    if q.classOnly then
+        e.classFile = q.classOnly
+        e.own = (p.classFile == q.classOnly)
+    end
+    if not e.own then e.status = "other"
+    elseif self:IsDone(q.id) then e.status = "done"
+    elseif log[q.id] then e.status = "log"
+    elseif e.level > p.level then e.status = "low"
+    elseif e.inside then e.status = "inside"
+    else e.status = "take" end
+    return e
+end
+
+local FAC = { Horde = "H", Alliance = "A" }
+
 function Q:ForDungeon(d, p, log)
+    local dj = DM.DJ and DM.DJ:Quests(d)
+    if dj then
+        local out, seen = {}, {}
+        for _, q in ipairs(dj) do
+            local qf = FAC[q.faction or ""]
+            if not seen[q.id] and (not qf or qf == p.fac) then
+                seen[q.id] = true
+                local e
+                if get("Quest", "name", q.id) then
+                    e = self:Evaluate(q.id, d, p, log)       -- our faction / Hardcore rules still apply
+                else
+                    e = self:FromJournal(q, d, p, log)
+                end
+                if e then
+                    e.dj = q
+                    if q.classOnly and not e.classFile then
+                        e.classFile = q.classOnly
+                        if p.classFile ~= q.classOnly then e.own = false e.status = "other" end
+                    end
+                    local share = DM.DJ:Shareable(q.id)
+                    if share ~= nil then e.shareable = share end
+                    table.insert(out, e)
+                end
+            end
+        end
+        return out
+    end
     local out = {}
     for _, id in ipairs(self.byDungeon[d.key] or d.quests or {}) do
         local e = self:Evaluate(id, d, p, log)
