@@ -65,6 +65,14 @@ function UI:QuestRow(e, groupSet, p)
         if #has > 0 then giver = (giver or "") .. "  |cff8fe39b" .. string.format(L["in log: %s"], table.concat(has, ", ")) .. "|r" end
         if #need > 0 then giver = (giver or "") .. "  |cffffd100" .. string.format(L["also needs it: %s"], table.concat(need, ", ")) .. "|r" end
     end
+    if DM.Sync:GuildEnabled() and e.status ~= "done" and e.own then
+        local g = DM.Sync:GuildWho(e.id)
+        if #g > 0 then
+            local shown = {}
+            for i = 1, math.min(3, #g) do shown[i] = g[i] end
+            giver = (giver or "") .. "  |cff69ccf0" .. string.format(L["guild: %s"], table.concat(shown, ", ") .. (#g > 3 and (" +" .. (#g - 3)) or "")) .. "|r"
+        end
+    end
     return {
         icon = icon, name = name, status = DM:Color(st[2], L[st[1]]), giver = giver or "-",
         entry = e, border = highlight and { 0.78, 0.63, 0.29 } or nil,
@@ -346,10 +354,13 @@ local function buildSettings(page)
         s.syncGroup = v
         if v then DM.Sync:Broadcast(true) DM.Sync:Request() end
     end), nil, 8))
-    add(row(W:Check(page, L["Compare quests with the guild (coming soon)"], function() return s.syncGuild end, function(v) s.syncGuild = v end), nil, 8))
+    add(row(W:Check(page, L["Compare quests of marked dungeons with the guild"], function() return s.syncGuild end, function(v)
+        s.syncGuild = v
+        if v then DM.Sync:Broadcast(true) DM.Sync:Request() end
+    end), nil, 8))
     local note = W:Text(page, "GameFontDisableSmall", L["Group and guild comparison are off by default and must be switched on."])
     note:SetPoint("TOPLEFT", 12, y - 4)
-    page.family = W:Text(page, "GameFontHighlightSmall")
+    page.family = ns.Family.Bar(page, L["Manager family"])
     page.family:SetPoint("BOTTOMLEFT", 12, 26)
     local url = W:Text(page, "GameFontDisableSmall", ns.Family.URL)
     url:SetPoint("BOTTOMLEFT", 12, 8)
@@ -437,6 +448,6 @@ function UI:Refresh()
         renderDetail(page)
     elseif self.tab == "set" then
         for _, w in ipairs(page.controls or {}) do if w.Refresh then w:Refresh() end end
-        page.family:SetText(ns.Family.Line(L["Manager family"]))
+        page.family:Refresh()
     end
 end

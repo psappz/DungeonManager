@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0
+
+### New
+- **Guild quest comparison (opt-in, off by default):** guild members with DungeonManager who need the same quests of their marked dungeons are listed next to the quest (up to three names) – handy to find a group.
+- **Manager family bar** in the settings is clickable: opens the other installed Manager addons.
+
 ## 1.3.0
 
 ### New

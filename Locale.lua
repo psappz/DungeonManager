@@ -9,6 +9,8 @@ ns.L = L
 local T
 local l = GetLocale()
 if l == "deDE" then T = {
+    ["Compare quests of marked dungeons with the guild"] = "Quests markierter Dungeons mit der Gilde abgleichen",
+    ["guild: %s"] = "Gilde: %s",
     ["Open in AtlasLoot"] = "In AtlasLoot öffnen",
     ["Opens the loot of this dungeon in AtlasLoot."] = "Öffnet die Beute dieses Dungeons in AtlasLoot.",
     ["Attunement missing"] = "Attunement fehlt",
@@ -120,6 +122,8 @@ if l == "deDE" then T = {
 } end
 
 if l == "frFR" then T = {
+    ["Compare quests of marked dungeons with the guild"] = "Comparer les quêtes des donjons marqués avec la guilde",
+    ["guild: %s"] = "guilde : %s",
     ["Open in AtlasLoot"] = "Ouvrir dans AtlasLoot",
     ["Opens the loot of this dungeon in AtlasLoot."] = "Ouvre le butin de ce donjon dans AtlasLoot.",
     ["%d uncertain spots (dashed)"] = "%d endroits incertains (pointillés)",
@@ -223,6 +227,8 @@ if l == "frFR" then T = {
 } end
 
 if l == "esES" or l == "esMX" then T = {
+    ["Compare quests of marked dungeons with the guild"] = "Comparar misiones de las mazmorras marcadas con la hermandad",
+    ["guild: %s"] = "hermandad: %s",
     ["Open in AtlasLoot"] = "Abrir en AtlasLoot",
     ["Opens the loot of this dungeon in AtlasLoot."] = "Abre el botín de esta mazmorra en AtlasLoot.",
     ["%d uncertain spots (dashed)"] = "%d puntos inciertos (discontinuos)",
@@ -326,6 +332,8 @@ if l == "esES" or l == "esMX" then T = {
 } end
 
 if l == "itIT" then T = {
+    ["Compare quests of marked dungeons with the guild"] = "Confronta le missioni dei dungeon segnati con la gilda",
+    ["guild: %s"] = "gilda: %s",
     ["Open in AtlasLoot"] = "Apri in AtlasLoot",
     ["Opens the loot of this dungeon in AtlasLoot."] = "Apre il bottino di questo dungeon in AtlasLoot.",
     ["%d uncertain spots (dashed)"] = "%d punti incerti (tratteggiati)",
@@ -429,6 +437,8 @@ if l == "itIT" then T = {
 } end
 
 if l == "ptBR" or l == "ptPT" then T = {
+    ["Compare quests of marked dungeons with the guild"] = "Comparar missões das masmorras marcadas com a guilda",
+    ["guild: %s"] = "guilda: %s",
     ["Open in AtlasLoot"] = "Abrir no AtlasLoot",
     ["Opens the loot of this dungeon in AtlasLoot."] = "Abre o saque desta masmorra no AtlasLoot.",
     ["%d uncertain spots (dashed)"] = "%d pontos incertos (tracejados)",

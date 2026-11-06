@@ -9,6 +9,7 @@ local L = ns.L
 local S = {}
 DM.Sync = S
 S.peers = {}            -- [name] = { need = {[id]=true}, log = {[id]=true}, class = "SHAMAN", t = time }
+S.guildPeers = {}       -- same, for guild members (opt-in "Compare quests with the guild")
 
 local PREFIX = "DMGR1"
 local registered = false
@@ -33,8 +34,12 @@ function S:Enabled()
     return DM.settings and DM.settings.syncGroup and channel() ~= nil
 end
 
-local function send(msg)
-    local ch = channel()
+function S:GuildEnabled()
+    return DM.settings and DM.settings.syncGuild and IsInGuild() and true or false
+end
+
+local function send(msg, ch)
+    ch = ch or channel()
     if not ch or not register() then return end
     if C_ChatInfo and C_ChatInfo.SendAddonMessage then pcall(C_ChatInfo.SendAddonMessage, PREFIX, msg, ch) end
 end
@@ -57,27 +62,20 @@ local function myState()
 end
 
 -- Messages: "S|<class>|<n|l>|<ids>" in chunks (addon messages are limited to 255 bytes).
-local lastSent = 0
-function S:Broadcast(force)
-    if not self:Enabled() then return end
-    if not force and GetTime() - lastSent < 5 then
-        C_Timer.After(5, function() S:Broadcast(true) end)
-        return
-    end
-    lastSent = GetTime()
+local function sendState(ch)
     local _, classFile = UnitClass("player")
     local need, inLog = myState()
-    send("R|" .. classFile)                         -- reset my entry on the receivers
+    send("R|" .. classFile, ch)                         -- reset my entry on the receivers
     for _, part in ipairs({ { "n", need }, { "l", inLog } }) do
         local buf = {}
-        local function flush()
-            if #buf > 0 then send("S|" .. classFile .. "|" .. part[1] .. "|" .. table.concat(buf, ",")) end
-            buf = {}
-        end
         local len = 0
+        local function flush()
+            if #buf > 0 then send("S|" .. classFile .. "|" .. part[1] .. "|" .. table.concat(buf, ","), ch) end
+            buf, len = {}, 0
+        end
         for _, id in ipairs(part[2]) do
             local s = tostring(id)
-            if len + #s + 1 > 220 then flush() len = 0 end
+            if len + #s + 1 > 220 then flush() end
             table.insert(buf, s)
             len = len + #s + 1
         end
@@ -85,26 +83,46 @@ function S:Broadcast(force)
     end
 end
 
+local lastSent, lastGuild = 0, 0
+function S:Broadcast(force)
+    if self:Enabled() then
+        if not force and GetTime() - lastSent < 5 then
+            C_Timer.After(5, function() S:Broadcast(true) end)
+        else
+            lastSent = GetTime()
+            sendState()
+        end
+    end
+    if self:GuildEnabled() and (force or GetTime() - lastGuild > 60) then
+        lastGuild = GetTime()
+        sendState("GUILD")
+    end
+end
+
 function S:Request()
-    if not self:Enabled() then return end
-    send("Q")
+    if self:Enabled() then send("Q") end
+    if self:GuildEnabled() then send("Q", "GUILD") end
 end
 
 local function short(name) return (name or ""):match("^[^-]+") or name end
 
-local function onMessage(prefix, msg, _, sender)
-    if prefix ~= PREFIX or not DM.settings or not DM.settings.syncGroup then return end
+local function onMessage(prefix, msg, dist, sender)
+    if prefix ~= PREFIX or not DM.settings then return end
+    local guild = dist == "GUILD"
+    if guild and not DM.settings.syncGuild then return end
+    if not guild and not DM.settings.syncGroup then return end
     local me = UnitName("player")
     if short(sender) == me then return end
     local who = short(sender)
+    local store = guild and S.guildPeers or S.peers
     local kind, a, b, c = strsplit("|", msg)
     if kind == "Q" then
-        S:Broadcast()
+        if guild then C_Timer.After(math.random(2, 20), function() S:Broadcast(true) end) else S:Broadcast() end
     elseif kind == "R" then
-        S.peers[who] = { need = {}, log = {}, class = a, t = time() }
+        store[who] = { need = {}, log = {}, class = a, t = time() }
     elseif kind == "S" then
-        local peer = S.peers[who] or { need = {}, log = {}, class = a, t = time() }
-        S.peers[who] = peer
+        local peer = store[who] or { need = {}, log = {}, class = a, t = time() }
+        store[who] = peer
         local set = (b == "l") and peer.log or peer.need
         for id in (c or ""):gmatch("%d+") do set[tonumber(id)] = true end
         peer.t = time()
@@ -125,6 +143,21 @@ function S:Who(questID)
     return need, has
 end
 
+-- Guild members (with DungeonManager, outside my group) that still need a quest or have it in the log
+function S:GuildWho(questID)
+    local out = {}
+    if not self:GuildEnabled() then return out end
+    local now = time()
+    for name, peer in pairs(self.guildPeers) do
+        if now - (peer.t or 0) < 6 * 3600 and not (UnitInParty(name) or UnitInRaid(name))
+            and (peer.need[questID] or peer.log[questID]) then
+            table.insert(out, name)
+        end
+    end
+    table.sort(out)
+    return out
+end
+
 function S:PeerCount()
     local n = 0
     for name in pairs(self.peers) do if UnitInParty(name) or UnitInRaid(name) then n = n + 1 end end
@@ -139,6 +172,11 @@ end)
 DM:On("QUEST_TURNED_IN", function() C_Timer.After(1, function() S:Broadcast() end) end)
 DM:On("QUEST_ACCEPTED", function() C_Timer.After(1, function() S:Broadcast() end) end)
 DM:Listen("MARKED_CHANGED", function() S:Broadcast() end)
+DM:On("PLAYER_ENTERING_WORLD", function()
+    if S.started then return end
+    S.started = true
+    C_Timer.After(20, function() S:Broadcast(true) S:Request() end)
+end)
 
 ---------------------------------------------------------------------------
 -- Posting the run plan to the group chat (button in the run preparation)
